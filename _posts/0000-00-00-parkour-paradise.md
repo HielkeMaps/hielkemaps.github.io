@@ -1,0 +1,19 @@
+---
+layout: map
+title: "Parkour Paradise"
+date: 2020-03-17
+permalink: /maps/parkour-paradise
+short-description: "Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all!"
+java: "/downloads/Parkour Paradise.zip"
+bedrock: "https://mcstore.io/hielke-maps/parkour-paradise"
+trailer: "https://www.youtube.com/watch?v=5fDlWD0rDJk"
+version: 2.0
+---
+
+Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all! The first levels will be easy, but the parkour gets harder the further you get. Are you skilled enough to reach the end?
+
+- 100 levels to beat!
+- Increasing difficulty!
+- Many different level themes!
+- Multiplayer friendly!
+- Ranking system for added replayability!
