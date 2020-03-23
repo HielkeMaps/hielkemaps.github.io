@@ -29,11 +29,12 @@
           if (firstName.indexOf(' ') >= 0) {
             firstName = name.split(' ').slice(0, -1).join(' ');
           }
-          $this = $("#sendMessageButton");
+          $this = $("#sendMessageButton");1
           $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
           $.ajax({
-            url: "//formspree.io/{{ site.email }}",
+            url: "https://formspree.io/{{ site.formspree_id }}",
             type: "POST",
+            crossDomain: true,
             data: {
               name: name,
               phone: phone,
