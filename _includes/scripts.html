@@ -3,7 +3,6 @@
 <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js" | relative_url }}"></script>
 <script src="{{"/assets/vendor/lightbox/js/ekko-lightbox.min.js" | relative_url }}"></script>
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
-<script src="https://cdn.commento.io/js/commento.js"></script>
 
 {% if page.url contains 'contact' %}
   <!-- Form Validation -->
@@ -20,11 +19,9 @@
         submitSuccess: function ($form, event) {
           event.preventDefault(); // prevent default submit behaviour
           // get values from FORM
-          var name = $("input#name").val();
-          var email = $("input#email").val();
-          var phone = $("input#phone").val();
-          var message = $("textarea#message").val();
+          var form = $("#contactForm").get(0); 
           var firstName = name; // For Success/Failure Message
+
           // Check for white space in name for Success/Fail message
           if (firstName.indexOf(' ') >= 0) {
             firstName = name.split(' ').slice(0, -1).join(' ');
@@ -32,14 +29,16 @@
           $this = $("#sendMessageButton");1
           $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
           $.ajax({
-            url: "https://formspree.io/{{ site.formspree_id }}",
+            url: "https://getform.io/f/{{ site.form_id }}",
             type: "POST",
             crossDomain: true,
-            data: {
-              name: name,
-              phone: phone,
-              email: email,
-              message: message
+            data: new FormData(form),
+            dataType: "json",
+            contentType: "multipart/form-data",
+            processData: false,
+            contentType: false,
+            headers: {
+              "Accept": "application/json"
             },
             cache: false,
             success: function () {
