@@ -5,81 +5,164 @@
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
 {% if page.url contains 'contact' %}
-  <!-- Form Validation -->
-  <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/jqBootstrapValidation.js" | relative_url }}"></script>
-  <!-- Send Form -->
-  <script>
-    $(function () {
+<!-- Form Validation -->
+<script src="{{"/assets/vendor/startbootstrap-clean-blog/js/jqBootstrapValidation.js" | relative_url }}"></script>
+<!-- Send Form -->
+<script>
+  $(function () {
 
-      $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function ($form, event, errors) {
-          // additional error messages or events
-        },
-        submitSuccess: function ($form, event) {
-          event.preventDefault(); // prevent default submit behaviour
-          // get values from FORM
-          var form = $("#contactForm").get(0); 
-          var firstName = name; // For Success/Failure Message
+    $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+      preventSubmit: true,
+      submitError: function ($form, event, errors) {
+        // additional error messages or events
+      },
+      submitSuccess: function ($form, event) {
+        event.preventDefault(); // prevent default submit behaviour
+        // get values from FORM
+        var form = $("#contactForm").get(0);
+        var firstName = name; // For Success/Failure Message
 
-          // Check for white space in name for Success/Fail message
-          if (firstName.indexOf(' ') >= 0) {
-            firstName = name.split(' ').slice(0, -1).join(' ');
-          }
-          $this = $("#sendMessageButton");1
-          $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-          $.ajax({
-            url: "https://getform.io/f/{{ site.form_id }}",
-            type: "POST",
-            crossDomain: true,
-            data: new FormData(form),
-            dataType: "json",
-            contentType: "multipart/form-data",
-            processData: false,
-            contentType: false,
-            headers: {
-              "Accept": "application/json"
-            },
-            cache: false,
-            success: function () {
-              // Success message
-              $('#success').html("<div class='alert alert-success'>");
-              $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
-              $('#success > .alert-success').append("<strong>Your message has been sent. </strong>");
-              $('#success > .alert-success').append('</div>');
-              //clear all fields
-              $('#contactForm').trigger("reset");
-            },
-            error: function () {
-              // Fail message
-              $('#success').html("<div class='alert alert-danger'>");
-              $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
-              $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
-              $('#success > .alert-danger').append('</div>');
-              //clear all fields
-              $('#contactForm').trigger("reset");
-            },
-            complete: function () {
-              setTimeout(function () {
-                $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-              }, 1000);
-            }
-          });
-        },
-        filter: function () {
-          return $(this).is(":visible");
+        // Check for white space in name for Success/Fail message
+        if (firstName.indexOf(' ') >= 0) {
+          firstName = name.split(' ').slice(0, -1).join(' ');
         }
-      });
-
-      $("a[data-toggle=\"tab\"]").click(function (e) {
-        e.preventDefault();
-        $(this).tab("show");
-      });
+        $this = $("#sendMessageButton"); 1
+        $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+        $.ajax({
+          url: "https://getform.io/f/{{ site.form_id }}",
+          type: "POST",
+          crossDomain: true,
+          data: new FormData(form),
+          dataType: "json",
+          contentType: "multipart/form-data",
+          processData: false,
+          contentType: false,
+          headers: {
+            "Accept": "application/json"
+          },
+          cache: false,
+          success: function () {
+            // Success message
+            $('#success').html("<div class='alert alert-success'>");
+            $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
+            $('#success > .alert-success').append("<strong>Your message has been sent. </strong>");
+            $('#success > .alert-success').append('</div>');
+            //clear all fields
+            $('#contactForm').trigger("reset");
+          },
+          error: function () {
+            // Fail message
+            $('#success').html("<div class='alert alert-danger'>");
+            $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
+            $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
+            $('#success > .alert-danger').append('</div>');
+            //clear all fields
+            $('#contactForm').trigger("reset");
+          },
+          complete: function () {
+            setTimeout(function () {
+              $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+            }, 1000);
+          }
+        });
+      },
+      filter: function () {
+        return $(this).is(":visible");
+      }
     });
 
-    /*When clicking on Full hide fail/success boxes */
-    $('#name').focus(function () {
-      $('#success').html('');
+    $("a[data-toggle=\"tab\"]").click(function (e) {
+      e.preventDefault();
+      $(this).tab("show");
     });
-  </script>
+  });
+
+  /*When clicking on Full hide fail/success boxes */
+  $('#name').focus(function () {
+    $('#success').html('');
+  });
+</script>
+{% endif %}
+
+
+{% if page.layout == 'map' %}
+<script>
+
+  $(function () {
+    var pagetitle = "{{page.title}}";
+    console.log(pagetitle);
+
+    //Get all maps
+    var api_url = "https://www.speedrun.com/api/v1/games/pd0wpq21/levels";
+
+    $.ajax({
+      url: api_url,
+      contentType: "application/json",
+      dataType: 'json',
+      success: function (result) {
+        result.data.forEach(map => {
+
+          //If map matches the page title
+          if (map.name === pagetitle) {
+
+            console.log(map);
+            //Get the records url from that map
+            recordsurl = map.links[4].uri;
+
+            //Retrieve records
+            $.ajax({
+              url: recordsurl,
+              contentType: "application/json",
+              dataType: 'json',
+              success: function (result) {
+
+                //get the fastest run
+                var fastest = result.data[0].runs[0];
+
+                if (typeof (fastest) === 'undefined') {
+                  $("#record").html("No time found");
+                } else {
+
+                  console.log(fastest);
+                  //Get player info
+                  var playerurl = fastest.run.players[0].uri;
+                  $.ajax({
+                    url: playerurl,
+                    contentType: "application/json",
+                    dataType: 'json',
+                    success: function (result) {
+                      console.log(result.data);
+                      var name = result.data.names.international;
+                      var video_url = fastest.run.weblink;
+                      $("#record_author").html("By ");
+                      $("#record_author_name").html(name);
+                      $("#record_author_name").attr("href", video_url);
+                    }
+                  });
+
+                  //Get the time
+                  var totalSeconds = fastest.run.times.primary_t;
+
+                  var hours = Math.floor(totalSeconds / 3600);
+                  totalSeconds %= 3600;
+                  var minutes = Math.floor(totalSeconds / 60);
+                  var seconds = totalSeconds % 60;
+
+                  $("#record").html(totalSeconds);
+                  $("#record_hms").html("(");
+                  if(hours > 0) $("#record_hms").append(hours + " hours, ");
+                  $("#record_hms").append(minutes + " minutes");
+                  if(hours > 0) $("#record_hms").append(",");
+                  $("#record_hms").append(" and " + seconds + " seconds");
+                  $("#record_hms").append(")");
+                }
+              }
+            });
+          }
+        });
+
+      }
+    })
+  });
+</script>
 {% endif %}

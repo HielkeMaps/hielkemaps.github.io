@@ -61,6 +61,21 @@ div.row > div > div.row {
 
 .downloadbtn {
 	margin: 10px;
+	width: 235px;
+}
+
+.javabtn {
+	float: right;
+}
+
+.downloads {
+	text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+	.downloadbtn {
+		width: 295px;
+	}
 }
 
 .mapcard {
@@ -69,10 +84,47 @@ div.row > div > div.row {
 	margin: 1rem !important;
 }
 
+.speedrunpanel {
+	border: 1px solid lightgray;
+	padding: 2rem;
+	text-align: center;
+	display: table;
+}
+
+#record {
+	font-size: 40px;
+	color: red;
+	font-weight: bold;
+}
+
+.discordLink:hover {
+	color:#7289DA;
+}
+
+#record_hms {
+	color: red;
+	font-size: 15px;
+	margin-top: -40px;
+	display: block;
+}
+
+#record_author_name {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#speedrun_discord {
+	display: table-footer-group;
+}
+
 @media only screen and (max-width: 575px) {
     .mappic {
       margin: 10px;
-    }
+	}
+
+	.javabtn {
+		float: unset;
+	}
 
     div.row > div > div.row {
     margin-bottom: 0px;
