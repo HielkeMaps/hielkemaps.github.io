@@ -7,6 +7,7 @@ short-description: "Parkour Paradise is a parkour map which contains 100 little 
 java: "/downloads/Parkour Paradise.zip"
 bedrock: "https://mcstore.io/hielke-maps/parkour-paradise"
 trailer: "https://www.youtube.com/watch?v=5fDlWD0rDJk"
+speedrunnable: true
 version: 2.0
 ---
 

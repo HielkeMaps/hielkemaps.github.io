@@ -22,7 +22,11 @@ layout: default
 
 <div class="container">
   <div class="row">
+    {% if page.speedrunnable %}
     <div class="col-lg-7 col-md-10 mx-auto">
+    {% else %}
+    <div class="col-lg-8 col-md-10 mx-auto">
+    {% endif %}
       {{ content }}
 
       <hr>
@@ -39,11 +43,13 @@ layout: default
       </div>
       <hr>
     </div>
+    {% if page.speedrunnable %}
     <div class="col-lg-1"></div>
     <div class="col-lg-4 col-md-10 mx-auto speedrunpanel">
       <h2>Fastest Time</h2>
       <p id="record"></p>
-      <span id="record_hms"></span><br>
+      <span id="record_hms"></span>
+      <a class="btn btn-sm btn-outline-danger" id="record_link" style="display:none; margin-top: -20px; padding: .25rem .5rem;">Submit one yourself!</a><br>
       <div id="author_info">
         <span id="record_author"></span><a target="_blank" id="record_author_name"></a>
       </div>
@@ -55,6 +61,7 @@ layout: default
             class="fab fa-discord fa-3x"></i></a>
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
 <br>

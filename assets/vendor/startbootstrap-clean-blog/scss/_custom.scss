@@ -16,6 +16,10 @@
 	justify-content: center;
 }
 
+.figure {
+	margin-top: 0.5rem;
+}
+
 .card {
 	transition: transform .2s;
 }
@@ -134,5 +138,12 @@ div.row > div > div.row {
 	min-width: 15rem; 
 	margin: 0.5rem !important;
 	}
+}
+
+
+
+//ABOUT page
+#bomb_battle_img {
+	margin-top: 10px;
 }
 

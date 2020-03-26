@@ -7,6 +7,7 @@ short-description: "Dimension Parkour takes you on an amazing parkour journey th
 java: "/downloads/Dimension Parkour.zip"
 bedrock: "https://mcstore.io/hielke-maps/dimension-parkour"
 trailer: "https://www.youtube.com/watch?v=reyzUaw5aKQ"
+speedrunnable: true
 version: 1.0
 ---
 

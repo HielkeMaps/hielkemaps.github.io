@@ -7,6 +7,7 @@ short-description: "Parkour spiral is a MASSIVE parkour map where you start at t
 java: "/downloads/Parkour Spiral.zip"
 bedrock: "https://mcstore.io/hielke-maps/parkour-spiral"
 trailer: "https://www.youtube.com/watch?v=ZJNpJXUnnd4"
+speedrunnable: true
 version: 2.0
 ---
 
