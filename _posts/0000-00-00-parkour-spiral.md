@@ -8,6 +8,11 @@ java: "/downloads/Parkour Spiral.zip"
 bedrock: "https://mcstore.io/hielke-maps/parkour-spiral"
 trailer: "https://www.youtube.com/watch?v=ZJNpJXUnnd4"
 speedrunnable: true
+isranked: true
+srank: 700
+arank: 1500
+brank: 2700 
+crank: 5400
 version: 2.0
 ---
 

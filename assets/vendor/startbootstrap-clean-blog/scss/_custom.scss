@@ -68,12 +68,30 @@ div.row > div > div.row {
 	width: 235px;
 }
 
-.javabtn {
-	float: right;
+// RANK
+.rank_letter {
+	font-weight: bold;
+	font-size: 25px;
 }
 
-.downloads {
-	text-align: center;
+.rank_letter#S {
+	color:#FFAA00;
+}
+
+.rank_letter#A {
+	color: #FF5555;
+}
+
+.rank_letter#B {
+	color:#55FF55;
+}
+
+.rank_letter#C {
+	color:#5555FF;
+}
+
+.rank_letter#D {
+	color:#FF55FF;
 }
 
 @media only screen and (min-width: 1200px) {

@@ -87,10 +87,9 @@
 
 {% if page.layout == 'map' and page.speedrunnable %}
 <script>
-
+  // SPEEDRUN SCRIPT 
   $(function () {
     var pagetitle = "{{page.title}}";
-    console.log(pagetitle);
 
     //Get all maps
     var api_url = "https://www.speedrun.com/api/v1/games/pd0wpq21/levels";
@@ -105,7 +104,6 @@
           //If map matches the page title
           if (map.name === pagetitle) {
 
-            console.log(map);
             //Get the records url from that map
             recordsurl = map.links[4].uri;
 
@@ -119,57 +117,121 @@
                 //get the fastest run
                 var fastest = result.data[0].runs[0];
 
+                //If there is no run found
                 if (typeof (fastest) === 'undefined') {
-                  $("#record").html("No time yet");
-                  $("#record").css("font-size", "25px");
-
-                  var link = result.data[0].weblink
-                  //change small text to link
-                  $('#record_hms').hide();
-                  $('#record_link').show();
-                  $('#record_link').attr("href", link);
+                  norun(result);
                 } else {
 
-                  console.log(fastest);
-                  //Get player info
-                  var playerurl = fastest.run.players[0].uri;
-                  $.ajax({
-                    url: playerurl,
-                    contentType: "application/json",
-                    dataType: 'json',
-                    success: function (result) {
-                      console.log(result.data);
-                      var name = result.data.names.international;
-                      var video_url = fastest.run.weblink;
-                      $("#record_author").html("By ");
-                      $("#record_author_name").html(name);
-                      $("#record_author_name").attr("href", video_url);
-                    }
-                  });
+                  var link = result.data[0].weblink
+                  $('#record_link_2').attr("href", link);
 
-                  //Get the time
-                  var totalSeconds = fastest.run.times.primary_t;
+                  //Version variable id = r8ro7y78
+                  var version = fastest.run.values.r8ro7y78;
 
-                  var hours = Math.floor(totalSeconds / 3600);
-                  totalSeconds %= 3600;
-                  var minutes = Math.floor(totalSeconds / 60);
-                  var seconds = totalSeconds % 60;
+                  //Current version id = klr06wwl
+                  //If run is for current version of map
+                  if (version === "klr06wwl") {
 
-                  $("#record").html(totalSeconds);
-                  $("#record_hms").html("(");
-                  if (hours > 0) $("#record_hms").append(hours + " hours, ");
-                  $("#record_hms").append(minutes + " minutes");
-                  if (hours > 0) $("#record_hms").append(",");
-                  $("#record_hms").append(" and " + seconds + " seconds");
-                  $("#record_hms").append(")");
+                    //Get player info
+                    var playerurl = fastest.run.players[0].uri;
+                    $.ajax({
+                      url: playerurl,
+                      contentType: "application/json",
+                      dataType: 'json',
+                      success: function (result) {
+                        var name = result.data.names.international;
+                        var video_url = fastest.run.weblink;
+                        $("#record_author").html("By ");
+                        $("#record_author_name").html(name);
+                        $("#record_author_name").attr("href", video_url);
+                      }
+                    }).done(function () {
+                      onFinish();
+                    });
+
+                    //Get the time
+                    var totalSeconds = fastest.run.times.primary_t;
+
+                    var hours = Math.floor(totalSeconds / 3600);
+                    totalSeconds %= 3600;
+                    var minutes = Math.floor(totalSeconds / 60);
+                    var seconds = totalSeconds % 60;
+
+                    $("#record").html(totalSeconds);
+                    $("#record_hms").html("(");
+                    if (hours > 0) $("#record_hms").append(hours + " hours, ");
+                    $("#record_hms").append(minutes + " minutes");
+                    if (hours > 0) $("#record_hms").append(",");
+                    $("#record_hms").append(" and " + seconds + " seconds");
+                    $("#record_hms").append(")");
+                  } else {
+                    norun(result);
+                  }
                 }
               }
             });
           }
         });
-
       }
     })
   });
+
+  function norun(result) {
+    $("#record").html("No runs yet");
+    $("#record").css("font-size", "25px");
+
+    var link = result.data[0].weblink
+    //change small text to link
+    $('#record_hms').hide();
+    $('#record_link').show();
+    $('#record_link').attr("href", link);
+    $('#compete').hide();
+    onFinish();
+  }
+
+  function onFinish() {
+    $('.speedrunpanel').css('visibility','visible').hide().fadeIn("slow");
+  }
+</script>
+{% endif %}
+
+{% if page.layout == 'map' and page.isranked %}
+<script>
+  $(function () {
+    $("#srank").append(addtime($("#srank").attr("value")));
+    $("#arank").append(addtime($("#arank").attr("value")));
+    $("#brank").append(addtime($("#brank").attr("value")));
+    $("#crank").append(addtime($("#crank").attr("value")));
+    $("#drank").html($("#crank").attr("value"));
+    $("#drank").append("+");
+  });
+
+  function addtime(totalSeconds) {
+    var res = totalSeconds
+    res += " (";
+    var hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    var minutes = Math.floor(totalSeconds / 60);
+    var seconds = totalSeconds % 60;
+    if (hours > 0) {
+      res += hours + " hour";
+      if (hours > 1) res += "s"
+      if (minutes > 0) {
+        if (seconds == 0) res += " and ";
+        else res += ", ";
+      }
+    }
+    if (minutes > 0) {
+      res += minutes + " minute";
+      if (minutes > 1) res += "s"
+      if (hours > 0 && seconds > 0) res += ","
+    }
+    if (seconds > 0) {
+      res += " and " + seconds + " second";
+      if (seconds > 1) res += "s"
+    }
+    res += ")"
+    return res;
+  }
 </script>
 {% endif %}

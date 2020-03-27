@@ -8,6 +8,11 @@ java: "/downloads/Dimension Parkour.zip"
 bedrock: "https://mcstore.io/hielke-maps/dimension-parkour"
 trailer: "https://www.youtube.com/watch?v=reyzUaw5aKQ"
 speedrunnable: true
+isranked: true
+srank: 1095
+arank: 580
+brank: 2100 
+crank: 3600
 version: 1.0
 ---
 

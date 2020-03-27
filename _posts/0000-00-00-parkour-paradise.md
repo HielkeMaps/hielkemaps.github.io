@@ -8,6 +8,11 @@ java: "/downloads/Parkour Paradise.zip"
 bedrock: "https://mcstore.io/hielke-maps/parkour-paradise"
 trailer: "https://www.youtube.com/watch?v=5fDlWD0rDJk"
 speedrunnable: true
+isranked: true
+srank: 840
+arank: 1200
+brank: 2700 
+crank: 5400
 version: 2.0
 ---
 
