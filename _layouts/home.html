@@ -5,9 +5,14 @@ layout: default
 <!-- Page Header -->
   <header class="masthead">
     
-    <video autoplay muted loop id="myVideo">
+    <!-- <video autoplay muted loop id="myVideo">
       <source src="vid/clip.mp4" type="video/mp4">
-    </video>
+    </video> -->
+
+    <div class="video-background">
+    <iframe id="myVideo" allowfullscreen title="YouTube video player" src="https://www.youtube.com/embed/{{site.homepage_video_id}}?modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;rel=0&amp;fs=0&amp;color=black&amp;iv_load_policy=3&amp;playlist={{site.homepage_video_id}}" frameborder="0">
+    </iframe>
+  </div>
 
     <div class="overlay">
       <div class="image-container">
