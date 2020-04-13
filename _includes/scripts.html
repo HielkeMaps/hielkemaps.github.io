@@ -114,23 +114,41 @@
               dataType: 'json',
               success: function (result) {
 
-                //get the fastest run
-                var fastest = result.data[0].runs[0];
-
-                //If there is no run found
-                if (typeof (fastest) === 'undefined') {
+                //get all runs
+                var runs = result.data[0].runs;
+                if (typeof (runs) === 'undefined') {
                   norun(result);
                 } else {
 
-                  var link = result.data[0].weblink
-                  $('#record_link_2').attr("href", link);
+                  var validruns = [];
+                  runs.forEach(entry => {
+                    var place = entry.place;
 
-                  //Version variable id = r8ro7y78
-                  var version = fastest.run.values.r8ro7y78;
+                    //Version variable id = r8ro7y78
+                    var version = entry.run.values.r8ro7y78;
 
-                  //Current version id = klr06wwl
-                  //If run is for current version of map
-                  if (version === "klr06wwl") {
+                    //Current version id = klr06wwl
+                    //Only count the runs for the current version of the map
+                    if (version === "klr06wwl") {
+                      validruns.push(entry);
+                    }
+                  });
+
+                  //If there are valid runs
+                  if (validruns === undefined || validruns.length == 0) {
+                    norun(result);
+                  } else {
+
+                    // Get the fastest from the runs
+                    var fastest = { place: Number.POSITIVE_INFINITY };
+                    var tmp;
+                    for (var i = validruns.length - 1; i >= 0; i--) {
+                      tmp = validruns[i].place;
+                      if (tmp < fastest.place) fastest = validruns[i];
+                    }
+
+                    var link = result.data[0].weblink
+                    $('#record_link_2').attr("href", link);
 
                     //Get player info
                     var playerurl = fastest.run.players[0].uri;
@@ -164,8 +182,7 @@
                     if (hours > 0) $("#record_hms").append(",");
                     $("#record_hms").append(" and " + seconds + " seconds");
                     $("#record_hms").append(")");
-                  } else {
-                    norun(result);
+
                   }
                 }
               }
@@ -190,7 +207,7 @@
   }
 
   function onFinish() {
-    $('.speedrunpanel').css('visibility','visible').hide().fadeIn("slow");
+    $('.speedrunpanel').css('visibility', 'visible').hide().fadeIn("slow");
   }
 </script>
 {% endif %}
