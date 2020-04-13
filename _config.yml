@@ -1,5 +1,6 @@
 title:              Hielke Maps
 email:              hielkemaps@gmail.com
+description:        Official Minecraft Partner
 baseurl:            ""
 url:                ""
 author:             "Hielke Maps"
@@ -7,9 +8,6 @@ form_id:            "407887f9-2e9e-4d6f-b246-f39d579a4a5d"
 
 # Social Profiles
 twitter_username:   HielkeMaps
-
-#homepage
-homepage_video_id: KkiAROD0U3I
 
 # Build settings
 markdown:           kramdown
