@@ -147,7 +147,7 @@
                       if (tmp < fastest.place) fastest = validruns[i];
                     }
 
-                    var link = result.data[0].weblink
+                    var link = result.data[0].weblink;
                     $('#record_link_2').attr("href", link);
 
                     //Get player info
@@ -157,7 +157,12 @@
                       contentType: "application/json",
                       dataType: 'json',
                       success: function (result) {
-                        var name = result.data.names.international;
+                        var name = result.data.name;
+
+                        //Name can be stated on 2 different locations
+                        if(typeof (name) === 'undefined'){
+                          name = result.data.names.international;
+                        }
                         var video_url = fastest.run.weblink;
                         $("#record_author").html("By ");
                         $("#record_author_name").html(name);
