@@ -11,7 +11,7 @@ trailer: "https://www.youtube.com/watch?v=reyzUaw5aKQ"
 speedrunnable: true
 isranked: true
 srank: 1095
-arank: 580
+arank: 1580
 brank: 2100 
 crank: 3600
 version: 1.0
