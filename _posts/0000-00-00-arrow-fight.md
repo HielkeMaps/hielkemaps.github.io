@@ -7,7 +7,7 @@ short-description: "Arrow Fight is a PvP minigame with custom unique arrows with
 java: "/downloads/Arrow Fight.zip"
 java-rp: "/downloads/Arrow Fight Resource Pack.zip"
 java-version: "1.15.2"
-version: 1.1.0
+version: 1.1
 ---
 Both teams will be sent to their team's island where they will quickly gather resources to prepare for the chaos that will soon strike them.
 You may craft armor, weapons... ect, but you will primarily be purchasing unique arrows that each have their own special abilities. For example, the TNT Arrow spawns in 1 TNT when the arrow lands. And the Fire Arrow lights nearby blocks on fire when the arrow lands.
