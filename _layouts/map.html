@@ -3,7 +3,8 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="masthead" style="background-color: gray;  background-image: url('{{site.baseurl}}/img/{{page.permalink}}/background.jpg')">
+<header class="masthead"
+  style="background-color: gray;  background-image: url('{{site.baseurl}}/img/{{page.permalink}}/background.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -75,6 +76,10 @@ layout: default
           <a href="{{page.java}}" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"><i
               class="fa fa-download"></i> Get it for
             Java</a>
+          {% if page.java-rp %}
+          <a href="{{page.java-rp}}" class="btn btn-success downloadbtn"><i
+              class="fa fa-download"></i> Get Resource Pack</a>
+          {% endif %}
           {% endif %}
         </div>
         <hr>
