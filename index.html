@@ -9,7 +9,7 @@ Welcome to my website! Here you can find all the information you need about Hiel
 
 <div class="container-fluid">
   <div class="card-deck" style="justify-content: center;">
-    {% for map in site.posts %}
+    {% for map in site.posts %} {% if map.bedrock %}
   <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
     <img class="card-img-top" src="{{site.baseurl}}/img/{{map.permalink}}/thumbnail.jpg" alt="Card image cap">
     <div class="card-body">
@@ -20,6 +20,7 @@ Welcome to my website! Here you can find all the information you need about Hiel
       <p class="post-meta">  {% if map.version %}v{{map.version}} - {% endif %}{{ map.date | date: '%B %d, %Y' }}</p>
     </div>
   </div>
+  {% endif %}
   {% endfor %}
   </div>
   <!-- Pager -->
