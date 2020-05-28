@@ -2,7 +2,6 @@
 layout: map
 title: "Parkour Spiral"
 date: 2020-03-17
-permalink: /maps/parkour-spiral
 short-description: "Parkour spiral is a MASSIVE parkour map where you start at the bottom and must parkour to the top!"
 java: "/downloads/Parkour Spiral.zip"
 java-version: "1.15.2"

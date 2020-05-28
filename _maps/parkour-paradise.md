@@ -2,7 +2,6 @@
 layout: map
 title: "Parkour Paradise"
 date: 2020-02-10
-permalink: /maps/parkour-paradise
 short-description: "Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all!"
 java: "/downloads/Parkour Paradise.zip"
 java-version: "1.15.2"

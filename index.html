@@ -3,44 +3,49 @@ layout: home
 background: '/img/bg-index.jpg'
 ---
 <div class="container">
-Welcome to my website! Here you can find all the information you need about Hielke Maps, including the maps I've made over the years, for both Bedrock and Java edition.
-<hr>
+  Welcome to my website! Here you can find all the information you need about Hielke Maps, including the maps I've made
+  over the years, for both Bedrock and Java edition.
+  <hr>
 </div>
 
 <div class="container-fluid">
   <div class="card-deck" style="justify-content: center;">
-    {% for map in site.posts %} {% if map.bedrock %}
-  <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
-    <img class="card-img-top" src="{{site.baseurl}}/img/{{map.permalink}}/thumbnail.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h4 class="card-title">{{ map.title }}</h4>
-      {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
-      {% if map.java %}<span class="badge badge-secondary">Java</span>{% endif %} 
-      <p class="card-text">{{map.short-description}}</p>
-      <p class="post-meta">  {% if map.version %}v{{map.version}} - {% endif %}{{ map.date | date: '%B %d, %Y' }}</p>
+    {% assign sorted = (site.maps | sort: 'date') | reverse %}
+    {% for map in sorted %}
+    {% if map.bedrock %}
+    {% unless map.hide %}
+    <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
+      <img class="card-img-top" src="{{site.baseurl}}/img/{{map.url}}/thumbnail.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">{{ map.title }}</h4>
+        {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
+        {% if map.java %}<span class="badge badge-secondary">Java</span>{% endif %}
+        <p class="card-text">{{map.short-description}}</p>
+        <p class="post-meta"> {% if map.version %}v{{map.version}} - {% endif %}{{ map.date | date: '%B %d, %Y' }}</p>
+      </div>
     </div>
-  </div>
-  {% endif %}
-  {% endfor %}
+    {% endunless %}
+    {% endif %}
+    {% endfor %}
   </div>
   <!-- Pager -->
   {% if paginator.total_pages > 1 %}
-  
+
   <div class="clearfix">
-  
+
     {% if paginator.previous_page %}
     <a class="btn btn-primary float-left"
       href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;
       Newer<span class="d-none d-md-inline"> Maps</span></a>
     {% endif %}
-  
+
     {% if paginator.next_page %}
     <a class="btn btn-primary float-right"
       href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older<span
         class="d-none d-md-inline"> Maps</span> &rarr;</a>
     {% endif %}
-  
+
   </div>
-  
+
   {% endif %}
-  </div>
+</div>
