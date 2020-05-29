@@ -10,7 +10,7 @@ background: '/img/bg-index.jpg'
 
 <div class="container-fluid">
   <div class="card-deck" style="justify-content: center;">
-    {% assign sorted = (site.maps | sort: 'date') | reverse %}
+    {% assign sorted = site.maps | sort: 'date' | reverse %}
     {% for map in sorted %}
     {% if map.bedrock %}
     {% unless map.hide %}

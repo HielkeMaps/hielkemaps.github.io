@@ -5,7 +5,7 @@ background: '/img/bg-map.jpg'
 ---
 <div class="container-fluid">
 <div class="card-deck" style="justify-content: center;">
-{% assign sorted = (site.maps | sort: 'date') | reverse %}
+{% assign sorted = site.maps | sort: 'date' | reverse %}
 {% for map in sorted %}
 {% unless map.hide %}
 <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
