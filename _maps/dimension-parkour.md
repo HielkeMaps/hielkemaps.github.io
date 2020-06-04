@@ -5,7 +5,7 @@ date: 2020-01-29
 short-description: "Dimension Parkour takes you on an amazing parkour journey through all three Minecraft dimensions."
 java: "/downloads/Dimension Parkour.zip"
 java-version: "1.15.2"
-bedrock: "https://mcstore.io/hielke-maps/dimension-parkour"
+bedrock: "https://bit.ly/371tQMU"
 trailer: "https://www.youtube.com/watch?v=reyzUaw5aKQ"
 speedrunnable: true
 isranked: true
