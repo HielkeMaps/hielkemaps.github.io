@@ -13,7 +13,7 @@ srank: 840
 arank: 1200
 brank: 2700 
 crank: 5400
-version: 2.0
+version: 2.1
 ---
 
 Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all! The first levels will be easy, but the parkour gets harder the further you get. Are you skilled enough to reach the end?
