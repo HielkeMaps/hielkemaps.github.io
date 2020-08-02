@@ -25,6 +25,10 @@
 	transition: transform .2s;
 }
 
+.badge {
+	font-style: normal;
+}
+
 .card:hover {
     transition: all 0.3s ease;
     cursor: pointer;

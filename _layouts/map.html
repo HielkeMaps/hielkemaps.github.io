@@ -11,9 +11,11 @@ layout: default
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
           <h1>{{ page.title }}</h1>
-          <span class="meta">{{ page.date | date: '%B %d, %Y' }}
-            {% if page.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
-            {% if page.java %}<span class="badge badge-secondary">Java</span>{% endif %}
+          <span class="meta">{{ page.date | date: '%B %d, %Y' }}&nbsp;
+            {% if page.bedrock %}<span class="badge badge-light">Bedrock</span>{% endif %}
+            {% if page.java %}<span class="badge badge-light">Java</span>
+            <span class="badge badge-light">{{page.java-version}}</span>
+            {% endif %}
           </span>
         </div>
       </div>
@@ -75,7 +77,7 @@ layout: default
           {% if page.java %}
           <a href="{{page.java}}" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"><i
               class="fa fa-download"></i> Get it for
-            Java</a>
+            Java ({{page.java-version}})</a>
           {% if page.java-rp %}
           <a href="{{page.java-rp}}" class="btn btn-success downloadbtn"><i
               class="fa fa-download"></i> Get Resource Pack</a>
