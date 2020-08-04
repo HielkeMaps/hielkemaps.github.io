@@ -13,9 +13,7 @@ background: '/img/bg-map.jpg'
   <div class="card-body">
     <h4 class="card-title">{{ map.title }}</h4>
     {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
-    {% if map.java %}<span class="badge badge-secondary">Java</span>
-    <span class="badge badge-secondary">{{map.java-version}}</span>
-    {% endif %} 
+    {% if map.java %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %} 
 
     <p class="card-text">{{map.short-description}}</p>
     <p class="post-meta">  {% if map.version %}v{{map.version}} - {% endif %}{{ map.date | date: '%B %d, %Y' }}</p>
