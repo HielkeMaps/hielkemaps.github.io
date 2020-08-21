@@ -4,7 +4,7 @@ title: "Parkour Pyramid"
 date: 2020-07-26
 short-description: "Parkour Pyramid is one GIANT pyramid full of parkour!"
 java: "/downloads/Parkour Pyramid.zip"
-java-version: "1.16.1"
+java-version: "1.16.2"
 trailer: "https://www.youtube.com/watch?v=g-1QduiUrgs"
 speedrunnable: true
 isranked: true
