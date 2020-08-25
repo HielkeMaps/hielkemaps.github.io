@@ -13,7 +13,6 @@ arank: 7200
 brank: 10800 
 crank: 16200
 version: 1.0
-hide: true
 ---
 
 Parkour Pyramid is an epic parkour adventure that will keep you entertained for hours!
