@@ -4,7 +4,7 @@ title: "Parkour Paradise 2"
 date: 2020-06-02
 short-description: "Parkour Paradise 2 offers 100 new and exciting levels for you to enjoy!"
 java: "/downloads/Parkour Paradise 2.zip"
-java-version: "1.16.1"
+java-version: "1.16.2"
 bedrock: "https://bit.ly/2MmOFJ0"
 trailer: "https://www.youtube.com/watch?v=Kz6RnLEJl3w"
 speedrunnable: true
