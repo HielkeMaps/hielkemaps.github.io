@@ -73,7 +73,7 @@ layout: default
           {% endif %}
 
           {% if page.java %}
-          <a href="{{page.java}}" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"><i
+          <a href="#" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}" data-toggle="modal" data-target="#javaModal"><i
               class="fa fa-download"></i> Get it for
             Java ({{page.java-version}})</a>
           {% if page.java-rp %}
@@ -160,11 +160,48 @@ layout: default
   </div>
   <br>
 
-  <!-- Comments
-  <div class="container">
-    <div style="text-align: center;">
-      <h2>Comments</h2>
+<!-- Modal -->
+<div class="modal fade" id="javaModal" tabindex="-1" role="dialog" aria-labelledby="javaModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center w-100">How would you like to play?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <a class="btn btn-primary" href="{{page.java}}" >
+          <span class="fas fa-user fa-2x"></span> 
+          <h5>Singleplayer</h5>
+        </a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#serverModal" data-dismiss="modal">
+          <span class="fas fa-users fa-2x"></span> 
+          <h5>Multiplayer</h5>
+        </button>
+      </div>
+      <div class="modal-footer">
+
+      </div>
     </div>
-    <div id="commento"></div>
   </div>
-  <script src="https://cdn.commento.io/js/commento.js"></script>-->
+</div>
+
+<div class="modal fade" id="serverModal" tabindex="-1" role="dialog" aria-labelledby="serverModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center w-100">play.hielkemaps.com</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        blablablabla stickypiston very good yes. 
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
