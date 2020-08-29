@@ -104,91 +104,51 @@
           //If map matches the page title
           if (map.name === pagetitle) {
 
-            //Get the records url from that map
-            recordsurl = map.links[4].uri + "?top=1000000";
+            //Get leaderboard url from map
+            leaderboardurl = map.links[6].uri + "?var-r8ro7y78=klr06wwl&top=1&embed=players";
 
-            //Retrieve records
+            //Retrieve leaderboard
             $.ajax({
-              url: recordsurl,
+              url: leaderboardurl,
               contentType: "application/json",
               dataType: 'json',
               success: function (result) {
 
-                //get all runs
-                var runs = result.data[0].runs;
-                if (typeof (runs) === 'undefined') {
+                //get top run
+                let run = result.data.runs[0].run;
+                if (typeof (run) === 'undefined') {
                   norun(result);
                 } else {
 
-                  var validruns = [];
-                  runs.forEach(entry => {
-                    var place = entry.place;
+                  //map link
+                  let link = result.data.weblink;
+                  $('#record_link_2').attr("href", link);
 
-                    //Version variable id = r8ro7y78
-                    var version = entry.run.values.r8ro7y78;
+                  let name = result.data.players.data[0].names.international
+                  let video_url = run.weblink;
 
-                    //Current version id = klr06wwl
-                    //Only count the runs for the current version of the map
-                    if (version === "klr06wwl") {
-                      validruns.push(entry);
-                    }
-                  });
+                  $("#record_author").html("By ");
+                  $("#record_author_name").html(name);
+                  $("#record_author_name").attr("href", video_url);
 
-                  //If there are valid runs
-                  if (validruns === undefined || validruns.length == 0) {
-                    norun(result);
-                  } else {
+                  //Get the time
+                  let totalSeconds = run.times.primary_t;
+                  let tempSeconds = totalSeconds;
 
-                    // Get the fastest from the runs
-                    var fastest = { place: Number.POSITIVE_INFINITY };
-                    var tmp;
-                    for (var i = validruns.length - 1; i >= 0; i--) {
-                      tmp = validruns[i].place;
-                      if (tmp < fastest.place) fastest = validruns[i];
-                    }
+                  let hours = Math.floor(tempSeconds / 3600);
+                  tempSeconds %= 3600;
+                  let minutes = Math.floor(tempSeconds / 60);
+                  let seconds = tempSeconds % 60;
 
-                    var link = result.data[0].weblink;
-                    $('#record_link_2').attr("href", link);
+                  $("#record").html(totalSeconds);
+                  $("#record_hms").html("(");
+                  if (hours > 0) $("#record_hms").append(hours + " hours, ");
+                  $("#record_hms").append(minutes + " minutes");
+                  if (hours > 0) $("#record_hms").append(",");
+                  $("#record_hms").append(" and " + seconds + " seconds");
+                  $("#record_hms").append(")");
 
-                    //Get player info
-                    var playerurl = fastest.run.players[0].uri;
-                    $.ajax({
-                      url: playerurl,
-                      contentType: "application/json",
-                      dataType: 'json',
-                      success: function (result) {
-                        var name = result.data.name;
-
-                        //Name can be stated on 2 different locations
-                        if(typeof (name) === 'undefined'){
-                          name = result.data.names.international;
-                        }
-                        var video_url = fastest.run.weblink;
-                        $("#record_author").html("By ");
-                        $("#record_author_name").html(name);
-                        $("#record_author_name").attr("href", video_url);
-                      }
-                    }).done(function () {
-                      onFinish();
-                    });
-
-                    //Get the time
-                    var totalSeconds = fastest.run.times.primary_t;
-
-                    var hours = Math.floor(totalSeconds / 3600);
-                    totalSeconds %= 3600;
-                    var minutes = Math.floor(totalSeconds / 60);
-                    var seconds = totalSeconds % 60;
-
-                    $("#record").html(totalSeconds);
-                    $("#record_hms").html("(");
-                    if (hours > 0) $("#record_hms").append(hours + " hours, ");
-                    $("#record_hms").append(minutes + " minutes");
-                    if (hours > 0) $("#record_hms").append(",");
-                    $("#record_hms").append(" and " + seconds + " seconds");
-                    $("#record_hms").append(")");
-
-                  }
+                  onFinish();
                 }
               }
             });
@@ -203,6 +163,7 @@
     $("#record").css("font-size", "25px");
 
     var link = result.data[0].weblink
+
     //change small text to link
     $('#record_hms').hide();
     $('#record_link').show();
