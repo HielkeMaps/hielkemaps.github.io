@@ -13,6 +13,8 @@ srank: 700
 arank: 1500
 brank: 2700 
 crank: 5400
+inserver: true
+trial: "https://trial.stickypiston.co/map/parkourspiral"
 version: 2.1
 ---
 

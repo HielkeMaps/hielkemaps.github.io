@@ -13,6 +13,7 @@ srank: 840
 arank: 1200
 brank: 2700 
 crank: 5400
+inserver: true
 version: 2.1
 ---
 
