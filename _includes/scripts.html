@@ -105,8 +105,7 @@
           if (map.name === pagetitle) {
 
             //Get leaderboard url from map
-            let args = "?var-r8ro7y78=klr06wwl&top=1&embed=players"; //Only current version, get only the best, add player
-            leaderboardurl = map.links[6].uri + args;
+            leaderboardurl = map.links[6].uri + "?var-r8ro7y78=klr06wwl&top=1&embed=players";
 
             //Retrieve leaderboard
             $.ajax({
