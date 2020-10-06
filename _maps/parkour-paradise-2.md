@@ -14,7 +14,7 @@ arank: 2400
 brank: 3600 
 crank: 7200
 inserver: true
-trial: "https://trial.stickypiston.co/map/parkourparadise2remastered"
+trial: "https://trial.stickypiston.co/map/parkourparadise2"
 version: 2.0
 ---
 
