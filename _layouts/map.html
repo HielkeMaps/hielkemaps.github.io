@@ -13,7 +13,7 @@ layout: default
           <h1>{{ page.title }}</h1>
           <span class="meta">{{ page.date | date: '%B %d, %Y' }}&nbsp;
             {% if page.bedrock %}<span class="badge badge-light">Bedrock</span>{% endif %}
-            {% if page.java %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif %} 
+            {% if page.java %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif %}
           </span>
         </div>
       </div>
@@ -68,17 +68,22 @@ layout: default
         <hr>
         <div class="text-center">
           {% if page.bedrock %}
-          <a href="{{page.bedrock}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get it for
+          <a href="{{page.bedrock}}" class="btn btn-success downloadbtn">Get it for
             Bedrock</a>
           {% endif %}
 
           {% if page.java %}
+          {% if page.inserver %}
+          <a href="#" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"
+            data-toggle="modal" data-target="#javaModal"> Get it for
+            Java</a>
+          {% else %}
           <a href="{{page.java}}" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"><i
-              class="fa fa-download"></i> Get it for
-            Java ({{page.java-version}})</a>
+              class="fa fa-download"></i> Get it for Java ({{page.java-version}})</a>
+          {% endif %}
           {% if page.java-rp %}
-          <a href="{{page.java-rp}}" class="btn btn-success downloadbtn"><i
-              class="fa fa-download"></i> Get Resource Pack</a>
+          <a href="{{page.java-rp}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get Resource
+            Pack</a>
           {% endif %}
           {% endif %}
         </div>
@@ -132,26 +137,26 @@ layout: default
               {% endif %}
               <img src="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="img-fluid">
             </a>
-            <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-toggle="lightbox"
-              data-gallery="example-gallery" class="col-sm-4 mappic">
+            <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-toggle="lightbox" data-gallery="example-gallery"
+              class="col-sm-4 mappic">
               <img src="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" class="img-fluid">
             </a>
-            <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-toggle="lightbox"
-              data-gallery="example-gallery" class="col-sm-4 mappic">
+            <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-toggle="lightbox" data-gallery="example-gallery"
+              class="col-sm-4 mappic">
               <img src="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" class="img-fluid">
             </a>
         </div>
         <div class="row">
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-toggle="lightbox"
-            data-gallery="example-gallery" class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-toggle="lightbox" data-gallery="example-gallery"
+            class="col-sm-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-toggle="lightbox"
-            data-gallery="example-gallery" class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-toggle="lightbox" data-gallery="example-gallery"
+            class="col-sm-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-toggle="lightbox"
-            data-gallery="example-gallery" class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-toggle="lightbox" data-gallery="example-gallery"
+            class="col-sm-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" class="img-fluid">
           </a>
         </div>
@@ -160,11 +165,88 @@ layout: default
   </div>
   <br>
 
-  <!-- Comments
-  <div class="container">
-    <div style="text-align: center;">
-      <h2>Comments</h2>
+  <!-- Modals -->
+  <div class="modal fade" id="javaModal" tabindex="-1" role="dialog" aria-labelledby="javaModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center w-100">How would you like to play?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#downloadModal"
+            data-dismiss="modal">
+            <span class="fas fa-users fa-2x"></span>
+            <h5>Singleplayer</h5>
+          </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#serverModal"
+            data-dismiss="modal">
+            <span class="fas fa-users fa-2x"></span>
+            <h5>Multiplayer</h5>
+          </button>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
     </div>
-    <div id="commento"></div>
   </div>
-  <script src="https://cdn.commento.io/js/commento.js"></script>-->
+
+  <div class="modal fade" id="serverModal" tabindex="-1" role="dialog" aria-labelledby="serverModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center w-100">Multiplayer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center px-5">
+          This map can be played on the Hielke Maps server!<br>
+          <b>play.hielkemaps.com</b><br>
+
+          <img src="/img/server.jpg" class="img-fluid rounded">
+          <br><br>
+
+          {% if page.trial %}
+          Don't want to play with strangers?<br>
+          You can also play this map on a free StickyPiston trial server!<br>
+          <a type="button" class="btn btn-success btn-sm" href="{{page.trial}}">Host trial server</a>
+          <br><br>
+          {% endif %}
+
+          Want your own private server?<br>
+          Use the code <b>HIELKEMAPS</b> to get 25% off your purchase!<br>
+          <a type="button" class="btn btn-success btn-sm" href="https://stickypiston.co/r/hielkemaps">Purchase server</a>
+          <a href=""></a>
+          <p>If you already have a server, you can also <a href="{{page.java}}" data-toggle="modal" data-target="#downloadModal" data-dismiss="modal">download the map</a> and set it up
+            yourself. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center w-100">Download</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          Here you can download the zip file of {{page.title}}.<br><br>
+          Make sure you unzip it into your saves directory to
+            make Minecraft detect it.<br><br>
+          <a class="btn btn-success" href="{{page.java}}">
+            <span class="fas fa-download"></span>
+            Download ({{page.java-version}})
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

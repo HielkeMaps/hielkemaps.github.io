@@ -13,6 +13,8 @@ srank: 1095
 arank: 1580
 brank: 2100 
 crank: 3600
+inserver: true
+trial: "https://trial.stickypiston.co/map/dimensionparkour1"
 version: 1.0
 ---
 

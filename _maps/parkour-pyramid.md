@@ -13,6 +13,8 @@ srank: 4800
 arank: 7200
 brank: 10800 
 crank: 16200
+inserver: true
+trial: "https://trial.stickypiston.co/map/parkourpyramid"
 version: 1.0
 ---
 
