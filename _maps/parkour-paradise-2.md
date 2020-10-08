@@ -15,6 +15,7 @@ brank: 3600
 crank: 7200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourparadise2"
+server: "https://stickypiston.co/hielkemaps/parkourparadise2"
 version: 2.0
 ---
 

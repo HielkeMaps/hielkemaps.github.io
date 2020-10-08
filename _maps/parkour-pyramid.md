@@ -15,6 +15,7 @@ brank: 10800
 crank: 16200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourpyramid"
+server: "https://stickypiston.co/hielkemaps/parkourpyramid"
 version: 1.0
 ---
 
