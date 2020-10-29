@@ -2,7 +2,7 @@
 layout: map
 title: "Parkour Spiral"
 date: 2020-03-17
-short-description: "Parkour spiral is a MASSIVE parkour map where you start at the bottom and must parkour to the top!"
+short-description: "Parkour Spiral is a MASSIVE parkour map where you start at the bottom and must parkour to the top!"
 java: "/downloads/Parkour Spiral.zip"
 java-version: "1.16.3"
 bedrock: "https://bit.ly/3eLswAj"
@@ -11,7 +11,7 @@ speedrunnable: true
 isranked: true
 srank: 700
 arank: 1500
-brank: 2700 
+brank: 2700
 crank: 5400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral"
