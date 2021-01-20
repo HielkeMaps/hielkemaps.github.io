@@ -4,7 +4,7 @@ title: "Parkour Paradise"
 date: 2020-02-10
 short-description: "Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all!"
 java: "/downloads/Parkour Paradise.zip"
-java-version: "1.16.4"
+java-version: "1.16.5"
 bedrock: "https://bit.ly/2XWM7GQ"
 trailer: "https://www.youtube.com/watch?v=5fDlWD0rDJk"
 speedrunnable: true
