@@ -5,7 +5,7 @@ background: '/img/bg-map.jpg'
 ---
 <div class="container-fluid">
 <div class="card-deck" style="justify-content: center;">
-{% assign sorted = site.maps | sort: 'date' | reverse %}
+{% assign sorted = site.maps | sort: 'order' %}
 {% for map in sorted %}
 {% unless map.hide %}
 <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
@@ -16,7 +16,6 @@ background: '/img/bg-map.jpg'
     {% if map.java %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %} 
 
     <p class="card-text">{{map.short-description}}</p>
-    <p class="post-meta">  {% if map.version %}v{{map.version}} - {% endif %}{{ map.date | date: '%B %d, %Y' }}</p>
   </div>
 </div>
 {% endunless %}

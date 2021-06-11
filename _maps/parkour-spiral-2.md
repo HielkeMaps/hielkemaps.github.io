@@ -2,6 +2,7 @@
 layout: map
 title: "Parkour Spiral 2"
 date: 2020-11-24
+order: 2
 short-description: "Parkour Spiral 2 offers a new fun parkour adventure! Start in the Nether and climb to the top!"
 java: "/downloads/Parkour Spiral 2.zip"
 java-version: "1.16.5"
@@ -16,7 +17,7 @@ crank: 4800
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral2"
 server: "https://stickypiston.co/hielkemaps/parkourspiral2"
-version: 1.1
+version: 2.1
 ---
 
 In Parkour Spiral 2 your goal is to climb the Spiral from the Nether to the top!

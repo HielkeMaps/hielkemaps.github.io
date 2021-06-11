@@ -2,6 +2,7 @@
 layout: map
 title: "Parkour Pyramid"
 date: 2020-08-25
+order: 7
 short-description: "Parkour Pyramid is one GIANT pyramid full of parkour!"
 java: "/downloads/Parkour Pyramid.zip"
 java-version: "1.16.5"
@@ -16,7 +17,7 @@ crank: 16200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourpyramid"
 server: "https://stickypiston.co/hielkemaps/parkourpyramid"
-version: 1.1
+version: 2.1
 ---
 
 Parkour Pyramid is an epic parkour adventure that will keep you entertained for hours!

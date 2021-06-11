@@ -2,6 +2,7 @@
 layout: map
 title: "Parkour Paradise 2"
 date: 2020-06-02
+order: 4
 short-description: "Parkour Paradise 2 offers 100 new and exciting levels for you to enjoy!"
 java: "/downloads/Parkour Paradise 2.zip"
 java-version: "1.16.5"
