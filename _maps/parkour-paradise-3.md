@@ -4,7 +4,7 @@ title: "Parkour Paradise 3"
 date: 2021-06-10
 order: 5
 hide: true
-short-description: "Parkour Paradise 3 offers 100 new and exciting levels for you to enjoy!"
+short-description: "Parkour Paradise 3 offers 100 new and exciting parkour levels for you to enjoy!"
 java: "/downloads/Parkour Paradise 3.zip"
 java-version: "1.17"
 trailer: "https://www.youtube.com/watch?v=dRN7gbcMyu0"
