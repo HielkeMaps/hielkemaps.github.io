@@ -1,12 +1,11 @@
 ---
 layout: map
 title: "Parkour Paradise 3"
-date: 2021-06-10
+date: 2021-07-27
 order: 5
-hide: true
+hide: false
 short-description: "Parkour Paradise 3 offers 100 new and exciting parkour levels for you to enjoy!"
-java: "/downloads/Parkour Paradise 3.zip"
-java-version: "1.17"
+bedrock: "https://bit.ly/3i6r1Bl"
 trailer: "https://www.youtube.com/watch?v=dRN7gbcMyu0"
 speedrunnable: true
 isranked: true
