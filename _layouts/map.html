@@ -25,11 +25,7 @@ layout: default
 
 <div class="container">
   <div class="row">
-    {% if page.speedrunnable %}
-    <div class="col-lg-7 col-md-10 mx-auto">
-      {% else %}
-      <div class="col-lg-8 col-md-10 mx-auto">
-        {% endif %}
+      <div class="col-lg-8 col-md-10 mx-auto" id="sp-row-size">
         {{ content }}
 
         <!-- Rank times -->
@@ -76,11 +72,11 @@ layout: default
 
           {% if page.java %}
           {% if page.inserver %}
-          <a href="#" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"
+          <a href="#" class="btn btn-success downloadbtn"
             data-toggle="modal" data-target="#javaModal"> Get it for
             Java</a>
           {% else %}
-          <a href="{{page.java}}" class="btn btn-success downloadbtn {% if page.bedrock %}float-right{% endif %}"><i
+          <a href="{{page.java}}" class="btn btn-success downloadbtn"><i
               class="fa fa-download"></i> Get it for Java ({{page.java-version}})</a>
           {% endif %}
           {% if page.java-rp %}
@@ -92,8 +88,8 @@ layout: default
         <hr>
       </div>
       {% if page.speedrunnable %}
-      <div class="col-lg-1"></div>
-      <div class="col-lg-4 col-md-10 mx-auto speedrunpanel" style="visibility: hidden;">
+      <div class="col-lg-1 speedrun-section" style="display: none;"></div>
+      <div class="animate__animated animate__fadeInRight col-lg-4 col-md-10 mx-auto speedrunpanel speedrun-section" style="display:none;">
         <h2>Fastest Time</h2>
         <p id="record"></p>
         <span id="record_hms"></span>
@@ -113,7 +109,7 @@ layout: default
         <div id="speedrun_discord">
           <span>Or join the Discord server!</span>
           <br>
-          <a href="https://discord.gg/6RzKxbH" target="_blank" class="discordLink"><i
+          <a href="https://discord.gg/{{ site.discord }}" target="_blank" class="discordLink"><i
               class="fab fa-discord fa-3x mt-2"></i></a>
         </div>
       </div>
@@ -219,10 +215,12 @@ layout: default
           <br><br>
           {% endif %}
 
+          {% if page.server %}
           Want your own private server?<br>
           Use the code <b>HIELKEMAPS</b> to get 25% off your purchase!<br>
           <a type="button" class="btn btn-success btn-sm" href="{{page.server}}">Purchase server</a>
-          <a href=""></a>
+          {% endif %}
+
           <p>If you already have a server, you can also <a href="{{page.java}}" data-toggle="modal" data-target="#downloadModal" data-dismiss="modal">download the map</a> and set it up
             yourself. </p>
         </div>

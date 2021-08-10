@@ -69,8 +69,7 @@ div.row > div > div.row {
 }
 
 .downloadbtn {
-	margin: 10px;
-	width: 235px;
+	min-width: 215px;
 }
 
 // RANK
@@ -164,6 +163,13 @@ div.row > div > div.row {
 
 	.downloadbtn {
 		float:none !important;
+		min-width: 90%;
+		margin: 5px;
+	}
+
+	#javaModal .btn{
+		margin: 5px;
+		min-width: 225px;
 	}
 }
 
@@ -173,4 +179,3 @@ div.row > div > div.row {
 #bomb_battle_img {
 	margin-top: 10px;
 }
-

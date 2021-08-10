@@ -27,6 +27,16 @@
             </a>
           </li>
           {% endif %}
+          {% if site.discord %}
+          <li class="list-inline-item">
+            <a href="https://discord.gg/{{ site.discord }}">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {% endif %}
         </ul>
         <p class="copyright text-muted">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }}</p>
       </div>

@@ -5,6 +5,8 @@ date: 2021-07-27
 order: 5
 hide: false
 short-description: "Parkour Paradise 3 offers 100 new and exciting parkour levels for you to enjoy!"
+java: "/downloads/Parkour Paradise 3.zip"
+java-version: "1.17.1"
 bedrock: "https://bit.ly/3i6r1Bl"
 trailer: "https://www.youtube.com/watch?v=dRN7gbcMyu0"
 speedrunnable: true
@@ -13,7 +15,9 @@ srank: 3900
 arank: 6600
 brank: 9000 
 crank: 14400
-inserver: false
+inserver: true
+trial: "https://trial.stickypiston.co/map/parkourparadise3"
+server: "https://stickypiston.co/hielkemaps/parkourparadise3"
 version: 2.0
 ---
 
