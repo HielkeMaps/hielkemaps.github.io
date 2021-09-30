@@ -10,6 +10,11 @@
     min-height: 70px;
 }
 
+.mainpanel {
+	flex-grow: 1;
+	transition: all 400ms ease;
+}
+
 .image-container {
 	display: flex;
 	align-items: center;
@@ -98,12 +103,6 @@ div.row > div > div.row {
 	color:#FF55FF;
 }
 
-@media only screen and (min-width: 1200px) {
-	.downloadbtn {
-		width: 295px;
-	}
-}
-
 .mapcard {
 	min-width: 25rem; 
 	max-width: 40rem; 
@@ -111,11 +110,9 @@ div.row > div > div.row {
 }
 
 .speedrunpanel {
-	border: 1px solid lightgray;
+	box-shadow: 0 10px 25px -1px lightgray;
 	padding: 2rem;
 	text-align: center;
-	display: table;
-	max-height: 0px; //this stops it from being too long. Why? No idea :D
 }
 
 #record {
@@ -140,13 +137,9 @@ div.row > div > div.row {
 	text-decoration: underline;
 }
 
-#speedrun_discord {
-	display: table-footer-group;
-}
-
 @media only screen and (max-width: 575px) {
     .mappic {
-      margin: 10px;
+    	margin: 10px;
 	}
 
 	.javabtn {
@@ -154,12 +147,12 @@ div.row > div > div.row {
 	}
 
     div.row > div > div.row {
-    margin-bottom: 0px;
+    	margin-bottom: 0px;
     }
 
     .mapcard {
-	min-width: 15rem; 
-	margin: 0.5rem !important;
+		min-width: 15rem; 
+		margin: 0.5rem !important;
 	}
 
 	.downloadbtn {
@@ -171,6 +164,24 @@ div.row > div > div.row {
 	#javaModal .btn{
 		margin: 5px;
 		min-width: 225px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	.speedrunpanel {
+		padding:1rem;
+		line-height: 25px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.downloadbtn {
+		width: 295px;
+	}
+
+	.speedrunpanel {
+		margin-right: -30px;
+		margin-left: 30px;
 	}
 }
 
