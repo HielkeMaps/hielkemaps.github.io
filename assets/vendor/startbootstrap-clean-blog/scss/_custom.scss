@@ -115,6 +115,7 @@ div.row > div > div.row {
 	padding: 2rem;
 	text-align: center;
 	display: table;
+	max-height: 0px; //this stops it from being too long. Why? No idea :D
 }
 
 #record {
