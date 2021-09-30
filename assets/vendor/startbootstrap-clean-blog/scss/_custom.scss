@@ -10,9 +10,9 @@
     min-height: 70px;
 }
 
-.mainpanel {
+.smooth-width {
 	flex-grow: 1;
-	transition: all 400ms ease;
+	transition: all 0.7s ease !important;
 }
 
 .image-container {
@@ -113,6 +113,7 @@ div.row > div > div.row {
 	box-shadow: 0 10px 25px -1px lightgray;
 	padding: 2rem;
 	text-align: center;
+	white-space: nowrap;
 }
 
 #record {
@@ -164,6 +165,14 @@ div.row > div > div.row {
 	#javaModal .btn{
 		margin: 5px;
 		min-width: 225px;
+	}
+
+
+}
+
+@media only screen and (max-width: 991px) {
+	.speedrun-buffer1{
+		display: none;
 	}
 }
 

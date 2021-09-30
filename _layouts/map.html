@@ -25,7 +25,12 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto mainpanel" id="sp-row-size">
+
+    {% if page.speedrunnable %}
+    <div class="col-lg-2 speedrun-buffer1 smooth-width"></div>
+    {% endif %}
+
+    <div class="col-lg-8 col-md-10 mx-auto mainpanel smooth-width" id="sp-row-size">
       {{ content }}
 
       <!-- Rank times -->
@@ -87,9 +92,8 @@ layout: default
       <hr>
     </div>
     {% if page.speedrunnable %}
-    <div class="animate__animated animate__fadeInRight col-lg-4 col-md-10 mx-auto speedrun-section"
-      style="display:none;">
-      <div class="speedrunpanel">
+    <div class="col-lg-2 col-md-10 mx-auto smooth-width speedrun-buffer2">
+      <div class="speedrunpanel speedrun-section animate__animated animate__zoomIn" style="display:none;">
         <h2>Fastest Time</h2>
         <p id="record"></p>
         <span id="record_hms"></span>
@@ -107,7 +111,7 @@ layout: default
           <br>
         </div>
         <div id="speedrun_discord">
-          <span>Or join the Discord server!</span>
+          <span>Or join the Discord!</span>
           <br>
           <a href="https://discord.gg/{{ site.discord }}" target="_blank" class="discordLink"><i
               class="fab fa-discord fa-3x mt-2"></i></a>
