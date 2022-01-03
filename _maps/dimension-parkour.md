@@ -2,7 +2,7 @@
 layout: map
 title: "Dimension Parkour"
 date: 2020-01-29
-order: 6
+order: 20
 short-description: "Dimension Parkour takes you on an amazing parkour journey through all three Minecraft dimensions."
 java: "/downloads/Dimension Parkour.zip"
 java-version: "1.17.1"
