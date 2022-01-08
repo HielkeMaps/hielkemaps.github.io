@@ -24,4 +24,4 @@ Parkour Spiral 3 offers a GIGANTIC new spiral tower for you to climb! Are you sk
 - 10 Easter eggs to find!
 - Snake parkour!
 - Ranking system for added replayability!
-- More than twice the size of the first Parkour Spiral!
+- More than double the size of the first Parkour Spiral!
