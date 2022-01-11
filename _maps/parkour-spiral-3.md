@@ -16,6 +16,8 @@ soon: true
 version: 1.0.0
 ---
 
+## COMING SOON
+
 Parkour Spiral 3 offers a GIGANTIC new spiral tower for you to climb! Are you skilled enough to reach the top? Come find out!
 
 - Parkour that is fun for everyone!
