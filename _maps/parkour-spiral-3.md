@@ -4,6 +4,7 @@ title: "Parkour Spiral 3"
 date: 2022-01-03
 order: 3
 short-description: "Parkour Spiral 3 offers a GIGANTIC new spiral tower for you to climb! Are you skilled enough to reach the top?"
+bedrock: "https://bit.ly/3LWu8J0"
 trailer: "https://www.youtube.com/watch?v=LFwwgL-HiPE"
 speedrunnable: true
 isranked: true
@@ -12,11 +13,8 @@ arank: 2400
 brank: 4200
 crank: 7200
 inserver: false
-soon: true
 version: 1.0.0
 ---
-
-## COMING SOON
 
 Parkour Spiral 3 offers a GIGANTIC new spiral tower for you to climb! Are you skilled enough to reach the top? Come find out!
 
