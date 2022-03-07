@@ -13,7 +13,7 @@ layout: default
           <h1>{{ page.title }}</h1>
           <span class="meta">{{ page.date | date: '%B %d, %Y' }}&nbsp;
             {% if page.bedrock %}<span class="badge badge-light">Bedrock</span>{% endif %}
-            {% if page.java %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif %}
+            {% if page.java or page.inserver %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif %}
           </span>
           <span class="meta">v{{ page.version}}
           </span>
@@ -75,11 +75,15 @@ layout: default
           Bedrock</a>
         {% endif %}
 
-        {% if page.java %}
-        {% if page.inserver %}
+        {% if page.java and page.inserver %}
         <a href="#" class="btn btn-success downloadbtn" data-toggle="modal" data-target="#javaModal"> Get it for
           Java</a>
         {% else %}
+        {% if page.inserver %}
+        <a href="#" class="btn btn-success downloadbtn" data-toggle="modal" data-target="#serverModal"> Get it for
+          Java</a>
+        {% endif %}
+        {% if page.java %}
         <a href="{{page.java}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get it for Java
           ({{page.java-version}})</a>
         {% endif %}
@@ -198,7 +202,7 @@ layout: default
 </div>
 
 <div class="modal fade" id="serverModal" tabindex="-1" role="dialog" aria-labelledby="serverModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">Multiplayer</h5>
@@ -226,9 +230,11 @@ layout: default
         <a type="button" class="btn btn-success btn-sm" href="{{page.server}}">Purchase server</a>
         {% endif %}
 
+        {% if page.java %}
         <p>If you already have a server, you can also <a href="{{page.java}}" data-toggle="modal"
             data-target="#downloadModal" data-dismiss="modal">download the map</a> and set it up
           yourself. </p>
+        {% endif %}
       </div>
     </div>
   </div>

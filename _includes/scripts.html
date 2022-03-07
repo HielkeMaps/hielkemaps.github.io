@@ -115,10 +115,10 @@
               success: function (result) {
 
                 //get top run
-                let run = result.data.runs[0].run;
-                if (typeof (run) === 'undefined') {
+                if (result.data.runs.length === 0) {
                   norun(result);
                 } else {
+                  let run = result.data.runs[0].run;
 
                   //map link
                   let link = result.data.weblink;
@@ -162,7 +162,7 @@
     $("#record").html("No runs yet");
     $("#record").css("font-size", "25px");
 
-    var link = result.data[0].weblink
+    var link = result.data.weblink
 
     //change small text to link
     $('#record_hms').hide();
