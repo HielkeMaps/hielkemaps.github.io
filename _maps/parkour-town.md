@@ -3,7 +3,7 @@ layout: map
 title: "Parkour Town"
 date: 2022-10-27
 order: 0
-short-description: "Parkour Town"
+short-description: "Parkour Town has thousands of ways to reach the top, can you find the fastest one?"
 java-version: "1.19.2"
 trailer: "https://www.youtube.com/watch?v=JeULV5tEfZo"
 speedrunnable: true
@@ -14,6 +14,7 @@ brank: 720
 crank: 1200
 inserver: false
 version: 1.0.0
+soon: true
 ---
 
 > # COMING SOON!
