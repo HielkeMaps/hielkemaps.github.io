@@ -11,12 +11,14 @@ layout: default
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
           <h1>{{ page.title }}</h1>
-          <span class="meta">{{ page.date | date: '%B %d, %Y' }}&nbsp;
+          <span class="meta">{% if page.soon %} {{page.release-date | date: '%B %d, %Y'}} {%else%} {{page.date| date:
+            '%B %d, %Y'}} {% endif %}&nbsp;
             {% if page.bedrock %}<span class="badge badge-light">Bedrock</span>{% endif %}
-            {% if page.java or page.inserver %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif %}
+            {% if page.java or page.inserver %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif
+            %}  
           </span>
-          <span class="meta">v{{ page.version}}
-          </span>
+          {% unless page.soon %}<span class="meta">v{{ page.version}}
+          </span>{% endunless %}
         </div>
       </div>
     </div>

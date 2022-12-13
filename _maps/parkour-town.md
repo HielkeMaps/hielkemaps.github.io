@@ -4,7 +4,7 @@ title: "Parkour Town"
 date: 2022-10-27
 order: 0
 short-description: "Parkour Town has thousands of ways to reach the top, can you find the fastest one?"
-java-version: "1.19.2"
+java-version: "1.19.3"
 trailer: "https://www.youtube.com/watch?v=JeULV5tEfZo"
 speedrunnable: true
 isranked: true
@@ -15,20 +15,18 @@ crank: 1200
 inserver: false
 version: 1.0.0
 soon: true
+release-date: 2022-12-21
 ---
 
-> # COMING SOON!
-> Parkour Town will be coming to both Bedrock and Java edition of Minecraft!
-
-> Join the Discord to stay updated:<br>
-> [https://discord.gg/6RzKxbH](https://discord.gg/6RzKxbH)
-> # COMING SOON!
+> # COMING DECEMBER 21
+> Parkour Town will be released on December 21 on the Minecraft Marketplace
+> and on the Java server (play.hielkemaps.com)!    
 
 ___
 
-**Parkour Town** is all about choice. It contains countless different routes to the top, and it's up to you to find the fastest one!
-Throughout the map you can find 20 coins, with these you can buy powerups to get an even faster time!<br>
-Can you find the fastest way up?
+Climb the **Parkour Town** with its countless pathways to the top!
+Explore the town, find the hidden coins, and buy powerups to unlock new pathways to improve your time!
+How fast can you get to the top?
 
 **Powerups:**
 - Snow Boots: walk over powder snow

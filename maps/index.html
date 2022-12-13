@@ -4,41 +4,43 @@ title: Maps
 background: '/img/bg-map.jpg'
 ---
 <div class="container-fluid">
-<div class="card-deck" style="justify-content: center;">
-{% assign sorted = site.maps | sort: 'order' %}
-{% for map in sorted %}
-{% unless map.hide %}
-<div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
-  <img class="card-img-top" src="{{site.baseurl}}/img/{{map.url}}/thumbnail.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title">{{ map.title }}</h4>
-    {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
-    {% if map.java or map.inserver %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %} 
-    {% if map.soon %}<span class="badge badge-primary">Coming soon</span>{% endif %} 
-    <p class="card-text">{{map.short-description}}</p>
+  <div class="card-deck" style="justify-content: center;">
+    {% assign sorted = site.maps | sort: 'order' %}
+    {% for map in sorted %}
+    {% unless map.hide %}
+    <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
+      <img class="card-img-top" src="{{site.baseurl}}/img/{{map.url}}/thumbnail.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">{{ map.title }}</h4>
+        {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
+        {% if map.java or map.inserver %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %}
+        {% if map.soon %}<span class="badge badge-primary">{% if map.release-date %}
+          {{map.release-date | date: "%B %-d"}}{%else %}
+          Coming soon{% endif %}</span>{% endif %}
+        <p class="card-text">{{map.short-description}}</p>
+      </div>
+    </div>
+    {% endunless %}
+    {% endfor %}
   </div>
-</div>
-{% endunless %}
-{% endfor %}
-</div>
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
+  <!-- Pager -->
+  {% if paginator.total_pages > 1 %}
 
-<div class="clearfix">
+  <div class="clearfix">
 
-  {% if paginator.previous_page %}
-  <a class="btn btn-primary float-left"
-    href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;
-    Newer<span class="d-none d-md-inline"> Maps</span></a>
+    {% if paginator.previous_page %}
+    <a class="btn btn-primary float-left"
+      href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;
+      Newer<span class="d-none d-md-inline"> Maps</span></a>
+    {% endif %}
+
+    {% if paginator.next_page %}
+    <a class="btn btn-primary float-right"
+      href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older<span
+        class="d-none d-md-inline"> Maps</span> &rarr;</a>
+    {% endif %}
+
+  </div>
+
   {% endif %}
-
-  {% if paginator.next_page %}
-  <a class="btn btn-primary float-right"
-    href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older<span
-      class="d-none d-md-inline"> Maps</span> &rarr;</a>
-  {% endif %}
-
-</div>
-
-{% endif %}
 </div>

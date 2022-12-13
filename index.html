@@ -19,8 +19,10 @@ background: '/img/bg-index.jpg'
       <div class="card-body">
         <h4 class="card-title">{{ map.title }}</h4>
         {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
-        {% if map.java or map.inserver %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %} 
-        {% if map.soon %}<span class="badge badge-primary">Coming soon</span>{% endif %} 
+        {% if map.java or map.inserver %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %}
+        {% if map.soon %}<span class="badge badge-primary">{% if map.release-date %}
+          {{map.release-date | date: "%B %-d"}}{%else %}
+          Coming soon{% endif %}</span>{% endif %}
         <p class="card-text">{{map.short-description}}</p>
       </div>
     </div>
