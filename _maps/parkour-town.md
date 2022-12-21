@@ -1,10 +1,11 @@
 ---
 layout: map
 title: "Parkour Town"
-date: 2022-10-27
+date: 2022-12-21
 order: 0
 short-description: "Parkour Town has thousands of ways to reach the top, can you find the fastest one?"
 java-version: "1.19.3"
+bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=cf288377-426a-4938-95f7-a2b0f3c9ca1f"
 trailer: "https://www.youtube.com/watch?v=JeULV5tEfZo"
 speedrunnable: true
 isranked: true
@@ -12,17 +13,9 @@ srank: 300
 arank: 480
 brank: 720
 crank: 1200
-inserver: false
+inserver: true
 version: 1.0.0
-soon: true
-release-date: 2022-12-21
 ---
-
-> # COMING DECEMBER 21
-> Parkour Town will be released on December 21 on the Minecraft Marketplace
-> and on the Java server (play.hielkemaps.com)!    
-
-___
 
 Climb the **Parkour Town** with its countless pathways to the top!
 Explore the town, find the hidden coins, and buy powerups to unlock new pathways to improve your time!
