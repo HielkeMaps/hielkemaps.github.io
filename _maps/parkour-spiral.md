@@ -5,7 +5,7 @@ date: 2020-03-17
 order: 1
 short-description: "Parkour Spiral is a MASSIVE parkour map where you start at the bottom and must parkour to the top!"
 java: "/downloads/Parkour Spiral.zip"
-java-version: "1.19.2"
+java-version: "1.19.3"
 bedrock: "https://bit.ly/3eLswAj"
 trailer: "https://www.youtube.com/watch?v=ZJNpJXUnnd4"
 speedrunnable: true
@@ -17,7 +17,7 @@ crank: 5400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral"
 server: "https://stickypiston.co/hielkemaps/parkourspiral"
-version: 2.3.0
+version: 2.3.1
 ---
 
 In Parkour Spiral your goal is to reach the top of the enormous spiral tower! Along the way you have to beat all kind of parkour challenges.

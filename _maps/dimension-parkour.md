@@ -5,7 +5,7 @@ date: 2020-01-29
 order: 20
 short-description: "Dimension Parkour takes you on an amazing parkour journey through all three Minecraft dimensions."
 java: "/downloads/Dimension Parkour.zip"
-java-version: "1.19.2"
+java-version: "1.19.3"
 bedrock: "https://bit.ly/371tQMU"
 trailer: "https://www.youtube.com/watch?v=reyzUaw5aKQ"
 speedrunnable: true
@@ -17,7 +17,7 @@ crank: 3600
 inserver: true
 trial: "https://trial.stickypiston.co/map/dimensionparkour1"
 server: "https://stickypiston.co/hielkemaps/dimensionparkour"
-version: 1.1.6
+version: 1.1.7
 ---
 
 Dimension Parkour takes you on an amazing parkour journey through all three Minecraft dimensions. Can you complete the parkour and defeat the Ender Dragon at the end? Come find out!
