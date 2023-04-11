@@ -2,7 +2,7 @@
 layout: map
 title: "Parkour Paradise 3"
 date: 2021-07-27
-order: 12
+order: 32
 hide: false
 short-description: "Parkour through 100 fun and challenging levels in Parkour Paradise 3!"
 java: "/downloads/Parkour Paradise 3.zip"

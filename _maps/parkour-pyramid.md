@@ -2,7 +2,7 @@
 layout: map
 title: "Parkour Pyramid"
 date: 2020-08-25
-order: 30
+order: 50
 short-description: "Parkour Pyramid is one GIANT pyramid full of parkour!"
 java: "/downloads/Parkour Pyramid.zip"
 java-version: "1.19.3"

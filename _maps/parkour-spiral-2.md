@@ -2,7 +2,7 @@
 layout: map
 title: "Parkour Spiral 2"
 date: 2020-11-24
-order: 2
+order: 21
 short-description: "Parkour Spiral 2 offers a new fun parkour adventure! Start in the Nether and climb to the top!"
 java: "/downloads/Parkour Spiral 2.zip"
 java-version: "1.19.3"

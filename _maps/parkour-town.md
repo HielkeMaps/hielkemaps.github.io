@@ -2,7 +2,7 @@
 layout: map
 title: "Parkour Town"
 date: 2022-12-21
-order: 0
+order: 10
 short-description: "Parkour Town has thousands of ways to reach the top, can you find the fastest one?"
 java: "/downloads/Parkour Town.zip"
 java-version: "1.19.3"
