@@ -1,11 +1,12 @@
 ---
 layout: map
 title: "Parkour Egg"
-date: 2023-04-11
+date: 2023-04-18
 order: 0
-soon: true
 short-description: "Climb the colorful Parkour Egg to the top!"
+java: "/downloads/Parkour Egg.zip"
 java-version: "1.19.4"
+bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=a7ab0f7d-1a45-4262-9a3f-e627efc779c1"
 speedrunnable: true
 isranked: true
 srank: 1000
