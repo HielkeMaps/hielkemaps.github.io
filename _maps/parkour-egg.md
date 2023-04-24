@@ -14,6 +14,8 @@ arank: 1500
 brank: 2500
 crank: 5000
 inserver: true
+trial: "https://trial.stickypiston.co/map/parkouregg"
+server: "https://stickypiston.co/hielkemaps/parkouregg"
 version: 1.0.0
 ---
 

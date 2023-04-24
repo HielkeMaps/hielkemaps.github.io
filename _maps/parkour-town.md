@@ -15,6 +15,8 @@ arank: 480
 brank: 720
 crank: 1200
 inserver: true
+trial: "https://trial.stickypiston.co/map/parkourtown"
+server: "https://stickypiston.co/hielkemaps/parkourtown"
 version: 1.0.0
 ---
 
