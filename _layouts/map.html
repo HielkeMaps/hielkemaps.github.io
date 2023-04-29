@@ -15,7 +15,7 @@ layout: default
             '%B %d, %Y'}} {% endif %}&nbsp;
             {% if page.bedrock %}<span class="badge badge-light">Bedrock</span>{% endif %}
             {% if page.java or page.inserver %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif
-            %}  
+            %}
           </span>
           {% unless page.soon %}<span class="meta">v{{ page.version}}
           </span>{% endunless %}
@@ -128,7 +128,7 @@ layout: default
   </div>
 </div>
 <br>
-<!-- Pictures -->
+<!-- Media -->
 <div style="text-align: center;">
   <h2>Media</h2>
 </div>
@@ -137,35 +137,29 @@ layout: default
     <div class="col-md-8">
       <div class="row">
         {% if page.trailer %}
-        <a href="{{page.trailer}}&amp;rel=0" data-width="1280" data-toggle="lightbox" data-gallery="example-gallery"
-          class="col-sm-4 mappic">
+        <a href="{{page.trailer}}&amp;rel=0" data-fancybox="media" data-thumb="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="col-sm-4 mappic">
           <img class="playBtn" src="{{site.baseurl}}/img/playbtn.svg" />
           {% else %}
-          <a href="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" data-width="1280" data-toggle="lightbox"
-            data-gallery="example-gallery" class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" data-fancybox="media"
+            class="col-sm-4 mappic">
             {% endif %}
             <img src="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-toggle="lightbox" data-gallery="example-gallery"
-            class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-fancybox="media" class="col-sm-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-toggle="lightbox" data-gallery="example-gallery"
-            class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" class="img-fluid">
           </a>
       </div>
       <div class="row">
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-toggle="lightbox" data-gallery="example-gallery"
-          class="col-sm-4 mappic">
+        <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-4 mappic">
           <img src="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" class="img-fluid">
         </a>
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-toggle="lightbox" data-gallery="example-gallery"
-          class="col-sm-4 mappic">
+        <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-fancybox="media" class="col-sm-4 mappic">
           <img src="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" class="img-fluid">
         </a>
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-toggle="lightbox" data-gallery="example-gallery"
-          class="col-sm-4 mappic">
+        <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-4 mappic">
           <img src="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" class="img-fluid">
         </a>
       </div>
@@ -265,11 +259,15 @@ layout: default
   </div>
 </div>
 
-  <!-- Comments -->
-  <div class="container">
-    <div style="text-align: center;">
-      <h2>Comments</h2>
-    </div>
-    <div id="commento"></div>
+<!-- Comments -->
+<div class="container">
+  <div style="text-align: center;">
+    <h2>Comments</h2>
   </div>
-  <script defer src="https://cdn.commento.io/js/commento.js"></script>
+  <div id="commento"></div>
+</div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+
+<!-- Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
