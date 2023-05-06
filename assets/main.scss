@@ -1,5 +1,6 @@
 ---
 --- 
+
 @import "styles";
 
 
@@ -115,16 +116,28 @@ div.row>div>div.row {
 }
 
 .mapcard {
-    width: 21rem;
-    margin: 10px !important;
-    padding: 0px;
+	width: 21rem;
+	margin: 10px !important;
+	padding: 0px;
 }
 
 @media (max-width: 767px) {
 	.mapcard {
-	  width: 25rem;
+		width: 45%;
 	}
-  }
+}
+
+@media (max-width: 600px) {
+	.mapcard {
+		width: 80%;
+	}
+}
+
+@media (max-width: 450px) {
+	.mapcard {
+		width: 92%;
+	}
+}
 
 .speedrunpanel {
 	box-shadow: 0 10px 25px -1px lightgray;
