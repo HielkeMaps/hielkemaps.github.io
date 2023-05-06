@@ -10,7 +10,7 @@ background: '/img/bg-index.jpg'
 </div>
 
 <div class="container-fluid">
-  <div class="card-deck" style="justify-content: center;">
+  <div class="card-deck row row-cols-xs-1 row-cols-md-3 row-cols-lg-4" style="justify-content: center;">
     {% assign sorted = site.maps | sort: 'order' %}
     {% for map in sorted %}
     {% if map.bedrock or map.soon %}

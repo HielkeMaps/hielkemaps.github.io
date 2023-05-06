@@ -1,5 +1,5 @@
 title:              Hielke Maps
-email:              hielkemaps@gmail.com
+email:              support@hielkemaps.com
 description:        Minecraft Maps by Hielke.
 baseurl:            ""
 url:                ""
@@ -12,13 +12,12 @@ discord: 6RzKxbH
 
 # Build settings
 markdown:           kramdown
-paginate:           9
+paginate:           3
 paginate_path:      "/maps/:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
-
+  - jekyll-sitemap
 
 collections:
   maps:

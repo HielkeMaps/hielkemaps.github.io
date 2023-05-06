@@ -1,106 +1,223 @@
-// Styling for the navbar
+// Complete styles for main navbar toggler and hamburger menu
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  .hamburger-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    z-index: 11;
+
+    .hamburger {
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(0deg);
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      height: 50%;
+      pointer-events: none;
+
+      span {
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        background: $white;
+        border-radius: 2px;
+        z-index: 1;
+        transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1.0), all 0.2s ease-in-out;
+        left: 0px;
+
+        &:first-child {
+          top: 10%;
+          transform-origin: 50% 50%;
+          transform: translate(0% -50%) !important;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+
+        &:last-child {
+          left: 0px;
+          top: auto;
+          bottom: 10%;
+          transform-origin: 50% 50%;
+        }
+      }
+
+      &.active {
+        span {
+          position: absolute;
+          margin: 0;
+
+          &:first-child {
+            top: 45%;
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            left: 50%;
+            width: 0px;
+          }
+
+          &:last-child {
+            top: 45%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+body.navbar-open{
+  overflow: hidden !important;
+}
+
+/* Define styles for #mainNav */
 #mainNav {
   position: absolute;
-  background: transparent;
-  @include sans-serif-font;
+  background: $navbar-transparent;
+  font-family: sans-serif;
+
+  /* Define styles for .navbar-brand */
   .navbar-brand {
     font-weight: 800;
     color: $white;
+
     &:focus,
     &:hover {
-      color: $blue;
+      color: $gray-500;
     }
   }
-  .navbar-toggler {
-    font-size: 15px;
-    font-weight: 800;
-    padding: 13px;
-    text-transform: uppercase;
-    color: $white;
-    border-color: $white;
-    &:focus,
-    &:hover {
-      color: $blue;
-      border-color: $blue;
-    }
-  }
+
+  /* Define styles for .navbar-nav */
   .navbar-nav {
-    > li.nav-item {
-      > a {
+    >li.nav-item {
+      >a {
         font-size: 15px;
         font-weight: 800;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: $white;
+
         &:focus,
         &:hover {
-          color: $blue;
+          color: $gray-500;
         }
       }
     }
   }
+
+  /* Define styles for larger screens */
   @media only screen and (min-width: 992px) {
-    border-bottom: 1px solid transparent;
     background: transparent;
+
+    /* Define styles for .navbar-brand */
     .navbar-brand {
       padding: 10px 20px;
       color: $white;
     }
+
+    /* Define styles for .navbar-nav */
     .navbar-nav {
-      > li.nav-item {
-        > a {
+      >li.nav-item {
+        >a {
           padding: 10px 20px;
           color: $white;
         }
       }
     }
-  }
-  @media only screen and (min-width: 992px) {
-    -webkit-transition: background-color 0.2s;
-    -moz-transition: background-color 0.2s;
+
     transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
+
     &.is-fixed {
-      /* when the user scrolls down, we hide the header right above the viewport */
+      /* Define styles for fixed navigation */
       position: fixed;
       top: -67px;
-      -webkit-transition: -webkit-transform 0.2s;
-      -moz-transition: -moz-transform 0.2s;
       transition: transform 0.2s;
-      border-bottom: 1px solid darken($white, .05);
-      background-color: fade-out($white, .1);
-      .navbar-brand {
-        color: $gray-900;
-        &:focus,
+      background: rgba(255, 255, 255, 0.812);
+
+      .navbar-brand{
+        color:black !important;
+
         &:hover {
-          color: $primary;
+          color: $primary !important;
         }
       }
-      .navbar-nav {
-        > li.nav-item {
-          > a {
-            color: $gray-900;
-            &:focus,
-            &:hover {
-              color: $primary;
-            }
-          }
+
+      .navbar-nav>li.nav-item>a {
+        color: black !important;
+
+        &:hover {
+          color: $primary !important;
         }
       }
     }
+
     &.is-visible {
-      /* if the user changes the scrolling direction, we show the header */
-      -webkit-transform: translate3d(0, 100%, 0);
-      -moz-transform: translate3d(0, 100%, 0);
-      -ms-transform: translate3d(0, 100%, 0);
-      -o-transform: translate3d(0, 100%, 0);
+      /* Define styles for visible navigation */
       transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  #logo-item {
+    display: none;
+  }
+
+  /* Define styles for smaller screens */
+  @media screen and (max-width: 991px) {
+    
+    /* Define styles for .navbar-collapse */
+    .navbar-collapse {
+      display: none;
+      height: 0vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: gray;
+      opacity:0;
+    }
+
+    #logo-item {
+      display:block;
+      margin-bottom: 20px;
+
+      img {
+        max-width: 33%;
+        max-height: 33vh;
+        height: auto;
+      }
+    }
+
+    /* Define styles for .navbar-nav */
+    .navbar-nav {
+      width: 100%;
+      padding-top: 3em;
+
+      /* Define styles for .nav-item */
+      .nav-item {
+        text-align: center;
+        margin-bottom: 10px;
+
+        /* Define styles for .nav-link */
+        .nav-link {
+          display: inline-block;
+          font-size:calc(100% + 1vw);
+          padding: 10px;
+        }
+      }
     }
   }
 }

@@ -13,8 +13,8 @@ layout: default
           <h1>{{ page.title }}</h1>
           <span class="meta">{% if page.soon %} {{page.release-date | date: '%B %d, %Y'}} {%else%} {{page.date| date:
             '%B %d, %Y'}} {% endif %}&nbsp;
-            {% if page.bedrock %}<span class="badge badge-light">Bedrock</span>{% endif %}
-            {% if page.java or page.inserver %}<span class="badge badge-light">Java {{page.java-version}}</span>{% endif
+            {% if page.bedrock %}<span class="badge text-bg-light">Bedrock</span>{% endif %}
+            {% if page.java or page.inserver %}<span class="badge text-bg-light">Java {{page.java-version}}</span>{% endif
             %}
           </span>
           {% unless page.soon %}<span class="meta">v{{ page.version}}
@@ -78,11 +78,11 @@ layout: default
         {% endif %}
 
         {% if page.java and page.inserver %}
-        <a href="#" class="btn btn-success downloadbtn" data-toggle="modal" data-target="#javaModal"> Get it for
+        <a href="#" class="btn btn-success downloadbtn" data-bs-toggle="modal" data-bs-target="#javaModal"> Get it for
           Java</a>
         {% else %}
         {% if page.inserver %}
-        <a href="#" class="btn btn-success downloadbtn" data-toggle="modal" data-target="#serverModal"> Get it for
+        <a href="#" class="btn btn-success downloadbtn" data-bs-toggle="modal" data-bs-target="#serverModal"> Get it for
           Java</a>
         {% endif %}
         {% if page.java %}
@@ -174,18 +174,18 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">How would you like to play?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body text-center">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#downloadModal"
-          data-dismiss="modal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal"
+          data-bs-dismiss="modal">
           <span class="fas fa-user fa-2x"></span>
           <h5>Singleplayer</h5>
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#serverModal"
-          data-dismiss="modal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serverModal"
+          data-bs-dismiss="modal">
           <span class="fas fa-users fa-2x"></span>
           <h5>Multiplayer</h5>
         </button>
@@ -202,7 +202,7 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">Multiplayer</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -227,8 +227,8 @@ layout: default
         {% endif %}
 
         {% if page.java %}
-        <p>If you already have a server, you can also <a href="{{page.java}}" data-toggle="modal"
-            data-target="#downloadModal" data-dismiss="modal">download the map</a> and set it up
+        <p>If you already have a server, you can also <a href="{{page.java}}" data-bs-toggle="modal"
+            data-bs-target="#downloadModal" data-bs-dismiss="modal">download the map</a> and set it up
           yourself. </p>
         {% endif %}
       </div>
@@ -242,7 +242,7 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">Download</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

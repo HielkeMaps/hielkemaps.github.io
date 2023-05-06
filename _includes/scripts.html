@@ -1,226 +1,32 @@
-<script src="{{"/assets/vendor/jquery/jquery.min.js" | relative_url }}"></script>
-<script src="{{"/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" | relative_url }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js" | relative_url }}"></script>
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
 {% if page.url contains 'contact' %}
-<!-- Form Validation -->
 <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/jqBootstrapValidation.js" | relative_url }}"></script>
-<!-- Send Form -->
-<script>
-  $(function () {
+<script src="{{"/assets/js/contact.js" | relative_url}}"></script>
+{% endif %}
 
-    $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
-      preventSubmit: true,
-      submitError: function ($form, event, errors) {
-        // additional error messages or events
-      },
-      submitSuccess: function ($form, event) {
-        event.preventDefault(); // prevent default submit behaviour
-        // get values from FORM
-        var form = $("#contactForm").get(0);
-        var firstName = name; // For Success/Failure Message
+{% if page.url contains 'apply' %}
+<script src="{{"/assets/js/apply.js" | relative_url}}"></script>
+{% endif %}
 
-        // Check for white space in name for Success/Fail message
-        if (firstName.indexOf(' ') >= 0) {
-          firstName = name.split(' ').slice(0, -1).join(' ');
-        }
-        $this = $("#sendMessageButton"); 1
-        $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-        $.ajax({
-          url: "https://usebasin.com/f/db486153291f",
-          type: "POST",
-          crossDomain: true,
-          data: new FormData(form),
-          dataType: "json",
-          contentType: "multipart/form-data",
-          processData: false,
-          contentType: false,
-          headers: {
-            "Accept": "application/json"
-          },
-          cache: false,
-          success: function () {
-            // Success message
-            $('#success').html("<div class='alert alert-success'>");
-            $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
-            $('#success > .alert-success').append("<strong>Your message has been sent. </strong>");
-            $('#success > .alert-success').append('</div>');
-            //clear all fields
-            $('#contactForm').trigger("reset");
-          },
-          error: function () {
-            // Fail message
-            $('#success').html("<div class='alert alert-danger'>");
-            $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
-            $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
-            $('#success > .alert-danger').append('</div>');
-            //clear all fields
-            $('#contactForm').trigger("reset");
-          },
-          complete: function () {
-            setTimeout(function () {
-              $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-            }, 1000);
-          }
-        });
-      },
-      filter: function () {
-        return $(this).is(":visible");
-      }
-    });
-
-    $("a[data-toggle=\"tab\"]").click(function (e) {
-      e.preventDefault();
-      $(this).tab("show");
-    });
-  });
-
-  /*When clicking on Full hide fail/success boxes */
-  $('#name').focus(function () {
-    $('#success').html('');
-  });
-</script>
+{% if page.url contains 'maps' %}
+<script src="{{"/assets/js/maps.js" | relative_url}}"></script>
 {% endif %}
 
 
-{% if page.layout == 'map' and page.speedrunnable %}
-<script>
-  // SPEEDRUN SCRIPT 
-  $(function () {
-    var pagetitle = "{{page.title}}";
+{% if page.layout == 'map' %}
+  <script src="{{"/assets/js/map.js" | relative_url}}"></script>
 
-    //Get all maps
-    var api_url = "https://www.speedrun.com/api/v1/games/pd0wpq21/levels";
+  {% if page.speedrunnable %}
+    <script id="scriptData" src="{{"/assets/js/leaderboard.js" | relative_url}}" data-title="{{page.title}}"></script>
+  {% endif %}
 
-    $.ajax({
-      url: api_url,
-      contentType: "application/json",
-      dataType: 'json',
-      success: function (result) {
-        result.data.forEach(map => {
+  {% if page.isranked %}
+    <script src="{{"/assets/js/rank.js" | relative_url}}"></script>
+  {% endif %}
 
-          //If map matches the page title
-          if (map.name === pagetitle) {
-
-            //Get leaderboard url from map
-            leaderboardurl = map.links[6].uri + "?var-r8ro7y78=klr06wwl&top=1&embed=players";
-
-            //Retrieve leaderboard
-            $.ajax({
-              url: leaderboardurl,
-              contentType: "application/json",
-              dataType: 'json',
-              success: function (result) {
-
-                //get top run
-                if (result.data.runs.length === 0) {
-                  norun(result);
-                } else {
-                  let run = result.data.runs[0].run;
-
-                  //map link
-                  let link = result.data.weblink;
-                  $('#record_link_2').attr("href", link);
-
-                  let name = result.data.players.data[0].names.international
-                  let video_url = run.weblink;
-
-                  $("#record_author").html("By ");
-                  $("#record_author_name").html(name);
-                  $("#record_author_name").attr("href", video_url);
-
-                  //Get the time
-                  let totalSeconds = run.times.primary_t;
-                  let tempSeconds = totalSeconds;
-
-                  let hours = Math.floor(tempSeconds / 3600);
-                  tempSeconds %= 3600;
-                  let minutes = Math.floor(tempSeconds / 60);
-                  let seconds = tempSeconds % 60;
-
-                  $("#record").html(totalSeconds);
-                  $("#record_hms").html("(");
-                  if (hours > 0) $("#record_hms").append(hours + " hours, ");
-                  $("#record_hms").append(minutes + " minutes");
-                  if (hours > 0) $("#record_hms").append(",");
-                  $("#record_hms").append(" and " + seconds + " seconds");
-                  $("#record_hms").append(")");
-
-                  onFinish();
-                }
-              }
-            });
-          }
-        });
-      }
-    })
-  });
-
-  function norun(result) {
-    $("#record").html("No runs yet");
-    $("#record").css("font-size", "25px");
-
-    var link = result.data.weblink
-
-    //change small text to link
-    $('#record_hms').hide();
-    $('#record_link').show();
-    $('#record_link').attr("href", link);
-    $('#compete').hide();
-    onFinish();
-  }
-
-  function onFinish() {
-
-    $('.speedrun-buffer1').removeClass("col-lg-2")
-    $('.speedrun-buffer1').addClass("col-lg-0")
-
-    $('.speedrun-buffer2').removeClass("col-lg-2")
-    $('.speedrun-buffer2').addClass("col-lg-4")
-
-    $('.speedrun-section').delay(200).show();
-  }
-</script>
-{% endif %}
-
-{% if page.layout == 'map' and page.isranked %}
-<script>
-  $(function () {
-    $("#srank").append(addtime($("#srank").attr("value")));
-    $("#arank").append(addtime($("#arank").attr("value")));
-    $("#brank").append(addtime($("#brank").attr("value")));
-    $("#crank").append(addtime($("#crank").attr("value")));
-    $("#drank").html($("#crank").attr("value"));
-    $("#drank").append("+");
-  });
-
-  function addtime(totalSeconds) {
-    var res = totalSeconds
-    res += " (";
-    var hours = Math.floor(totalSeconds / 3600);
-    totalSeconds %= 3600;
-    var minutes = Math.floor(totalSeconds / 60);
-    var seconds = totalSeconds % 60;
-    if (hours > 0) {
-      res += hours + " hour";
-      if (hours > 1) res += "s"
-      if (minutes > 0) {
-        if (seconds == 0) res += " and ";
-        else res += ", ";
-      }
-    }
-    if (minutes > 0) {
-      res += minutes + " minute";
-      if (minutes > 1) res += "s"
-      if (hours > 0 && seconds > 0) res += ","
-    }
-    if (seconds > 0) {
-      res += " and " + seconds + " second";
-      if (seconds > 1) res += "s"
-    }
-    res += ")"
-    return res;
-  }
-</script>
 {% endif %}
