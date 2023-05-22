@@ -5,7 +5,7 @@ date: 2022-01-03
 order: 22
 short-description: "Parkour Spiral 3 offers a GIGANTIC new spiral tower for you to climb! Are you skilled enough to reach the top?"
 java: "/downloads/Parkour Spiral 3.zip"
-java-version: "1.19.3"
+java-version: "1.19.4"
 bedrock: "https://bit.ly/3LWu8J0"
 trailer: "https://www.youtube.com/watch?v=Apm-hANHhSI"
 speedrunnable: true

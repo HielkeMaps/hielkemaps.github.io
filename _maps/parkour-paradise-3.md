@@ -6,7 +6,7 @@ order: 32
 hide: false
 short-description: "Parkour through 100 fun and challenging levels in Parkour Paradise 3!"
 java: "/downloads/Parkour Paradise 3.zip"
-java-version: "1.19.3"
+java-version: "1.19.4"
 bedrock: "https://bit.ly/3i6r1Bl"
 trailer: "https://www.youtube.com/watch?v=dRN7gbcMyu0"
 speedrunnable: true

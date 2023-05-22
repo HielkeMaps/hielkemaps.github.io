@@ -5,7 +5,7 @@ date: 2020-03-17
 order: 20
 short-description: "Parkour Spiral is a MASSIVE parkour map where you start at the bottom and must parkour to the top!"
 java: "/downloads/Parkour Spiral.zip"
-java-version: "1.19.3"
+java-version: "1.19.4"
 bedrock: "https://bit.ly/3eLswAj"
 trailer: "https://www.youtube.com/watch?v=ZJNpJXUnnd4"
 speedrunnable: true
