@@ -5,19 +5,19 @@ date: 2020-08-25
 order: 50
 short-description: "Parkour Pyramid is one GIANT pyramid full of parkour!"
 java: "/downloads/Parkour Pyramid.zip"
-java-version: "1.19.4"
+java-version: "1.20.1"
 trailer: "https://www.youtube.com/watch?v=g-1QduiUrgs"
 bedrock: "https://www.minecraft.net/nl-nl/pdp?id=d0247495-6eb2-4823-8681-9f15acc5255a"
 speedrunnable: true
 isranked: true
 srank: 4800
 arank: 7200
-brank: 10800 
+brank: 10800
 crank: 16200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourpyramid"
 server: "https://stickypiston.co/hielkemaps/parkourpyramid"
-version: 2.1.7
+version: 2.1.8
 ---
 
 Parkour Pyramid is an epic parkour adventure that will keep you entertained for hours!
