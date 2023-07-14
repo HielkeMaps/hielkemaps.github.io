@@ -16,7 +16,7 @@ background: '/img/bg-index.jpg'
     {% if map.bedrock or map.soon %}
     {% unless map.hide %}
     <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
-      <img class="card-img-top" src="{{site.baseurl}}/img/{{map.url}}/thumbnail.jpg" alt="Card image cap">
+      <img class="card-img-top" src="{{site.baseurl}}/img/{{map.url}}/thumbnail-compressed.jpg" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title">{{ map.title }}</h4>
         {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
