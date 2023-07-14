@@ -10,7 +10,9 @@
 
   {{ content }}
 
-  {% include footer.html %}
+  {% unless page.hide-footer %}
+    {% include footer.html %}
+  {% endunless %}
 
   {% include scripts.html %}
 

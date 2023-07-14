@@ -1,8 +1,6 @@
 // SPEEDRUN SCRIPT
 
 $(function () {
-    console.log('SPEEDRUN SCRIPT');
-
     var pagetitle = $('#scriptData').data('title');
 
     //Get all maps
