@@ -28,6 +28,12 @@
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
+	@media screen and (max-width: 600px) {
+		h1 {
+		  font-size: 3rem; /* Adjust the font size for smaller screens */
+		}
+	  }
+
 	#server-status {
 		margin: 0;
 		opacity: 0;
