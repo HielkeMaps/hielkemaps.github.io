@@ -26,8 +26,10 @@ function toggleMobileMenu() {
     function openMobileMenu() {
         $('body').addClass('navbar-open');
         $('.hamburger').addClass('active');
+        $('.navbar-collapse').css('backdrop-filter', 'blur(15px)');
 
         $navMenuCont.css('display', 'block');
+        $('#mainNav').css('backdrop-filter', 'none');
 
         let $navItems = $navMenuCont.find('.nav-item');
         $navItems.removeClass('animate__fadeOutUp').addClass('animate__fadeInDown');
@@ -43,6 +45,9 @@ function toggleMobileMenu() {
 		
         $navMenuCont.removeClass('slide-in').delay(100).animate({ 'height': '0vh','opacity': '0' }, 350, function () {
             $navMenuCont.css('display', 'none');
+
+            $('.navbar-collapse').css('backdrop-filter', 'none');
+            $('#mainNav').css('backdrop-filter', 'blur(5px)');
         });
     }
 }
