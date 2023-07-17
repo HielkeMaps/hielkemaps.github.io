@@ -10,12 +10,13 @@
 
 	.text-overlay {
 		position: absolute;
-		top: 50%;
+		bottom: 0;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, 0%);
 		text-align: center;
 		color: white;
 		z-index: 1;
+		width: 100%;
 	}
 
 	video {
@@ -29,17 +30,29 @@
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
+	@media screen and (max-width: 900px) {
+		h1 {
+		  font-size: 4rem;
+		}
+	}
+
 	@media screen and (max-width: 600px) {
 		h1 {
-		  font-size: 3rem; /* Adjust the font size for smaller screens */
+		  font-size: 3rem;
 		}
-	  }
+	}
+
+	#main-text{
+		margin-bottom: 10vh;
+	}
 
 	#server-status {
 		margin: 0;
 		opacity: 0;
-		height: 0;
+		height: 90px;
 		transition: opacity 0.5s, height 0.5s;
+		margin-bottom: 15%;
+		font-size: 1.1em;
 	}
 	
 	  .fade-in {

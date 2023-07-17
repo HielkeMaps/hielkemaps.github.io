@@ -52,4 +52,10 @@ function toggleMobileMenu() {
     }
 }
 
+const hideNav = new URLSearchParams(window.location.search).get('hideNav')
+if(hideNav){
+    $('nav').hide();
+}
+
+
 $('[data-toggle="toggle-menu"]').on('click', toggleMobileMenu);

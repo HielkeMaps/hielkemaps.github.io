@@ -23,7 +23,7 @@ h6 {
   @include sans-serif-font;
 }
 
-a {
+a:not(.btn) {
   color: $gray-900;
   @include transition-all;
   &:focus,

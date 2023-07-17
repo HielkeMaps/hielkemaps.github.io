@@ -85,12 +85,5 @@ function norun(result) {
 }
 
 function onFinish() {
-
-    $('.speedrun-buffer1').removeClass("col-lg-2")
-    $('.speedrun-buffer1').addClass("col-lg-0")
-
-    $('.speedrun-buffer2').removeClass("col-lg-2")
-    $('.speedrun-buffer2').addClass("col-lg-4")
-
     $('.speedrun-section').delay(200).show();
 }

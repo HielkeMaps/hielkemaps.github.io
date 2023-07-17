@@ -29,11 +29,6 @@ html,body{
 	min-height: 60px;
 }
 
-.smooth-width {
-	flex-grow: 1;
-	transition: all 0.7s ease !important;
-}
-
 .image-container {
 	display: flex;
 	align-items: center;
@@ -74,6 +69,7 @@ div.row>div>div.row {
 }
 
 .mappic {
+	padding: 5px;
 	position: relative;
 	transition: transform .2s;
 }
@@ -177,10 +173,6 @@ div.row>div>div.row {
 }
 
 @media only screen and (max-width: 576px) {
-	.mappic {
-		margin-top: 5px;
-		margin-bottom: 5px;
-	}
 
 	.javabtn {
 		float: unset;
@@ -199,12 +191,6 @@ div.row>div>div.row {
 	#javaModal .btn {
 		margin: 5px;
 		min-width: 225px;
-	}
-}
-
-@media only screen and (max-width: 991px) {
-	.speedrun-buffer1 {
-		display: none;
 	}
 }
 

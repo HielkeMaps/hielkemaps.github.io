@@ -28,11 +28,7 @@ layout: default
 <div class="container">
   <div class="row">
 
-    {% if page.speedrunnable %}
-    <div class="col-lg-2 speedrun-buffer1 smooth-width"></div>
-    {% endif %}
-
-    <div class="col-lg-8 col-md-10 mx-auto mainpanel smooth-width" id="sp-row-size">
+    <div class="col-lg-8 col-md-10 mx-auto mainpanel" id="sp-row-size">
       {{ content }}
 
       <!-- Rank times -->
@@ -73,32 +69,33 @@ layout: default
       <hr>
       <div class="text-center">
         {% if page.bedrock %}
-        <a href="{{page.bedrock}}" class="btn btn-success downloadbtn">Get it for
+        <a type="button" href="{{page.bedrock}}" class="btn btn-success downloadbtn">Get it for
           Bedrock</a>
         {% endif %}
 
         {% if page.java and page.inserver %}
-        <a href="#" class="btn btn-success downloadbtn" data-bs-toggle="modal" data-bs-target="#javaModal"> Get it for
-          Java</a>
+        <button type="button" class="btn btn-success downloadbtn" data-bs-toggle="modal" data-bs-target="#javaModal"> Get it for
+          Java</button>
         {% else %}
         {% if page.inserver %}
-        <a href="#" class="btn btn-success downloadbtn" data-bs-toggle="modal" data-bs-target="#serverModal"> Get it for
-          Java</a>
+        <button type="button" class="btn btn-success downloadbtn" data-bs-toggle="modal" data-bs-target="#serverModal"> Get it for
+          Java</button>
         {% endif %}
         {% if page.java %}
-        <a href="{{page.java}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get it for Java
+        <a type="button" href="{{page.java}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get it for Java
           ({{page.java-version}})</a>
         {% endif %}
         {% if page.java-rp %}
-        <a href="{{page.java-rp}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get Resource
+        <a type="button" href="{{page.java-rp}}" class="btn btn-success downloadbtn"><i class="fa fa-download"></i> Get Resource
           Pack</a>
         {% endif %}
         {% endif %}
       </div>
       <hr>
     </div>
+
     {% if page.speedrunnable %}
-    <div class="col-lg-2 col-md-10 mx-auto smooth-width speedrun-buffer2">
+    <div class="col-lg-4 col-md-10 mx-auto">
       <div class="speedrunpanel speedrun-section animate__animated animate__zoomIn" style="display:none;">
         <h2>Fastest Time</h2>
         <p id="record"></p>
@@ -132,38 +129,36 @@ layout: default
 <div style="text-align: center;">
   <h2>Media</h2>
 </div>
-<div class="container-fluid">
+<div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="row">
+
         {% if page.trailer %}
-        <a href="{{page.trailer}}&amp;rel=0" data-fancybox="media" data-thumb="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="col-sm-4 mappic">
+        <a href="{{page.trailer}}&amp;rel=0" data-fancybox="media" data-thumb="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="col-sm-6 col-lg-4 mappic">
           <img class="playBtn" src="{{site.baseurl}}/img/playbtn.svg" />
           {% else %}
           <a href="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" data-fancybox="media"
-            class="col-sm-4 mappic">
+            class="col-sm-6 col-lg-4 mappic">
             {% endif %}
             <img src="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-fancybox="media" class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-4 mappic">
+          <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
             <img src="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" class="img-fluid">
           </a>
-      </div>
-      <div class="row">
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-4 mappic">
+
+ 
+        <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
           <img src="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" class="img-fluid">
         </a>
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-fancybox="media" class="col-sm-4 mappic">
+        <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
           <img src="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" class="img-fluid">
         </a>
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-4 mappic">
+        <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
           <img src="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" class="img-fluid">
         </a>
-      </div>
-    </div>
+
   </div>
 </div>
 <br>
@@ -174,9 +169,7 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">How would you like to play?</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal"
@@ -202,16 +195,12 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">Multiplayer</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center px-5">
         This map can be played on the Hielke Maps server!<br>
-        <b>play.hielkemaps.com</b><br>
-
-        <img src="/img/server.jpg" class="img-fluid rounded">
-        <br><br>
+        <iframe src="/server?hideNav=true" style="width:100%; height: 500px"></iframe>
+        <br>
 
         {% if page.trial %}
         Don't want to play with strangers?<br>
@@ -242,15 +231,13 @@ layout: default
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-center w-100">Download</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
         Here you can download the zip file of {{page.title}}.<br><br>
         Make sure you unzip it into your saves directory to
         make Minecraft detect it.<br><br>
-        <a class="btn btn-success" href="{{page.java}}">
+        <a type="button" class="btn btn-success" href="{{page.java}}">
           <span class="fas fa-download"></span>
           Download ({{page.java-version}})
         </a>
