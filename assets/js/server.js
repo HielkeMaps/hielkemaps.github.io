@@ -54,5 +54,14 @@ async function getServerStatus() {
   }
 }
 
+const isIframe = new URLSearchParams(window.location.search).get('iframe')
+if(isIframe){
+  //If iframe, we will the page compressed
+  $("#text-top").css("margin-top","20px");
+  $("#text-top").css("margin-bottom","40px");
+  $("#server-status").css("margin-top","20px");
+  $("#server-status").css("font-size","1em");
+}
+
 // Call the function to fetch the server status
 getServerStatus();

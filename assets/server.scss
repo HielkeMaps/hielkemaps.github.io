@@ -10,9 +10,9 @@
 
 	.text-overlay {
 		position: absolute;
-		bottom: 0;
+		top: 0;
 		left: 50%;
-		transform: translate(-50%, 0%);
+		transform: translate(-50%,0%);
 		text-align: center;
 		color: white;
 		z-index: 1;
@@ -36,14 +36,15 @@
 		}
 	}
 
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 800px) {
 		h1 {
 		  font-size: 3rem;
 		}
 	}
 
-	#main-text{
-		margin-bottom: 10vh;
+	#text-top{
+		margin-top: 25vh;
+		margin-bottom: 75px;
 	}
 
 	#server-status {
@@ -51,8 +52,8 @@
 		opacity: 0;
 		height: 90px;
 		transition: opacity 0.5s, height 0.5s;
-		margin-bottom: 15%;
 		font-size: 1.1em;
+		margin-top: 40px;
 	}
 	
 	  .fade-in {

@@ -212,6 +212,38 @@ div.row>div>div.row {
 	}
 }
 
+#serverModal {
+
+	@media only screen and (max-width: 576px) {
+		.modal-dialog{
+			max-width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 577px) and (max-width: 992px) {
+		.modal-dialog{
+			max-width: 80%;
+		}
+	}
+
+	#serverFrame{
+		height: 370px;
+		width: 100%; 
+		border-radius: 10px;
+	}
+
+	#serverDiv {
+		padding: 10px 20px 0px 20px;
+
+		.btn{
+			margin: 10px;
+		}
+
+		p{
+			margin-bottom: 0px;
+		}
+	}
+}
 
 //ABOUT page
 #bomb_battle_img {
