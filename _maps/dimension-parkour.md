@@ -17,7 +17,7 @@ crank: 3600
 inserver: true
 trial: "https://trial.stickypiston.co/map/dimensionparkour1"
 server: "https://stickypiston.co/hielkemaps/dimensionparkour"
-version: 1.1.8
+version: 1.2.0
 ---
 
 Dimension Parkour takes you on an amazing parkour journey through all three Minecraft dimensions. Can you complete the parkour and defeat the Ender Dragon at the end? Come find out!
