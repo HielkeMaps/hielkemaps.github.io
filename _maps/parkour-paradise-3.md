@@ -18,7 +18,7 @@ crank: 14400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourparadise3"
 server: "https://stickypiston.co/hielkemaps/parkourparadise3"
-version: 2.2.0
+version: 2.2.1
 ---
 
 Parkour Paradise 3 is a MASSIVE parkour map containing 100 fun and exciting levels to beat! Play alone or with friends!
