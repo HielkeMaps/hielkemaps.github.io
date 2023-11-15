@@ -5,7 +5,7 @@ date: 2023-04-18
 order: 0
 short-description: "Climb the colorful Parkour Egg to the top!"
 java: "/downloads/Parkour Egg.zip"
-java-version: "1.20.1"
+java-version: "1.20.2"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=a7ab0f7d-1a45-4262-9a3f-e627efc779c1"
 speedrunnable: true
 isranked: true
@@ -16,7 +16,7 @@ crank: 5000
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkouregg"
 server: "https://stickypiston.co/hielkemaps/parkouregg"
-version: 1.0.4
+version: 1.0.5
 ---
 
 Climb the colorful Parkour Egg to the top!
