@@ -5,7 +5,7 @@ date: 2020-02-10
 order: 30
 short-description: "Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all!"
 java: "/downloads/Parkour Paradise.zip"
-java-version: "1.20.2"
+java-version: "1.20.4"
 bedrock: "https://bit.ly/2XWM7GQ"
 trailer: "https://www.youtube.com/watch?v=5fDlWD0rDJk"
 speedrunnable: true
@@ -17,7 +17,7 @@ crank: 5400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourparadise"
 server: "https://stickypiston.co/hielkemaps/parkourparadise"
-version: 2.2.2
+version: 2.3.0
 ---
 
 Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all! The first levels will be easy, but the parkour gets harder the further you get. Are you skilled enough to reach the end?
