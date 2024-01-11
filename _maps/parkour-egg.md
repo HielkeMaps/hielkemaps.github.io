@@ -16,7 +16,7 @@ crank: 5000
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkouregg"
 server: "https://stickypiston.co/hielkemaps/parkouregg"
-version: 1.1.0
+version: 1.1.1
 ---
 
 Climb the colorful Parkour Egg to the top!
