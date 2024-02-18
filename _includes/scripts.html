@@ -1,38 +1,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="{{"/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js" | relative_url }}"></script>
-<script src="{{"/assets/scripts.js" | relative_url }}"></script>
+<script src="{{"/assets/main.js" | relative_url }}"></script>
 
-{% if page.url contains 'contact' %}
-<script src="{{"/assets/vendor/startbootstrap-clean-blog/js/jqBootstrapValidation.js" | relative_url }}"></script>
-<script src="{{"/assets/js/contact.js" | relative_url}}"></script>
+{% if page.custom-js %}
+{% for js_file in page.custom-js %}
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+{% endfor %}
 {% endif %}
-
-{% if page.url contains 'server' %}
-<script src="{{"/assets/js/server.js" | relative_url}}"></script>
-<script src="{{"/assets/vendor/popper.min.js" | relative_url }}"></script>
-<link rel="stylesheet" href="{{"/assets/server.css" | relative_url }}">
-{% endif %}
-
-{% if page.url contains 'apply' %}
-<script src="{{"/assets/js/apply.js" | relative_url}}"></script>
-{% endif %}
-
-{% if page.url contains 'maps' %}
-<script src="{{"/assets/js/maps.js" | relative_url}}"></script>
-{% endif %}
-
 
 {% if page.layout == 'map' %}
-  <script src="{{"/assets/js/map.js" | relative_url}}"></script>
+  <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
+
+  {% if page.java %}
+    <script id="javaScript" src="{{"/assets/js/java.js" | relative_url}}" data-url="{{page.java}}"></script>
+  {% endif %}
 
   {% if page.speedrunnable %}
-    <script id="scriptData" src="{{"/assets/js/leaderboard.js" | relative_url}}" data-title="{{page.title}}"></script>
+    <script id="speedrunScript" src="{{"/assets/js/leaderboard.js" | relative_url}}" data-title="{{page.title}}"></script>
   {% endif %}
 
   {% if page.isranked %}
     <script src="{{"/assets/js/rank.js" | relative_url}}"></script>
   {% endif %}
-
 {% endif %}

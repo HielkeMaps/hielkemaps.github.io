@@ -1,0 +1,77 @@
+// Bootstrap overrides for this template
+.btn {
+  border-radius: 10px !important;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 15px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: 0.2s ease-in-out 0s;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($primary, 7.5) !important;
+    border-color: darken($primary, 7.5) !important;
+  }
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 25px 35px;
+}
+
+  // Form stuff
+form {
+
+  input, textarea {
+    filter: brightness(98%) !important;
+    font-size: 18px !important;
+    border: none !important;
+  }
+
+  label{
+    color: gray !important;
+    transition-property: color, all !important;
+    transition-duration: 0.25s !important;
+    transition-timing-function: ease-out !important;
+  }
+
+  input {
+    border-bottom: 1px solid $primary !important;
+    font-weight: 0 !important;
+  }
+
+  textarea {
+    min-height: 180px !important;
+  }
+}
+
+.form-control {
+  padding-left: 0.5rem !important;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-floating > .form-control-plaintext ~ label,
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  transform: scale(0.65) translateY(-0.5rem) translateX(0rem) !important;
+  color: $primary !important;
+}

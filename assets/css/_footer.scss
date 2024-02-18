@@ -1,0 +1,17 @@
+// Styling for the footer
+footer {
+  margin-top: 20px;
+  padding: 20px 0px 5px 0px;
+  background-color: rgb(223, 223, 223);
+
+  .list-inline {
+    margin: 0;
+    padding: 0;
+  }
+  .copyright {
+    font-size: 14px;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+}

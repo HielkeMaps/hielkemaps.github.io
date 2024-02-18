@@ -4,7 +4,7 @@ layout: default
 
 <!-- Page Header -->
 <header class="masthead"
-  style="background-color: gray;  background-image: url('{{site.baseurl}}/img/{{page.url}}/background.jpg')">
+  style="background-color: gray;  background-image: url('{{site.baseurl}}/media/{{page.url}}/background.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -133,30 +133,30 @@ layout: default
   <div class="row justify-content-center">
 
         {% if page.trailer %}
-        <a href="{{page.trailer}}&amp;rel=0" data-fancybox="media" data-thumb="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="col-sm-6 col-lg-4 mappic">
-          <img class="playBtn" src="{{site.baseurl}}/img/playbtn.svg" />
+        <a href="{{page.trailer}}&amp;rel=0" data-fancybox="media" data-thumb="{{site.baseurl}}/media/{{page.url}}/thumbnail.jpg" class="col-sm-6 col-lg-4 mappic">
+          <img class="playBtn" src="{{site.baseurl}}/media/playbtn.svg" />
           {% else %}
-          <a href="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" data-fancybox="media"
+          <a href="{{site.baseurl}}/media/{{page.url}}/thumbnail.jpg" data-fancybox="media"
             class="col-sm-6 col-lg-4 mappic">
             {% endif %}
-            <img src="{{site.baseurl}}/img/{{page.url}}/thumbnail.jpg" class="img-fluid">
+            <img src="{{site.baseurl}}/media/{{page.url}}/thumbnail.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
-            <img src="{{site.baseurl}}/img/{{page.url}}/pic_0.jpg" class="img-fluid">
+          <a href="{{site.baseurl}}/media/{{page.url}}/pic_0.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+            <img src="{{site.baseurl}}/media/{{page.url}}/pic_0.jpg" class="img-fluid">
           </a>
-          <a href="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
-            <img src="{{site.baseurl}}/img/{{page.url}}/pic_1.jpg" class="img-fluid">
+          <a href="{{site.baseurl}}/media/{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+            <img src="{{site.baseurl}}/media/{{page.url}}/pic_1.jpg" class="img-fluid">
           </a>
 
  
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
-          <img src="{{site.baseurl}}/img/{{page.url}}/pic_2.jpg" class="img-fluid">
+        <a href="{{site.baseurl}}/media/{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+          <img src="{{site.baseurl}}/media/{{page.url}}/pic_2.jpg" class="img-fluid">
         </a>
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
-          <img src="{{site.baseurl}}/img/{{page.url}}/pic_3.jpg" class="img-fluid">
+        <a href="{{site.baseurl}}/media/{{page.url}}/pic_3.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+          <img src="{{site.baseurl}}/media/{{page.url}}/pic_3.jpg" class="img-fluid">
         </a>
-        <a href="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
-          <img src="{{site.baseurl}}/img/{{page.url}}/pic_4.jpg" class="img-fluid">
+        <a href="{{site.baseurl}}/media/{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+          <img src="{{site.baseurl}}/media/{{page.url}}/pic_4.jpg" class="img-fluid">
         </a>
 
   </div>
@@ -174,12 +174,12 @@ layout: default
       <div class="modal-body text-center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal"
           data-bs-dismiss="modal">
-          <span class="fas fa-user fa-2x"></span>
+          <span class="fas fa-user fa-2x mb-3"></span>
           <h5>Singleplayer</h5>
         </button>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serverModal"
           data-bs-dismiss="modal">
-          <span class="fas fa-users fa-2x"></span>
+          <span class="fas fa-users fa-2x mb-3"></span>
           <h5>Multiplayer</h5>
         </button>
       </div>
@@ -241,14 +241,16 @@ layout: default
         <h5 class="modal-title text-center w-100">Download</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-center">
-        Here you can download the zip file of {{page.title}}.<br><br>
+      <div class="modal-body text-center download-modal-content">
+        Here you can download the zip file of {{page.title}}.<br>
         Make sure you unzip it into your saves directory to
         make Minecraft detect it.<br><br>
-        <a type="button" class="btn btn-success" href="{{page.java}}">
-          <span class="fas fa-download"></span>
-          Download ({{page.java-version}})
+        <a type="button" class="btn btn-success java-download-btn" href="{{page.java}}">
+          <i class="fas fa-download"></i>
+          Download ({{page.version}})
+          <div class="java-download-mc">For Minecraft {{page.java-version}}</div>
         </a>
+        <span class="tos-text">By downloading you accept the <a href="/tos">Terms of Service</a></span>
       </div>
     </div>
   </div>

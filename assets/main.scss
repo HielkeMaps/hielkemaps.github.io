@@ -18,7 +18,7 @@ html,body{
 	max-height: 60vh;
 	width: 100%;
 	object-fit: cover;
-	background-image: url('../../img/server.jpg');
+	background-image: url('../../media/server.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -275,4 +275,14 @@ div.row>div>div.row {
 
 	--f-thumb-border-radius: 6px !important;
 	--f-thumb-outline: 0 !important;
+}
+
+.tos-text{
+	display: block;
+	font-size: 15px;
+	margin-top:10px;
+}
+
+.download-modal-content{
+    padding: 10px 75px;
 }

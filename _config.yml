@@ -1,5 +1,5 @@
 title:              Hielke Maps
-email:              support@hielkemaps.com
+email:              hielkemaps@gmail.com
 description:        Minecraft Maps by Hielke.
 baseurl:            ""
 url:                ""
@@ -7,16 +7,13 @@ author:             "Hielke Maps"
 google_analytics:   "UA-163466455-1"
 
 # Social Profiles
-twitter_username:   HielkeMaps
+x_username:   HielkeMaps
 discord: 6RzKxbH
 
 # Build settings
 markdown:           kramdown
-paginate:           3
-paginate_path:      "/maps/:num/"
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
 
 collections:

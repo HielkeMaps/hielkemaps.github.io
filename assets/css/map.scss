@@ -1,0 +1,31 @@
+---
+---
+
+.java-download-btn{
+	padding: 15px 80px;
+	width: 100%;
+	position: relative;
+
+	i{
+		position: absolute;
+		font-size: 30px;
+		left: 10%;
+	}
+}
+
+
+.java-download-mc{
+	font-size: 10px;
+	font-weight: 600;
+}
+
+.java-download-btn:hover i {
+	animation: bouncy 1.3s infinite;
+}
+
+@keyframes bouncy {
+	from, to { transform: translateY(0); }
+	25% { transform: translateY(-5px) scale(0.9, 1.1); }
+	50% { transform: translateY(5px) scale(1.1, 0.9); }
+	75% { transform: translateY(-3px) scale(0.95, 1.05); }
+}

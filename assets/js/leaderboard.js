@@ -1,7 +1,7 @@
 // SPEEDRUN SCRIPT
 
 $(function () {
-    var pagetitle = $('#scriptData').data('title');
+    var pagetitle = $('#speedrunScript').data('title');
 
     //Get all maps
     var api_url = "https://www.speedrun.com/api/v1/games/pd0wpq21/levels";

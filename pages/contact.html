@@ -1,0 +1,51 @@
+---
+layout: page
+title: Contact Me
+description: Have questions? I have answers.
+background: "/media/contact.png"
+permalink: /contact
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto mb-5">
+      <p>
+        Want to get in touch? Fill out the form below to send me a message and I
+        will get back to you as soon as possible!
+      </p>
+      <form action="https://usebasin.com/f/db486153291f" method="POST">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="nameInput" placeholder="name" name="name" required />
+          <label for="nameInput">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="emailInput"
+            placeholder="test@test.com"
+            name="email"
+            required
+          />
+          <label for="emailInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="subjectInput" placeholder="subject" placeholder="subject" name="subject" required />
+          <label for="subjectInput">Subject</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            type="text"
+            class="form-control"
+            id="messageInput"
+            placeholder="Message"
+            name="message"
+            required
+          ></textarea>
+          <label for="messageInput">Message</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</div>
