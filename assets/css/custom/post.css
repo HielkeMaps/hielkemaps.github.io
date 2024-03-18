@@ -15,7 +15,7 @@
 }
 
 .side-div{
-    width: 400px;
+    width: 25%;
 }
 
 .left-div {
@@ -58,5 +58,7 @@
 
     .author-box {
         margin-top: 80px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
