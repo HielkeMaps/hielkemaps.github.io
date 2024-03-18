@@ -8,9 +8,13 @@
 }
 
 .mappic {
-	padding: 5px;
+	padding: 7px;
 	position: relative;
 	transition: transform .2s;
+
+	img{
+		border-radius: 15px;
+	}
 }
 
 .mappic:hover {
