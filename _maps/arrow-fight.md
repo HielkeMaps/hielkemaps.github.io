@@ -8,6 +8,7 @@ java: "/downloads/Arrow Fight.zip"
 java-rp: "/downloads/Arrow Fight Resource Pack.zip"
 java-version: "1.19.2"
 inserver: false
+hide: true
 version: 1.2.0
 ---
 Both teams will be sent to their team's island where they will quickly gather resources to prepare for the chaos that will soon strike them.

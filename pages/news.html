@@ -1,0 +1,36 @@
+---
+layout: default
+title: News
+description: "All the news, right here!"
+background: '/media/bg-map.jpg'
+permalink: /news/
+custom-css: news
+---
+
+<div class="fluid-container news">
+  <h1 class="text-center pt-5">News</h1>
+ 
+    {% for post in site.posts %}
+    <div class="container shadow-xl">
+    <div class="row gx-5">
+      <div class="col">
+
+        <h5>{{ post.title }}</h5>
+        <span class="date"> {{ post.date | date: "%B %-d, %Y" }}</span>
+        <p>
+          {{ post.excerpt }}
+        </p>
+
+        <a class="btn btn-outline-primary" href="{{ post.url }}">Read more</a>
+
+      </div>
+      <div class="col hidden md:block">
+        <div class="image-holder">
+          <img src="{{site.baseurl}}/media{{ post.url }}/background.jpg" alt="News thumbnail">
+        </div>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+

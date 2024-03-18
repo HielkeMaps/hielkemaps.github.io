@@ -172,12 +172,12 @@ layout: default
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#downloadModal"
+        <button type="button" class="btn btn-primary p-2 w-44" data-bs-toggle="modal" data-bs-target="#downloadModal"
           data-bs-dismiss="modal">
           <span class="fas fa-user fa-2x mb-3"></span>
           <h5>Singleplayer</h5>
         </button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serverModal"
+        <button type="button" class="btn btn-primary p-2 w-44" data-bs-toggle="modal" data-bs-target="#serverModal"
           data-bs-dismiss="modal">
           <span class="fas fa-users fa-2x mb-3"></span>
           <h5>Multiplayer</h5>
@@ -258,12 +258,9 @@ layout: default
 
 <!-- Comments -->
 <div class="container">
-  <div style="text-align: center;">
-    <h2>Comments</h2>
-  </div>
-  <div id="commento"></div>
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+  <hyvor-talk-comments website-id="10730" page-id="{{page.name}}"></hyvor-talk-comments>
 </div>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
 
 <!-- Lightbox -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>

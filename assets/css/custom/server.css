@@ -1,7 +1,3 @@
----
---- 
-
-//SERVER PAGE
 .server-page {
 	position: relative;
 	overflow:hidden;
@@ -73,4 +69,31 @@
 	  
 }:has(> body) { 
 	overflow: hidden;
+}
+
+#serverModal {
+
+	@media only screen and (max-width: 576px) {
+		.modal-dialog{
+			max-width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 577px) and (max-width: 992px) {
+		.modal-dialog{
+			max-width: 80%;
+		}
+	}
+
+	#serverDiv {
+		padding: 10px 20px 0px 20px;
+
+		.btn{
+			margin: 10px;
+		}
+
+		p{
+			margin-bottom: 0px;
+		}
+	}
 }

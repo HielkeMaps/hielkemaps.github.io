@@ -1,64 +1,3 @@
----
---- 
-
-@import "styles";
-
-html,body{
-	width: 100%;
-	height: 100%;
-	margin: 0px !important;
-}
-
-.badge-secondary {
-	color: #fff;
-	background-color: #6c757d;
-}
-
-#myVideo {
-	max-height: 60vh;
-	width: 100%;
-	object-fit: cover;
-	background-image: url('../../media/server.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#logo {
-	height: 25%;
-	min-height: 60px;
-}
-
-.image-container {
-	display: flex;
-	align-items: center;
-	height: 100%;
-	justify-content: center;
-}
-
-.figure {
-	margin-top: 0.5rem;
-}
-
-.card {
-	transition: transform .2s;
-}
-
-.badge {
-	font-style: normal;
-}
-
-.card:hover {
-	transition: all 0.3s ease;
-	cursor: pointer;
-	background-color: #e6e6e6;
-	transform: scale(1.03);
-}
-
-div.row>div>div.row {
-	margin-bottom: 15px;
-}
-
 .playBtn {
 	position: absolute;
 	top: 50%;
@@ -93,7 +32,6 @@ div.row>div>div.row {
 	min-width: 215px;
 }
 
-// RANK
 .rank_letter {
 	font-weight: bold;
 	font-size: 25px;
@@ -119,30 +57,6 @@ div.row>div>div.row {
 	color: #FF55FF;
 }
 
-.mapcard {
-	width: 21rem;
-	margin: 10px !important;
-	padding: 0px;
-}
-
-@media (max-width: 767px) {
-	.mapcard {
-		width: 45%;
-	}
-}
-
-@media (max-width: 600px) {
-	.mapcard {
-		width: 80%;
-	}
-}
-
-@media (max-width: 450px) {
-	.mapcard {
-		width: 92%;
-	}
-}
-
 .speedrunpanel {
 	box-shadow: 0 10px 25px -1px lightgray;
 	padding: 2rem;
@@ -156,7 +70,7 @@ div.row>div>div.row {
 	font-weight: bold;
 }
 
-.discordLink:hover {
+.discordLink {
 	color: #7289DA;
 }
 
@@ -170,6 +84,45 @@ div.row>div>div.row {
 #record_author_name {
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+#serverFrame{
+	height: 370px;
+	width: 100%; 
+	border-radius: 10px;
+}
+
+.java-download-btn{
+	padding: 15px 80px;
+	width: 100%;
+	position: relative;
+
+	i{
+		position: absolute;
+		font-size: 30px;
+		left: 10%;
+	}
+}
+
+.download-modal-content{
+    padding: 10px 75px;
+}
+
+
+.java-download-mc{
+	font-size: 10px;
+	font-weight: 600;
+}
+
+.java-download-btn:hover i {
+	animation: bouncy 1.3s infinite;
+}
+
+@keyframes bouncy {
+	from, to { transform: translateY(0); }
+	25% { transform: translateY(-5px) scale(0.9, 1.1); }
+	50% { transform: translateY(5px) scale(1.1, 0.9); }
+	75% { transform: translateY(-3px) scale(0.95, 1.05); }
 }
 
 @media only screen and (max-width: 576px) {
@@ -212,45 +165,12 @@ div.row>div>div.row {
 	}
 }
 
-#serverModal {
-
-	@media only screen and (max-width: 576px) {
-		.modal-dialog{
-			max-width: 100%;
-		}
-	}
-
-	@media only screen and (min-width: 577px) and (max-width: 992px) {
-		.modal-dialog{
-			max-width: 80%;
-		}
-	}
-
-	#serverFrame{
-		height: 370px;
-		width: 100%; 
-		border-radius: 10px;
-	}
-
-	#serverDiv {
-		padding: 10px 20px 0px 20px;
-
-		.btn{
-			margin: 10px;
-		}
-
-		p{
-			margin-bottom: 0px;
-		}
-	}
+.tos-text{
+	display: block;
+	font-size: 15px;
+	margin-top:10px;
 }
 
-//ABOUT page
-#bomb_battle_img {
-	margin-top: 10px;
-}
-
-// Fancybox custom styling
 .fancybox__toolbar {
 	padding: 16px !important;
 }
@@ -275,14 +195,4 @@ div.row>div>div.row {
 
 	--f-thumb-border-radius: 6px !important;
 	--f-thumb-outline: 0 !important;
-}
-
-.tos-text{
-	display: block;
-	font-size: 15px;
-	margin-top:10px;
-}
-
-.download-modal-content{
-    padding: 10px 75px;
 }

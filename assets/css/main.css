@@ -1,0 +1,172 @@
+@import url("./form.css");
+@import url("./navbar.css");
+@import url("./masthead.css");
+@import url("./footer.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--primary-color: #0085BE;
+	--primary-color-pressed:  #006b99;
+}
+
+a {
+	color: var(--primary-color);
+}
+
+a:hover{
+	color: var(--primary-color-pressed);
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px !important;
+	font-size: 18px;
+	color: #212529;
+	font-family: 'Arial', 'Times New Roman', serif;
+	scroll-behavior: smooth;
+}
+
+p {
+	line-height: 1.5;
+	margin: 30px 0;
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 800;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.btn {
+	border-radius: 10px !important;
+	font-size: 14px;
+	font-weight: 800;
+	padding: 18px 28px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-radius: 0;
+	transition: 0.2s ease-in-out 0s;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	&:hover {
+		transform: scale(1.03);
+	}
+}
+
+.btn-outline-primary {
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: white;
+		background-color: var(--primary-color-pressed);
+		border-color: var(--primary-color-pressed);
+	}
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: white;
+		background-color: var(--primary-color-pressed);
+		border-color: var(--primary-color-pressed);
+	}
+}
+
+.btn-lg {
+	font-size: 16px;
+	padding: 25px 35px;
+}
+
+::selection {
+	color: white;
+	background: var(--primary-color);
+	text-shadow: none;
+}
+
+img::selection {
+	color: white;
+	background: transparent;
+}
+
+.badge {
+	font-style: normal;
+}
+
+.badge-secondary {
+	color: white;
+	background-color: #6c757d;
+}
+
+.image-container {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+}
+
+.figure {
+	margin-top: 0.5rem;
+}
+
+.card {
+	transition: transform .2s;
+}
+
+.card:hover {
+	transition: all 0.3s ease;
+	cursor: pointer;
+	background-color: #e6e6e6;
+	transform: scale(1.03);
+}
+
+div.row>div>div.row {
+	margin-bottom: 15px;
+}
+
+.mapcard {
+	width: 21rem;
+	margin: 10px !important;
+	padding: 0px;
+}
+
+@media (max-width: 767px) {
+	.mapcard {
+		width: 45%;
+	}
+}
+
+@media (max-width: 600px) {
+	.mapcard {
+		width: 80%;
+	}
+}
+
+@media (max-width: 450px) {
+	.mapcard {
+		width: 92%;
+	}
+}
+
+#bomb_battle_img {
+	margin-top: 10px;
+}

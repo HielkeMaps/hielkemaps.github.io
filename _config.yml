@@ -4,7 +4,6 @@ description:        Minecraft Maps by Hielke.
 baseurl:            ""
 url:                ""
 author:             "Hielke Maps"
-google_analytics:   "UA-163466455-1"
 
 # Social Profiles
 x_username:   HielkeMaps
@@ -20,3 +19,5 @@ collections:
   maps:
     output: true
     permalink: /:collection/:path
+  posts:
+    permalink: /news/:year-:month-:day

@@ -1,4 +1,3 @@
-// Complete styles for main navbar toggler and hamburger menu
 .navbar-toggler {
   border: none;
   padding: 0;
@@ -28,7 +27,7 @@
         width: 100%;
         height: 4px;
         position: absolute;
-        background: $white;
+        background: white;
         border-radius: 2px;
         z-index: 1;
         transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1.0), all 0.2s ease-in-out;
@@ -84,6 +83,12 @@ body.navbar-open{
 
 /* Define styles for #mainNav */
 #mainNav {
+
+  #logo {
+    width: 50px;
+    padding-right: 10px;
+  }
+  
   position: absolute;
   background: #5f5f5f7e;
   font-family: sans-serif;
@@ -91,11 +96,12 @@ body.navbar-open{
   /* Define styles for .navbar-brand */
   .navbar-brand {
     font-weight: 800;
-    color: $white;
+    color: white;
+    font-size: 17px;
 
     &:focus,
     &:hover {
-      color: $gray-500;
+      color: #adb5bd;
     }
   }
 
@@ -107,11 +113,11 @@ body.navbar-open{
         font-weight: 800;
         letter-spacing: 1px;
         text-transform: uppercase;
-        color: $white;
+        color: white;
 
         &:focus,
         &:hover {
-          color: $gray-500;
+          color: #adb5bd;
         }
       }
     }
@@ -123,14 +129,14 @@ body.navbar-open{
 
     .navbar-brand {
       padding: 10px 20px;
-      color: $white;
+      color: white;
     }
 
     .navbar-nav {
       >li.nav-item {
         >a {
           padding: 10px 20px;
-          color: $white;
+          color: white;
         }
       }
     }
@@ -149,7 +155,7 @@ body.navbar-open{
         color:black !important;
 
         &:hover {
-          color: $primary !important;
+          color: var(--primary-color) !important;
         }
       }
 
@@ -157,7 +163,7 @@ body.navbar-open{
         color: black !important;
 
         &:hover {
-          color: $primary !important;
+          color: var(--primary-color) !important;
         }
       }
     }
@@ -197,6 +203,7 @@ body.navbar-open{
       img {
         max-width: 33%;
         max-height: 33vh;
+        display: inherit;
         height: auto;
       }
     }

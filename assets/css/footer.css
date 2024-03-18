@@ -1,8 +1,5 @@
-// Styling for the footer
 footer {
-  margin-top: 20px;
   padding: 20px 0px 5px 0px;
-  background-color: rgb(223, 223, 223);
 
   .list-inline {
     margin: 0;

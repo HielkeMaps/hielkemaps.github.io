@@ -1,46 +1,165 @@
 ---
 layout: default
 permalink: /index
+custom-js: homepage
+custom-css: homepage
 ---
-<header class="masthead">
-    
+
+<header class="masthead vh-100">
   <video autoplay muted loop playsinline id="myVideo">
-    <source src="media/video/clip.mp4" type="video/mp4">
+    <source src="{{" /media/video/clip.mp4" | relative_url }}" type="video/mp4" />
   </video>
 
-  <div class="overlay">
-    <div class="image-container">
-      <img src="media/logo.png" id="logo">
+  <div class="overlay home-overlay flex justify-center items-center relative">
+    <div class="flex justify-center items-center text-center flex-col">
+      <h1 class="text-4xl lg:text-6xl text-white">Leap into adventure</h1>
+      <p class="text-white text-lg">Discover the Ultimate Minecraft Parkour Maps</p>
+      <a class="btn btn-primary m-2 shadow-xl" href="{{" /maps" | relative_url }}">Browse maps</a>
     </div>
+
+    <a href="#features" class="absolute bottom-5 animate__animated animate__fadeIn animate__delay-2s view-more">
+      <div class="animate__animated animate-bounce p-3 w-16 h-16 rounded-full border-white border-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+          <path d="m19 14-7 7m0 0-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </a>
   </div>
 </header>
 
-<div class="container">
-  <p>Welcome to Hielke Maps, where Minecraft parkour takes center stage! As a passionate Minecraft content creator, I've crafted a collection of immersive and challenging parkour maps for both Bedrock and Java editions.</p>
-  <p>Whether you're a seasoned parkour pro or a newcomer to the game, my maps offer a thrilling and exciting experience. Explore new worlds, test your skills, and compete with others to reach the top of the leaderboards.</p>
-  <p>With innovative designs and obstacles that will keep you on your toes, you're guaranteed an unforgettable parkour experience. Browse my collection now and take your Minecraft skills to the next level!</p>
-</div>
-
-<div class="container-fluid">
-  <div class="card-deck row row-cols-xs-1 row-cols-md-3 row-cols-lg-4" style="justify-content: center;">
-    {% assign sorted = site.maps | sort: 'order' %}
-    {% for map in sorted %}
-    {% if map.bedrock or map.soon %}
-    {% unless map.hide %}
-    <div class="card mapcard" onclick="location.href='{{ map.url | prepend: site.baseurl | replace: '//', '/' }}';">
-      <img class="card-img-top" src="{{site.baseurl}}/media/{{map.url}}/thumbnail-compressed.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">{{ map.title }}</h4>
-        {% if map.bedrock %}<span class="badge badge-secondary">Bedrock</span>{% endif %}
-        {% if map.java or map.inserver %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %}
-        {% if map.soon %}<span class="badge badge-primary">{% if map.release-date %}
-          {{map.release-date | date: "%B %-d"}}{%else %}
-          Coming soon{% endif %}</span>{% endif %}
-        <p class="card-text">{{map.short-description}}</p>
+<div class="container" id="features">
+  <h2 class="text-center header">Features</h2>
+  <div class="row gx-4 gy-4 pt-2 pb-28 row-cols-1 row-cols-lg-3 text-center">
+    <div class="col hover:scale-105 duration-100">
+      <div class="feature shadow-xl">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <i class="fa-solid fa-rotate"></i>
+        </div>
+        <h5>Replayable</h5>
+        <p>
+          All maps keep track of your fastest time, replay them to improve your
+          time and get the highest rank!
+        </p>
       </div>
     </div>
-    {% endunless %}
-    {% endif %}
+    <div class="col hover:scale-105 duration-100">
+      <div class="feature shadow-xl">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <i class="fa-solid fa-face-laugh-beam"></i>
+        </div>
+        <h5>Fun for everyone</h5>
+        <p>
+          Whether you’re a beginner at parkour or a seasoned pro, my maps are
+          designed for everyone!
+        </p>
+      </div>
+    </div>
+    <div class="col hover:scale-105 duration-100">
+      <div class="feature shadow-xl">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <h5>Competitive</h5>
+        <p>
+          Do you believe you're the fastest around? Validate your speed by
+          submitting to the <a class="font-bold no-underline hover:underline text-black"  target="_blank" href="https://www.speedrun.com/mcm_hielke_maps">leaderboard!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fluid-container news-section" id="news">
+  <h2 class="text-center header">Latest news</h2>
+
+  <div class="container flex flex-row-reverse flex-wrap shadow-xl">
+    {% for post in site.posts limit:1 %}
+    <div class="row gx-5">
+      <div class="col">
+
+        <h5>{{ post.title }}</h5>
+        <span class="date"> {{ post.date | date: "%B %-d, %Y" }}</span>
+        <p>
+          {{ post.excerpt }}
+        </p>
+
+        <a class="btn btn-outline-primary" href="{{ post.url }}">Read more</a>
+
+      </div>
+      <div class="col hidden md:block">
+        <div class="image-holder">
+          <img src="{{site.baseurl}}/media{{ post.url }}/background.jpg" alt="News thumbnail">
+        </div>
+      </div>
+    </div>
     {% endfor %}
+  </div>
+  <div class="w-100 text-center items-center mt-4">
+    <a class="no-underline hover:underline text-purple-400 hover:text-purple-500" href="{{site.baseurl}}/news">More news</a>
+  </div>
+</div>
+
+<div class="container-fluid newsletter-section" id="newsletter">
+  <h2 class="text-center text-white header">Subscribe to my newsletter!</h2>
+  <div class="container mt-14">
+    <script async src="https://eocampaign1.com/form/b37f944e-ce35-11ee-8f7b-47bbc859c081.js"
+      data-form="b37f944e-ce35-11ee-8f7b-47bbc859c081"></script>
+  </div>
+</div>
+
+<div class="fluid-container faq-section" id="faq">
+  <h2 class="text-center header">FAQ</h2>
+
+  <div class="container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-4">
+      <div class="faq shadow-xl">
+        <h5>Are your maps multiplayer compatible?</h5>
+        <p>
+          Yes, all my maps are multiplayer compatible.
+          Invite your friends to join you in the map and see who can complete it the fastest!
+        </p>
+      </div>
+      <div class="faq shadow-xl">
+        <h5>How can I provide feedback or report issues?</h5>
+        <p>
+          If you encounter any issues or have feedback regarding a specific parkour map, you can reach out to me through the provided contact information on the website or social media handles.
+        </p>
+      </div>
+      <div class="faq shadow-xl">
+        <h5>Can I use your parkour maps for videos?</h5>
+        <p>
+          Yes! You are welcome to use my parkour maps for creating videos or streaming content.
+          I would appreciate it if you credit me as the map creator and provide a link to this website.
+        </p>
+      </div>
+      <div class="faq shadow-xl">
+        <h5>I downloaded the map, but commands don't work?</h5>
+        <p>
+          Big changes you're playing on a server and you have command blocks disabled.
+          Be sure to enable command blocks in your server.properties file.
+        </p>
+      </div>
+      <div class="faq shadow-xl">
+        <h5>Are there any age restrictions for playing your maps?</h5>
+        <p>
+          My maps are suitable for all ages, but some sections may be challenging and require precision and timing. 
+          Younger players may need adult assistance or guidance.
+        </p>
+      </div>
+      <div class="faq shadow-xl">
+        <h5>Can I play your maps on different Minecraft versions?</h5>
+        <p>
+          My maps are designed to be compatible with the latest version of Minecraft.
+          I do not maintain support for older versions, but you may be able to find older versions of my maps online from other sources.
+        </p>
+      </div>
+      <div class="faq shadow-xl">
+        <h5>Do you have plans to release more maps in the future?</h5>
+        <p>
+          Absolutely! I'm constantly working on new parkour projects. Keep an eye on the website and social media channels for announcements. Also be sure to join the newsletter!
+        </p>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,7 +1,5 @@
-// Styling for the masthead
 header.masthead {
-  // TIP: Background images are set within the HTML using inline CSS!
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   background: no-repeat center center;
   background-attachment: scroll;
   position: relative;
@@ -65,7 +63,7 @@ header.masthead {
       font-style: italic;
       font-family: 'Arial', 'Times New Roman', serif;;
       a {
-        color: $white;
+        color: white;
       }
     }
     @media only screen and (min-width: 768px) {
