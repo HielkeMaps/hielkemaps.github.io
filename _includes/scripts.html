@@ -17,14 +17,14 @@
 <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
 
 {% if page.java %}
-<script id="javaScript" src="{{" /assets/js/java.js" | relative_url}}" data-url="{{page.java}}"></script>
+<script id="javaScript" src="{{ site.baseurl }}/assets/js/java.js" | relative_url}}" data-url="{{page.java}}"></script>
 {% endif %}
 
 {% if page.speedrunnable %}
-<script id="speedrunScript" src="{{" /assets/js/leaderboard.js" | relative_url}}" data-title="{{page.title}}"></script>
+<script id="speedrunScript" src="{{ site.baseurl }}/assets/js/leaderboard.js" data-title="{{page.title}}"></script>
 {% endif %}
 
 {% if page.isranked %}
-<script src="{{" /assets/js/rank.js" | relative_url}}"></script>
+<script src="{{ site.baseurl }}/assets/js/rank.js" | relative_url}}"></script>
 {% endif %}
 {% endif %}
