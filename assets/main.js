@@ -5,8 +5,6 @@ $(document).on('hidden.bs.modal', function () {
 	}
 });
 
-var rellax = new Rellax('.rellax', {  center:true });
-
 function toggleMobileMenu() {
     var $toggleBtn = $('[data-toggle="toggle-menu"]');
     var $navMenuCont = $($toggleBtn.data('target'));
