@@ -8,8 +8,6 @@ $(document).on("hidden.bs.modal", function () {
 const lazyLoadComments = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log("loading comments!");
-  
         const script = document.createElement("script");
         script.src = "https://talk.hyvor.com/embed/embed.js";
         script.type = "module";
