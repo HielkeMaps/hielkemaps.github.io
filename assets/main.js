@@ -1,61 +1,84 @@
 // Bootstrap hack to make sure you can't scroll the page when any modal is open
-$(document).on('hidden.bs.modal', function () {
-	if ($('.modal.show').length) {
-		$('body').addClass('modal-open');
-	}
+$(document).on("hidden.bs.modal", function () {
+  if ($(".modal.show").length) {
+    $("body").addClass("modal-open");
+  }
 });
 
+const lazyLoadComments = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log("loading comments!");
+  
+        const script = document.createElement("script");
+        script.src = "https://talk.hyvor.com/embed/embed.js";
+        script.type = "module";
+        document.body.appendChild(script);
+  
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  
+  const lazyCommentsDiv = document.querySelector(".lazy-comments");
+  if (lazyCommentsDiv) {
+    const observer = new IntersectionObserver(lazyLoadComments);
+    observer.observe(lazyCommentsDiv);
+  }
+
 function toggleMobileMenu() {
-    var $toggleBtn = $('[data-toggle="toggle-menu"]');
-    var $navMenuCont = $($toggleBtn.data('target'));
-    var isOpen = $toggleBtn.data('isopen');
-    var isAnimating = $navMenuCont.is(':animated');
+  var $toggleBtn = $('[data-toggle="toggle-menu"]');
+  var $navMenuCont = $($toggleBtn.data("target"));
+  var isOpen = $toggleBtn.data("isopen");
+  var isAnimating = $navMenuCont.is(":animated");
 
-    if (isAnimating) {
-        return;
-    }
+  if (isAnimating) {
+    return;
+  }
 
-    if (isOpen) {
-        closeMobileMenu();
-        $toggleBtn.data('isopen', false);
-    } else {
-        openMobileMenu();
-        $toggleBtn.data('isopen', true);
-    }
+  if (isOpen) {
+    closeMobileMenu();
+    $toggleBtn.data("isopen", false);
+  } else {
+    openMobileMenu();
+    $toggleBtn.data("isopen", true);
+  }
 
-    function openMobileMenu() {
-        $('body').addClass('navbar-open');
-        $('.hamburger').addClass('active');
-        $('.navbar-collapse').css('backdrop-filter', 'blur(15px)');
+  function openMobileMenu() {
+    $("body").addClass("navbar-open");
+    $(".hamburger").addClass("active");
+    $(".navbar-collapse").css("backdrop-filter", "blur(15px)");
 
-        $navMenuCont.css('display', 'block');
-        $('#mainNav').css('backdrop-filter', 'none');
+    $navMenuCont.css("display", "block");
+    $("#mainNav").css("backdrop-filter", "none");
 
-        let $navItems = $navMenuCont.find('.nav-item');
-        $navItems.removeClass('animate__fadeOutUp').addClass('animate__fadeInDown');
-        $navMenuCont.animate({ 'height': '100vh' ,'opacity': '1'}, 350);
-    }
+    let $navItems = $navMenuCont.find(".nav-item");
+    $navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
+    $navMenuCont.animate({ height: "100vh", opacity: "1" }, 350);
+  }
 
-    function closeMobileMenu() {
-        $('body').removeClass('navbar-open');
-        $('.hamburger').removeClass('active');
+  function closeMobileMenu() {
+    $("body").removeClass("navbar-open");
+    $(".hamburger").removeClass("active");
 
-        let $navItems = $navMenuCont.find('.nav-item');
-        $navItems.removeClass('animate__fadeInDown').addClass('animate__fadeOutUp');
-		
-        $navMenuCont.removeClass('slide-in').delay(100).animate({ 'height': '0vh','opacity': '0' }, 350, function () {
-            $navMenuCont.css('display', 'none');
+    let $navItems = $navMenuCont.find(".nav-item");
+    $navItems.removeClass("animate__fadeInDown").addClass("animate__fadeOutUp");
 
-            $('.navbar-collapse').css('backdrop-filter', 'none');
-            $('#mainNav').css('backdrop-filter', 'blur(5px)');
-        });
-    }
+    $navMenuCont
+      .removeClass("slide-in")
+      .delay(100)
+      .animate({ height: "0vh", opacity: "0" }, 350, function () {
+        $navMenuCont.css("display", "none");
+
+        $(".navbar-collapse").css("backdrop-filter", "none");
+        $("#mainNav").css("backdrop-filter", "blur(5px)");
+      });
+  }
 }
 
-const hideNav = new URLSearchParams(window.location.search).get('hideNav')
-if(hideNav){
-    $('nav').hide();
+const hideNav = new URLSearchParams(window.location.search).get("hideNav");
+if (hideNav) {
+  $("nav").hide();
 }
 
-
-$('[data-toggle="toggle-menu"]').on('click', toggleMobileMenu);
+$('[data-toggle="toggle-menu"]').on("click", toggleMobileMenu);
