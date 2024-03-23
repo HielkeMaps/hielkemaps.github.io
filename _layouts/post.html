@@ -32,8 +32,9 @@ layout: default
   </div>
   <div class="text-div">
     {{ content }}
-    <div class="comments lazy-comments">
-      <hyvor-talk-comments website-id="10730" page-id="{{page.name}}"></hyvor-talk-comments>
+    <div class="comments">
+      <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+      <hyvor-talk-comments website-id="10730" page-id="{{page.url}}"></hyvor-talk-comments>
     </div>
   </div>
   <div class="right-div side-div">
