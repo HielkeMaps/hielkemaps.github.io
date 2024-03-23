@@ -257,8 +257,9 @@ layout: default
 </div>
 
 <!-- Comments -->
-<div class="container lazy-comments">
-  <hyvor-talk-comments website-id="10730" page-id="{{page.url}}"></hyvor-talk-comments>
+<div class="container">
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+  <hyvor-talk-comments website-id="10730" page-url="{{ page.url | absolute_url }}" page-id="{{page.url}}" loading="lazy"></hyvor-talk-comments>
 </div>
 
 <!-- Lightbox -->

@@ -34,7 +34,7 @@ layout: default
     {{ content }}
     <div class="comments">
       <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-      <hyvor-talk-comments website-id="10730" page-id="{{page.url}}"></hyvor-talk-comments>
+      <hyvor-talk-comments website-id="10730" page-url="{{ page.url | absolute_url }}" page-id="{{page.url}}" loading="default"></hyvor-talk-comments>
     </div>
   </div>
   <div class="right-div side-div">

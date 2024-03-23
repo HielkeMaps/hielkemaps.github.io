@@ -5,25 +5,6 @@ $(document).on("hidden.bs.modal", function () {
   }
 });
 
-const lazyLoadComments = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const script = document.createElement("script");
-        script.src = "https://talk.hyvor.com/embed/embed.js";
-        script.type = "module";
-        document.body.appendChild(script);
-  
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-  
-  const lazyCommentsDiv = document.querySelector(".lazy-comments");
-  if (lazyCommentsDiv) {
-    const observer = new IntersectionObserver(lazyLoadComments);
-    observer.observe(lazyCommentsDiv);
-  }
-
 function toggleMobileMenu() {
   var $toggleBtn = $('[data-toggle="toggle-menu"]');
   var $navMenuCont = $($toggleBtn.data("target"));
