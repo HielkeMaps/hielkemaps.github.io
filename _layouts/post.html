@@ -5,7 +5,7 @@ layout: default
 <!-- Page Header -->
 <header class="masthead">
   <div class="absolute w-100 h-100 -left-0 top-0 -z-10"
-    style="filter:brightness(0.6); background-size:cover; background-color: gray; background-image: url('{{site.baseurl}}/media/{{page.url}}/background.jpg')">
+    style="filter:brightness(0.6); background-size:cover; background-color: gray; background-image: url('{{site.baseurl}}/media{{page.url}}/background.jpg')">
   </div>
   <div class="overlay"></div>
   <div class="container">
@@ -34,7 +34,9 @@ layout: default
     {{ content }}
     <div class="comments">
       <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-      <hyvor-talk-comments website-id="10730" page-url="{{ page.url | absolute_url }}" page-id="{{page.url}}" loading="default"></hyvor-talk-comments>
+      <hyvor-talk-comments website-id="10730" page-url="{{ site.baseurl }}{{ page.url }}" page-id="{{page.url}}"
+        loading="default">
+      </hyvor-talk-comments>
     </div>
   </div>
   <div class="right-div side-div">
