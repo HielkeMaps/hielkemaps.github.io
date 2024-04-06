@@ -61,3 +61,38 @@ if (hideNav) {
 }
 
 $('[data-toggle="toggle-menu"]').on("click", toggleMobileMenu);
+
+// Comments reaction particles :)
+let jsConfetti = new JSConfetti();
+const comments = document.querySelector("hyvor-talk-comments");
+if (comments) {
+  comments.addEventListener("reaction", function (e) {
+    switch (e.detail.type) {
+      case "superb":
+        jsConfetti.addConfetti({
+          emojis: ["🔥"],
+        });
+        break;
+      case "love":
+        jsConfetti.addConfetti({
+          emojis: ["❤️"],
+        });
+        break;
+      case "wow":
+        jsConfetti.addConfetti({
+          emojis: ["😲"],
+        });
+        break;
+      case "sad":
+        jsConfetti.addConfetti({
+          emojis: ["😢"],
+        });
+        break;
+      case "laugh":
+        jsConfetti.addConfetti({
+          emojis: ["😂"],
+        });
+        break;
+    }
+  });
+}

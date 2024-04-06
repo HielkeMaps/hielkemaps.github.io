@@ -1,0 +1,45 @@
+---
+layout: default
+permalink: /upcoming
+custom-css: upcoming
+custom-js: upcoming
+youtube-id: "itv5nPs4I7c"
+---
+
+
+<script async src="https://www.youtube.com/iframe_api"></script>
+
+<div class="fluid-container upcoming">
+    <div class="row">
+        <div class="col-xl-8">
+            <div class="videoWrapper shadow-xl">
+                {% if page.youtube-id %}
+                <iframe src="https://www.youtube.com/embed/{{page.youtube-id}}?enablejsapi=1" frameborder="0"></iframe>
+                <div id="countdownOverlay">
+                    <div class="frame">
+                        <h1>Reveal in:</h1>
+                        <h1 id="countdownText"></h1>
+                        <div class="counter">
+                            <button class="btn" id="hypeBtn"">Hype!</button>
+                            <div class="triangle"></div>
+                            <div id="countBox" class="countBox">
+                                <p id="hypeCount" class="count">...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                No youtube-id :(
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div id="comments-container" class="shadow-xl">
+                <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+                <hyvor-talk-comments class="hyvor-comments" website-id="10730" page-url="{{ site.baseurl }}{{ page.url }}"
+                    page-id="{{page.url}}" loading="manual">
+                </hyvor-talk-comments>
+            </div>
+        </div>
+    </div>
+</div>

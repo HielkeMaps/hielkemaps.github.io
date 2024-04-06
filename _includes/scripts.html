@@ -4,12 +4,13 @@
   integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 
 <script src="{{'/assets/main.js' | relative_url }}"></script>
 
 {% if page.custom-js %}
 {% for js_file in page.custom-js %}
-<script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/custom/{{ js_file }}.js"></script>
 {% endfor %}
 {% endif %}
 
