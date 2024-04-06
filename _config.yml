@@ -1,15 +1,15 @@
-title:              Hielke Maps
-email:              contact@hielkemaps.com
-description:        Minecraft Maps by Hielke.
-author:             "Hielke Maps"
+title: Hielke Maps
+email: contact@hielkemaps.com
+description: Minecraft Maps by Hielke.
+author: "Hielke Maps"
 domain: "https://hielkemaps.com"
 
 # Social Profiles
-x_username:   HielkeMaps
+x_username: HielkeMaps
 discord: 6RzKxbH
 
 # Build settings
-markdown:           kramdown
+markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
