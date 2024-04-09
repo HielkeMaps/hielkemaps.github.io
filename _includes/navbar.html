@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container-fluid">
 
-    <a class="navbar-brand flex items-center align-middle navbar-title" href="{{ site.url }}">
-      <img src="{{ site.url }}/media/logo.png" class="pointer-events-none" id="logo" />
+    <a class="navbar-brand flex items-center align-middle navbar-title" href="{{ site.baseurl }}/">
+      <img src="{{ site.baseurl }}/media/logo.png" class="pointer-events-none" id="logo" />
       {{ site.title | escape }}
     </a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="toggle-menu" data-target="#navbarResponsive">
@@ -18,19 +18,19 @@
     <div class="navbar-collapse justify-content-end" id="navbarResponsive">
       <ul class="navbar-nav">
         <li class="nav-item animate__animated" id="logo-item">
-          <a class="nav-link" href="{{ site.url }}"><img src="{{ site.url }}/media/logo.png" alt="Logo"></a>
+          <a class="nav-link" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/media/logo.png" alt="Logo"></a>
         </li>
         <li class="nav-item animate__animated">
-          <a class="nav-link" href="{{ site.url }}">Home</a>
+          <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
         </li>
         <li class="nav-item animate__animated">
-          <a class="nav-link" href="{{ site.url }}/maps">Maps</a>
+          <a class="nav-link" href="{{ site.baseurl }}/maps">Maps</a>
         </li>
         <li class="nav-item animate__animated">
-          <a class="nav-link" href="{{ site.url }}/news">News</a>
+          <a class="nav-link" href="{{ site.baseurl }}/news">News</a>
         </li>
         <li class="nav-item animate__animated">
-          <a class="nav-link" href="{{ site.url }}/contact"">Contact</a>
+          <a class="nav-link" href="{{ site.baseurl }}/contact"">Contact</a>
         </li>
       </ul>
     </div>
