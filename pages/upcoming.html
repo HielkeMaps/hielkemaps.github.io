@@ -3,21 +3,22 @@ layout: default
 permalink: /upcoming
 custom-css: upcoming
 custom-js: upcoming
-youtube-id: "itv5nPs4I7c"
+youtube-id: "I9WRpevGDcU"
+date: 2024-04-07 14:00:00
 ---
+<!-- date: 2024-04-07 14:00:00 -->
 
-
-<script async src="https://www.youtube.com/iframe_api"></script>
-
+<span id="countdownDate" data-countdown-date="{{page.date}}"></span>
 <div class="fluid-container upcoming">
     <div class="row">
         <div class="col-xl-8">
             <div class="videoWrapper shadow-xl">
                 {% if page.youtube-id %}
-                <iframe src="https://www.youtube.com/embed/{{page.youtube-id}}?enablejsapi=1" frameborder="0"></iframe>
+                <iframe id="player" src="https://www.youtube.com/embed/{{page.youtube-id}}?autoplay=1&mute=1&enablejsapi=1" allow="autoplay" frameborder="0"></iframe>
+                <script async src="https://www.youtube.com/iframe_api"></script>
                 <div id="countdownOverlay">
                     <div class="frame">
-                        <h1>Reveal in:</h1>
+                        <h1>Reveal starts in:</h1>
                         <h1 id="countdownText"></h1>
                         <div class="counter">
                             <button class="btn" id="hypeBtn"">Hype!</button>

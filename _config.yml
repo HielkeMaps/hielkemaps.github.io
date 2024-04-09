@@ -8,11 +8,17 @@ domain: "https://hielkemaps.com"
 x_username: HielkeMaps
 discord: 6RzKxbH
 
+timezone: UTC
+
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+sass:
+  sass_dir: /assets/css
+  sourcemap: never
 
 collections:
   maps:

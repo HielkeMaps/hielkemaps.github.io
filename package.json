@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm-run-all --parallel jekyll tailwind",
     "jekyll": "bundle exec jekyll serve",
-    "tailwind": "npx tailwindcss -i ./assets/css/main.css -o ./assets/dist-style.css --watch"
+    "tailwind": "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind-output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
-  },
-  "dependencies": {
-    "npm-run-all": "^4.1.5"
   }
 }

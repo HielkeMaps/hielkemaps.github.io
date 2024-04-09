@@ -1,9 +1,13 @@
-$(function () {
-  // Show hype tooltip
-  $('[data-toggle="tooltip"]').tooltip();
+var player;
 
-  // Set the date we're counting down to
-  const countDownDate = new Date(new Date("April 7, 2024 6:12:00").toLocaleString("en-US", {timeZone: "UTC"}));
+function onYouTubeIframeAPIReady() {
+  console.log("iFrame ready!!!!");
+  player = new YT.Player("player");
+}
+
+$(function () {
+  const dateStr = $('#countdownDate').data("countdown-date");
+  const countDownDate = new Date(new Date(dateStr).toLocaleString("en-US", {timeZone: "UTC",}));
   const countdownOverlay = $("#countdownOverlay");
   const countdownText = $("#countdownText");
 
@@ -42,10 +46,10 @@ $(function () {
     countdownText.html(countdownString);
 
     // If the count down is finished, write some text
-    if (distance < 0) {
+    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
       clearInterval(countdown);
-      countdownText.html("");
-      countdownOverlay.hide();
+      countdownOverlay.fadeOut(1500);
+      player.unMute();
     }
   }
 
