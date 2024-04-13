@@ -6,7 +6,7 @@ function onYouTubeIframeAPIReady() {
 
 $(function () {
 
-  const dateStr = document.getElementById( 'countdownDate' ).getAttribute( 'data-countdown-date' )
+  const dateStr = $("#countdownDate").data("countdown-date");
   const countDownDate = new Date(dateStr);
   const countdownOverlay = $("#countdownOverlay");
   const countdownText = $("#countdownText");
