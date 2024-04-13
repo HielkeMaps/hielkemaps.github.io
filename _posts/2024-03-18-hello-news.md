@@ -17,3 +17,5 @@ Additionally, the homepage has been refreshed with a new look and feel. Go and c
 Lastly, I've launched a new newsletter to keep you in the loop with news. [Subscribe]({{ site.baseurl }}/#newsletter) to stay connected with our little community.
 
 Thanks for your support, and I look forward to sharing more news soon! 😉
+
+<br/>

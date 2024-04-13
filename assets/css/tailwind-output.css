@@ -235,6 +235,10 @@
   height: 4rem
 }
 
+.h-\[60vw\] {
+  height: 60vw
+}
+
 .w-16 {
   width: 4rem
 }
@@ -409,6 +413,10 @@
 @media (min-width: 768px) {
   .md\:block {
     display: block
+  }
+
+  .md\:h-\[470px\] {
+    height: 470px
   }
 }
 

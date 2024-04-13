@@ -1,13 +1,12 @@
 var player;
 
 function onYouTubeIframeAPIReady() {
-  console.log("iFrame ready!!!!");
   player = new YT.Player("player");
 }
 
 $(function () {
-  const dateStr = $('#countdownDate').data("countdown-date");
-  const countDownDate = new Date(new Date(dateStr).toLocaleString("en-US", {timeZone: "UTC",}));
+  const dateStr = $("#countdownDate").data("countdown-date");
+  const countDownDate = new Date(dateStr);
   const countdownOverlay = $("#countdownOverlay");
   const countdownText = $("#countdownText");
 
@@ -18,7 +17,6 @@ $(function () {
   const distance = countDownDate - now;
   if (distance > 0) {
     countdownOverlay.css("display", "flex");
-    console.log("Show countdown!");
   }
 
   function updateCountDown() {
@@ -45,8 +43,8 @@ $(function () {
     countdownString += seconds + "s ";
     countdownText.html(countdownString);
 
-    // If the count down is finished, write some text
-    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+    // 5 minutes,
+    if (days == 0 && hours == 0 && minutes == 5 && seconds == 45) {
       clearInterval(countdown);
       countdownOverlay.fadeOut(1500);
       player.unMute();
@@ -112,31 +110,43 @@ $(function () {
   updateCommentsHeight();
 });
 
-customElements.whenDefined("hyvor-talk-comments").then(() => {
-  const comments = document.querySelector("hyvor-talk-comments");
-  comments.settings = {
-    top_widget: "none",
-    voting: {
-      type: "up", // 'both' | 'up' | 'down'
-      voters: false, // show voters list
-    },
-    realtime: {
-      on: true, // enable realtime updates
-      count: true, // show online count
-      users: true, // show online users list
-      typing: "on_with_typer", // show if someone is typing = 'off' | 'on_without_typer' | 'on_with_typer'
-    },
-    editor: {
-      emoji: true,
-      images: false,
-      gifs: false,
-      embeds: true, // link embedding
-      mentions: true,
-      code_blocks: false,
-      blockquotes: false,
-      inline_styles: true, // bold, italic, inline code, strike, spoiler
-      links: false,
-    },
-  };
-  comments.load();
-});
+const isIframe = new URLSearchParams(window.location.search).get("iframe");
+if (isIframe) {
+  $("#comments-container").remove();
+  $(".upcoming").css( "padding", "0" );
+
+  document.querySelector("footer").style = "display: none";
+  document.body.style.overflow = "hidden";
+  document.body.style.backgroundColor = "transparent";
+}else{
+
+  //Not iframe, show comments
+  customElements.whenDefined("hyvor-talk-comments").then(() => {
+    const comments = document.querySelector("hyvor-talk-comments");
+    comments.settings = {
+      top_widget: "none",
+      voting: {
+        type: "up", // 'both' | 'up' | 'down'
+        voters: false, // show voters list
+      },
+      realtime: {
+        on: true, // enable realtime updates
+        count: true, // show online count
+        users: true, // show online users list
+        typing: "on_with_typer", // show if someone is typing = 'off' | 'on_without_typer' | 'on_with_typer'
+      },
+      editor: {
+        emoji: true,
+        images: false,
+        gifs: false,
+        embeds: true, // link embedding
+        mentions: true,
+        code_blocks: false,
+        blockquotes: false,
+        inline_styles: true, // bold, italic, inline code, strike, spoiler
+        links: false,
+      },
+    };
+    comments.load();
+  });
+}

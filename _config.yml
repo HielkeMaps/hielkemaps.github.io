@@ -8,8 +8,6 @@ domain: "https://hielkemaps.com"
 x_username: HielkeMaps
 discord: 6RzKxbH
 
-timezone: UTC
-
 # Build settings
 markdown: kramdown
 plugins:

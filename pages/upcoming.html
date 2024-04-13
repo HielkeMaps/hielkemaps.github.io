@@ -3,10 +3,9 @@ layout: default
 permalink: /upcoming
 custom-css: upcoming
 custom-js: upcoming
-youtube-id: "I9WRpevGDcU"
-date: 2024-04-07 14:00:00
+youtube-id: "l4afpsnRcZA"
+date: 2024-04-20 18:00:00 +0000
 ---
-<!-- date: 2024-04-07 14:00:00 -->
 
 <span id="countdownDate" data-countdown-date="{{page.date}}"></span>
 <div class="fluid-container upcoming">
@@ -18,7 +17,7 @@ date: 2024-04-07 14:00:00
                 <script async src="https://www.youtube.com/iframe_api"></script>
                 <div id="countdownOverlay">
                     <div class="frame">
-                        <h1>Reveal starts in:</h1>
+                        <h1 id="revealText">New map reveal in:</h1>
                         <h1 id="countdownText"></h1>
                         <div class="counter">
                             <button class="btn" id="hypeBtn"">Hype!</button>
@@ -30,14 +29,14 @@ date: 2024-04-07 14:00:00
                     </div>
                 </div>
                 {% else %}
-                No youtube-id :(
+                <img src="{{ site.baseurl }}/media/upcoming.jpg" class="absolute w-100 h-100" />
                 {% endif %}
             </div>
         </div>
         <div class="col-xl-4">
             <div id="comments-container" class="shadow-xl">
                 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-                <hyvor-talk-comments class="hyvor-comments" website-id="10730" page-url="{{ site.baseurl }}{{ page.url }}"
+                <hyvor-talk-comments class="hyvor-comments" website-id="10730" page-url="{{site.domain}}{{ page.url }}"
                     page-id="{{page.url}}" loading="manual">
                 </hyvor-talk-comments>
             </div>
