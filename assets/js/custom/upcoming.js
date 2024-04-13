@@ -20,6 +20,7 @@ $(function () {
   if (timeDiff > fiveMinutesAnd45Seconds) {
     countdownOverlay.css("display", "flex");
     $(".hyvor-comments").remove();
+    $(".youtube-comments").show();
   }
 
   function updateCountDown() {
