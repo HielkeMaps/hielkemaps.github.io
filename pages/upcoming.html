@@ -4,7 +4,7 @@ permalink: /upcoming
 custom-css: upcoming
 custom-js: upcoming
 youtube-id: "l4afpsnRcZA"
-date: 2024-04-20 18:00:00 +0000
+date: 2024-04-20 18:05:45 +0000
 ---
 
 <span id="countdownDate" data-countdown-date="{{page.date}}"></span>
@@ -39,6 +39,9 @@ date: 2024-04-20 18:00:00 +0000
                 <hyvor-talk-comments class="hyvor-comments" website-id="10730" page-url="{{site.domain}}{{ page.url }}"
                     page-id="{{page.url}}" loading="manual">
                 </hyvor-talk-comments>
+                {% if page.youtube-id %}
+                    <iframe class="youtube-comments" src="https://www.youtube.com/live_chat?v={{page.youtube-id}}&embed_domain={{site.domain}}&light_theme=1" frameborder="0"></iframe>
+                {% endif %}
             </div>
         </div>
     </div>

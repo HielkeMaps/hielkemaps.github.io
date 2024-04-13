@@ -138,17 +138,25 @@ h1 {
   padding-right: 1rem;
   padding-top: 30px;
 
+
+
   #comments-container {
+
+    .youtube-comments {
+      width: 100%;
+      min-height: 500px;
+    }
+    
     .hyvor-comments {
       width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
     }
 
     overflow: hidden;
     display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
     align-content: center;
     max-width: 500px;
     background-color: white;

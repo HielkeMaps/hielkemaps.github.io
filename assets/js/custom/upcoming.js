@@ -14,9 +14,12 @@ $(function () {
   const hypeCounter = $("#hypeCount");
 
   const now = new Date().getTime();
-  const distance = countDownDate - now;
-  if (distance > 0) {
+  const timeDiff = countDownDate - now;
+  const fiveMinutesAnd45Seconds = 5 * 60 * 1000 + 45 * 1000;
+
+  if (timeDiff > fiveMinutesAnd45Seconds) {
     countdownOverlay.css("display", "flex");
+    $(".hyvor-comments").remove();
   }
 
   function updateCountDown() {
@@ -43,8 +46,8 @@ $(function () {
     countdownString += seconds + "s ";
     countdownText.html(countdownString);
 
-    // 5 minutes,
-    if (days == 0 && hours == 0 && minutes == 5 && seconds == 45) {
+    // Show video when less than 5 minute and 45 seconds left (Video countdown)
+    if (timeDiff < fiveMinutesAnd45Seconds) {
       clearInterval(countdown);
       countdownOverlay.fadeOut(1500);
       player.unMute();
