@@ -5,9 +5,13 @@ function onYouTubeIframeAPIReady() {
 }
 
 $(function () {
+  
+  const dateString = $("#countdownDate").data("countdown-date");
+  const [datePart, timePart] = dateString.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const [hour, minute, second] = timePart.split(":");
+  const countDownDate = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
 
-  const dateStr = $("#countdownDate").data("countdown-date");
-  const countDownDate = new Date(dateStr);
   const countdownOverlay = $("#countdownOverlay");
   const countdownText = $("#countdownText");
 
