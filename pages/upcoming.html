@@ -13,8 +13,6 @@ date: 2024-04-20 18:05:45 +0000
         <div class="col-xl-8">
             <div class="videoWrapper shadow-xl">
                 {% if page.youtube-id %}
-                <iframe id="player" src="https://www.youtube.com/embed/{{page.youtube-id}}?autoplay=1&mute=1&enablejsapi=1" allow="autoplay" frameborder="0"></iframe>
-                <script async src="https://www.youtube.com/iframe_api"></script>
                 <div id="countdownOverlay">
                     <div class="frame">
                         <h1 id="revealText">New map reveal in:</h1>
@@ -28,6 +26,8 @@ date: 2024-04-20 18:05:45 +0000
                         </div>
                     </div>
                 </div>
+                <iframe id="player" src="https://www.youtube.com/embed/{{page.youtube-id}}?autoplay=1&mute=1&enablejsapi=1" allow="autoplay" frameborder="0"></iframe>
+                <script async src="https://www.youtube.com/iframe_api"></script>
                 {% else %}
                 <img src="{{ site.baseurl }}/media/upcoming.jpg" class="absolute w-100 h-100" />
                 {% endif %}
