@@ -15,12 +15,19 @@ $(function () {
 
   const now = new Date().getTime();
   const timeDiff = countDownDate - now;
+
+  // Reveal starts 5 minutes and 45 sec after YouTube video starts
   const fiveMinutesAnd45Seconds = 5 * 60 * 1000 + 45 * 1000;
+  const oneMinute = 60 * 1000;
+
+  // Show youtube comments until about 1 minutes after reveal started
+  if(timeDiff > -oneMinute){
+    $(".hyvor-comments").remove();
+    $(".youtube-comments").show();
+  }
 
   if (timeDiff > fiveMinutesAnd45Seconds) {
     countdownOverlay.css("display", "flex");
-    $(".hyvor-comments").remove();
-    $(".youtube-comments").show();
   }
 
   function updateCountDown() {
