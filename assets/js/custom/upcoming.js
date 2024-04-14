@@ -90,7 +90,7 @@ $(function () {
 
   setInterval(() => {
     getHype();
-  }, 5000);
+  }, 1000);
 
   function updateHype() {
     hypeCounter.html(hypeCount);
