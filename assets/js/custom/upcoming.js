@@ -76,7 +76,7 @@ $(function () {
 
   function getHype() {
     $.ajax({
-      url: "https://count.cab/get/EgNI12tn6q",
+      url: "https://api.hielkemaps.com/counter/get",
       dataType: "json",
       success: function (response) {
         if (response.count > hypeCount) {
@@ -102,7 +102,7 @@ $(function () {
 
   hypeBtn.on("click", function () {
     $.ajax({
-      url: "https://count.cab/hit/EgNI12tn6q",
+      url: "https://api.hielkemaps.com/counter/increase",
       dataType: "json",
     });
     hypeCount++;
