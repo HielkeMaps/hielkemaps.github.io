@@ -2,7 +2,7 @@
 layout: map
 title: "Parkour Egg"
 date: 2023-04-18
-order: 0
+order: 1
 short-description: "Climb the colorful Parkour Egg to the top!"
 java: "/downloads/Parkour Egg.zip"
 java-version: "1.20.4"
