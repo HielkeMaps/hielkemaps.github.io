@@ -67,6 +67,8 @@ layout: default
         </tbody>
       </table>
       {% endif %}
+
+      {% if page.java or page.bedrock or page.inserver %}
       <hr>
       <div class="text-center">
         {% if page.bedrock %}
@@ -97,6 +99,7 @@ layout: default
         {% endif %}
       </div>
       <hr>
+      {% endif %}
     </div>
 
     {% if page.speedrunnable %}
