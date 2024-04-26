@@ -17,7 +17,7 @@ crank: 5400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral"
 server: "https://stickypiston.co/hielkemaps/parkourspiral"
-version: 2.6.1
+version: 2.6.2
 ---
 
 In Parkour Spiral your goal is to reach the top of the enormous spiral tower! Along the way you have to beat all kind of parkour challenges.
