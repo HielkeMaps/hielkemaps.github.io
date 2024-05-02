@@ -17,7 +17,7 @@ crank: 7200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral3"
 server: "https://stickypiston.co/hielkemaps/parkourspiral3"
-version: 1.3.1
+version: 1.3.2
 ---
 
 Parkour Spiral 3 offers a GIGANTIC new spiral tower for you to climb! Are you skilled enough to reach the top? Come find out!
