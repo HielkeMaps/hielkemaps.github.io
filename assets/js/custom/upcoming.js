@@ -6,12 +6,16 @@ function onYouTubeIframeAPIReady() {
 
 $(function () {
   
-  const dateString = $("#countdownDate").data("countdown-date");
-  const [datePart, timePart] = dateString.split(" ");
-  const [year, month, day] = datePart.split("-");
-  const [hour, minute, second] = timePart.split(":");
-  const countDownDate = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
 
+  let countDownDate;
+  const dateString = $("#countdownDate").data("countdown-date");
+  if(dateString) {
+    const [datePart, timePart] = dateString.split(" ");
+    const [year, month, day] = datePart.split("-");
+    const [hour, minute, second] = timePart.split(":");
+    countDownDate = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
+  }
+  
   const countdownOverlay = $("#countdownOverlay");
   const countdownText = $("#countdownText");
 
@@ -21,8 +25,6 @@ $(function () {
   const now = new Date().getTime();
   const timeDiff = countDownDate - now;
 
-  // Reveal starts 5 minutes and 45 sec after YouTube video starts
-  const fiveMinutesAnd45Seconds = 5 * 60 * 1000 + 45 * 1000;
   const oneMinute = 60 * 1000;
 
   // Show youtube comments until about 1 minutes after reveal started
@@ -31,7 +33,7 @@ $(function () {
     $(".youtube-comments").show();
   }
 
-  if (timeDiff > fiveMinutesAnd45Seconds) {
+  if (timeDiff > 0) {
     countdownOverlay.css("display", "flex");
   }
 
@@ -59,8 +61,8 @@ $(function () {
     countdownString += seconds + "s ";
     countdownText.html(countdownString);
 
-    // Show video when less than 5 minute and 45 seconds left (Video countdown)
-    if (timeDiff < fiveMinutesAnd45Seconds) {
+    // Show video when less than 0
+    if (timeDiff < 0) {
       clearInterval(countdown);
       countdownOverlay.fadeOut(1500);
       player.unMute();
