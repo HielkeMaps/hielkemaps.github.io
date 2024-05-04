@@ -24,14 +24,15 @@ function openMobileMenu() {
   isOpen = true;
   $(".hamburger").addClass("active");
   $("#mainNav").css("backdrop-filter", "none");
+  $('body,html').css('overflow','hidden');
 
   mobileNav.css("backdrop-filter", "blur(15px)");
   mobileNav.css("display", "block");
-  
+
   let navItems = mobileNav.find(".nav-item");
   navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
-  mobileNav.animate({ height: "100vh", opacity: "1" }, 350, () => {
-    $('body,html').css('overflow','hidden');
+  mobileNav.animate({ height: "100svh", opacity: "1" }, 350, () => {
+
   });
 }
 
@@ -45,7 +46,7 @@ function closeMobileMenu() {
 
   mobileNav
     .delay(150)
-    .animate({ height: "0vh", opacity: "0" }, 350, () => {
+    .animate({ height: "0%", opacity: "0" }, 350, () => {
       mobileNav.css("display", "");
       mobileNav.css("opacity", "");
       mobileNav.css("height", "");
