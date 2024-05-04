@@ -24,14 +24,13 @@ function openMobileMenu() {
   isOpen = true;
   $(".hamburger").addClass("active");
   $("#mainNav").css("backdrop-filter", "none");
-  $("#mainNav").css("-webkit-backdrop-filter", "none");
 
   $('body,html').css('overflow','hidden');
 
   mobileNav.css("backdrop-filter", "blur(15px)");
-  mobileNav.css("-webkit-backdrop-filter", "blur(15px)");
 
-  mobileNav.css("display", "block");
+  mobileNav.css("display", "flex");
+  mobileNav.css("position", "absolute");
 
   let navItems = mobileNav.find(".nav-item");
   //navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
@@ -55,11 +54,11 @@ function closeMobileMenu() {
       mobileNav.css("opacity", "");
       mobileNav.css("height", "");
       mobileNav.css("backdrop-filter", "");
-      mobileNav.css("-webkit-backdrop-filter", "");
+      mobileNav.css("position", "");
+
       navItems.removeClass("animate__fadeOutUp");
 
       $("#mainNav").css("backdrop-filter", "blur(5px)");
-      $("#mainNav").css("-webkit-backdrop-filter", "blur(5px)");
     });
 }
 
