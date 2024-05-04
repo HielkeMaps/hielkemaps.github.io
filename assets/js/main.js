@@ -5,6 +5,11 @@ $(document).on("hidden.bs.modal", function () {
   }
 });
 
+$(document).scroll(function () {
+  var $nav = $(".navbar");
+  $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+});
+
 function toggleMobileMenu() {
   var $toggleBtn = $('[data-toggle="toggle-menu"]');
   var $navMenuCont = $($toggleBtn.data("target"));
