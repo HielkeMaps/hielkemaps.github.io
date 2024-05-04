@@ -1,5 +1,5 @@
 ---
----
+--- 
 
 @import url("./form.css");
 @import url("./navbar.css");
@@ -8,21 +8,29 @@
 
 :root {
 	--primary-color: #0085BE;
-	--primary-color-pressed:  #006b99;
+	--primary-color-pressed: #006b99;
 }
 
 a {
 	color: var(--primary-color);
 }
 
-a:hover{
+a:hover {
 	color: var(--primary-color-pressed);
+}
+
+body {
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+}
+
+html {
+	height: -webkit-fill-available;
 }
 
 html,
 body {
 	width: 100%;
-	height: 100%;
 	margin: 0px !important;
 	font-size: 18px;
 	color: #212529;

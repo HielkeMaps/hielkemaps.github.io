@@ -3,15 +3,14 @@ $(document).scroll(function () {
   $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
 });
 
-let navMenuCont;
+let mobileNav;
 let isOpen = false;
 let isAnimating = false;
 let toggleBtn = $('[data-toggle="toggle-menu"]');
-navMenuCont = $(toggleBtn.data("target"));
+mobileNav = $(toggleBtn.data("target"));
 
 function toggleMobileMenu() {
-  isAnimating = navMenuCont.is(":animated");
-
+  isAnimating = mobileNav.is(":animated");
   if (isAnimating) return;
 
   if (isOpen) {
@@ -27,12 +26,12 @@ function openMobileMenu() {
   $(".hamburger").addClass("active");
   $(".navbar-collapse").css("backdrop-filter", "blur(15px)");
 
-  navMenuCont.css("display", "block");
+  mobileNav.css("display", "block");
   $("#mainNav").css("backdrop-filter", "none");
 
-  let navItems = navMenuCont.find(".nav-item");
+  let navItems = mobileNav.find(".nav-item");
   navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
-  navMenuCont.animate({ height: "100vh", opacity: "1" }, 350);
+  mobileNav.animate({ height: "100vh", opacity: "1" }, 350);
 }
 
 function closeMobileMenu() {
@@ -40,19 +39,18 @@ function closeMobileMenu() {
   $("body").removeClass("navbar-open");
   $(".hamburger").removeClass("active");
 
-  let navItems = navMenuCont.find(".nav-item");
+  let navItems = mobileNav.find(".nav-item");
   navItems.removeClass("animate__fadeInDown").addClass("animate__fadeOutUp");
 
-  navMenuCont
-    .removeClass("slide-in")
-    .delay(100)
+  mobileNav
+    .delay(150)
     .animate({ height: "0vh", opacity: "0" }, 350, function () {
-      navMenuCont.css("display", "");
-      navMenuCont.css("opacity", "");
-      navMenuCont.css("height", "");
+      mobileNav.css("display", "");
+      mobileNav.css("opacity", "");
+      mobileNav.css("height", "");
+      mobileNav.css("backdrop-filter", "none");
       navItems.removeClass("animate__fadeOutUp");
 
-      $(".navbar-collapse").css("backdrop-filter", "none");
       $("#mainNav").css("backdrop-filter", "blur(5px)");
     });
 }
