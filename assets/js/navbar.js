@@ -33,7 +33,7 @@ function openMobileMenu() {
   mobileNav.css("position", "absolute");
 
   let navItems = mobileNav.find(".nav-item");
-  //navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
+  navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
   mobileNav.animate({ height: "100vh", opacity: "1" }, 350, () => {
 
   });
@@ -45,7 +45,7 @@ function closeMobileMenu() {
   $(".hamburger").removeClass("active");
 
   let navItems = mobileNav.find(".nav-item");
-  //navItems.removeClass("animate__fadeInDown").addClass("animate__fadeOutUp");
+  navItems.removeClass("animate__fadeInDown").addClass("animate__fadeOutUp");
 
   mobileNav
     .delay(150)
