@@ -24,9 +24,13 @@ function openMobileMenu() {
   isOpen = true;
   $(".hamburger").addClass("active");
   $("#mainNav").css("backdrop-filter", "none");
+  $("#mainNav").css("-webkit-backdrop-filter", "none");
+
   $('body,html').css('overflow','hidden');
 
   mobileNav.css("backdrop-filter", "blur(15px)");
+  mobileNav.css("-webkit-backdrop-filter", "blur(15px)");
+
   mobileNav.css("display", "block");
 
   let navItems = mobileNav.find(".nav-item");
@@ -52,9 +56,11 @@ function closeMobileMenu() {
       mobileNav.css("opacity", "");
       mobileNav.css("height", "");
       mobileNav.css("backdrop-filter", "");
+      mobileNav.css("-webkit-backdrop-filter", "");
       navItems.removeClass("animate__fadeOutUp");
 
       $("#mainNav").css("backdrop-filter", "blur(5px)");
+      $("#mainNav").css("-webkit-backdrop-filter", "blur(5px)");
     });
 }
 
