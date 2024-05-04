@@ -33,7 +33,7 @@ function toggleMobileMenu() {
 
     let $navItems = $navMenuCont.find(".nav-item");
     $navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
-    $navMenuCont.animate({ height: "100vh", opacity: "1" }, 350);
+    $navMenuCont.animate({ minHeight: "100vh", height: "-webkit-fill-available", opacity: "1" }, 350);
   }
 
   function closeMobileMenu() {
