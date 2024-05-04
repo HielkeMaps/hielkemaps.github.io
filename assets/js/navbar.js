@@ -30,8 +30,9 @@ function openMobileMenu() {
   mobileNav.css("display", "block");
 
   let navItems = mobileNav.find(".nav-item");
+  let targetHeight = $(window).height();
   navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
-  mobileNav.animate({ height: "100svh", opacity: "1" }, 350, () => {
+  mobileNav.animate({ height: targetHeight, opacity: "1" }, 350, () => {
 
   });
 }
@@ -46,7 +47,7 @@ function closeMobileMenu() {
 
   mobileNav
     .delay(150)
-    .animate({ height: "0%", opacity: "0" }, 350, () => {
+    .animate({ height: "0px", opacity: "0" }, 350, () => {
       mobileNav.css("display", "");
       mobileNav.css("opacity", "");
       mobileNav.css("height", "");
