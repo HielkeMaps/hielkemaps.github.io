@@ -22,21 +22,22 @@ function toggleMobileMenu() {
 
 function openMobileMenu() {
   isOpen = true;
-  $("body").addClass("navbar-open");
   $(".hamburger").addClass("active");
-  $(".navbar-collapse").css("backdrop-filter", "blur(15px)");
-
-  mobileNav.css("display", "block");
   $("#mainNav").css("backdrop-filter", "none");
 
+  mobileNav.css("backdrop-filter", "blur(15px)");
+  mobileNav.css("display", "block");
+  
   let navItems = mobileNav.find(".nav-item");
   navItems.removeClass("animate__fadeOutUp").addClass("animate__fadeInDown");
-  mobileNav.animate({ height: "100vh", opacity: "1" }, 350);
+  mobileNav.animate({ height: "100vh", opacity: "1" }, 350, () => {
+    $('body,html').css('overflow','hidden');
+  });
 }
 
 function closeMobileMenu() {
   isOpen = false;
-  $("body").removeClass("navbar-open");
+  $("body,html").css("overflow", "");
   $(".hamburger").removeClass("active");
 
   let navItems = mobileNav.find(".nav-item");
@@ -44,11 +45,11 @@ function closeMobileMenu() {
 
   mobileNav
     .delay(150)
-    .animate({ height: "0vh", opacity: "0" }, 350, function () {
+    .animate({ height: "0vh", opacity: "0" }, 350, () => {
       mobileNav.css("display", "");
       mobileNav.css("opacity", "");
       mobileNav.css("height", "");
-      mobileNav.css("backdrop-filter", "none");
+      mobileNav.css("backdrop-filter", "");
       navItems.removeClass("animate__fadeOutUp");
 
       $("#mainNav").css("backdrop-filter", "blur(5px)");
