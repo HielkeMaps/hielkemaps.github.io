@@ -17,7 +17,7 @@ crank: 4800
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral2"
 server: "https://stickypiston.co/hielkemaps/parkourspiral2"
-version: 2.4.1
+version: 2.4.2
 ---
 
 In Parkour Spiral 2 your goal is to climb the Spiral from the Nether to the top!
