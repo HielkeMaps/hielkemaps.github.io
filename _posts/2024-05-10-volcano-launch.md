@@ -10,7 +10,8 @@ Get your running shoes on and prepare for an adrenaline-pumping adventure becaus
 
 <!--more-->
 
-In just a few days, we will be hosting a massive launch party that you won't want to miss. Mark your calendars for Friday, May 17, 2024, at 1:00 AM, and get ready to test your parkour skills like never before!
+In just a few days, we will be hosting a massive launch party that you won't want to miss.
+Mark your calendars and get ready to test your parkour skills like never before!
 
 The launch event will kick off with a competition to see who can conquer the new Parkour Volcano map the fastest. The fastest players will not only earn bragging rights but also receive prestigious server ranks as a reward! 😄
 
