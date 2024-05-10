@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Parkour Volcano Launch Event"
+title: "Parkour Volcano Launching May 16th!"
 description: "Join the fun!"
 blur: true
 excerpt_separator: <!--more-->
