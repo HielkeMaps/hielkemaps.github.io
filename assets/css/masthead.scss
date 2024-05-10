@@ -9,6 +9,11 @@ header.masthead {
   position: relative;
   background-size: cover;
 
+  .blur{
+    filter: blur(5px) brightness(0.5) !important;
+    scale: 1.05;
+  }
+
   .overlay {
     position: absolute;
     top: 0;

@@ -4,8 +4,9 @@ layout: default
 
 <!-- Page Header -->
 <header class="masthead">
-  <div class="absolute w-100 h-100 -left-0 top-0 -z-10"
-    style="filter:brightness(0.6); background-size:cover; background-color: gray; background-image: url('{{site.baseurl}}/media{{page.url}}/background.jpg')">
+  <div class="absolute w-100 h-100 -left-0 top-0 -z-10 {% if page.blur %}blur{% endif %}"
+    style="filter:brightness(0.6); background-size:cover; background-color: gray; background-image: url('{{site.baseurl}}/media{{page.url}}/background.jpg')
+    ">
   </div>
   <div class="overlay"></div>
   <div class="container">

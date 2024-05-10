@@ -4,7 +4,11 @@ title: Upcoming
 permalink: /upcoming
 custom-css: upcoming
 custom-js: upcoming
-youtube-id: "5yzLzc2nhYI"
+youtube-id: "l4afpsnRcZA"
+date: 2024-05-16 18:00:00
+countdown: true
+is-reveal: false
+hype-counter: false
 ---
 
 <span id="countdownDate" data-countdown-date="{{page.date}}"></span>
@@ -12,37 +16,49 @@ youtube-id: "5yzLzc2nhYI"
     <div class="row">
         <div class="col-xl-8">
             <div class="videoWrapper shadow-xl">
-                {% if page.youtube-id %}
+                {% if page.countdown %}
                 <div id="countdownOverlay">
                     <div class="frame">
-                        <h1 id="revealText">New map reveal in:</h1>
+                        <h1 id="revealText">Parkour Volcano Release:</h1>
                         <h1 id="countdownText"></h1>
+                     
                         <div class="counter">
+                            {% if page.hype-counter %}
                             <button class="btn" id="hypeBtn"">Hype!</button>
-                            <div class="triangle"></div>
+                            <div class=" triangle"></div>
                             <div id="countBox" class="countBox">
                                 <p id="hypeCount" class="count">...</p>
                             </div>
+                            {% else %}
+                            <a href="https://play.hielkemaps.com">play.hielkemaps.com</a>
+                            {% endif %}
                         </div>
+                       
                     </div>
                 </div>
-                <iframe id="player" src="https://www.youtube.com/embed/{{page.youtube-id}}?enablejsapi=1&controls=1" allow="autoplay" frameborder="0"></iframe>
-                <script async src="https://www.youtube.com/iframe_api"></script>
                 {% else %}
                 <img src="{{ site.baseurl }}/media/upcoming.jpg" class="absolute w-100 h-100" />
                 {% endif %}
-            </div>
-        </div>
-        <div class="col-xl-4">
-            <div id="comments-container" class="shadow-xl">
-                <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-                <hyvor-talk-comments class="hyvor-comments" website-id="10730" page-url="{{site.domain}}{{ page.url }}"
-                    page-id="{{page.url}}" loading="manual">
-                </hyvor-talk-comments>
+
                 {% if page.youtube-id %}
-                    <iframe class="youtube-comments" style="display: none;" src="https://www.youtube.com/live_chat?v={{page.youtube-id}}&embed_domain=hielkemaps.com" frameborder="0"></iframe>
+                    <iframe id="player" src="https://www.youtube.com/embed/{{page.youtube-id}}?enablejsapi=1&controls=1"
+                    allow="autoplay" frameborder="0"></iframe>
+                    <script async src="https://www.youtube.com/iframe_api"></script>
                 {% endif %}
-            </div>
         </div>
     </div>
+    <div class="col-xl-4">
+        <div id="comments-container" class="shadow-xl">
+            <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+            <hyvor-talk-comments class="hyvor-comments" website-id="10730" page-url="{{site.domain}}{{ page.url }}"
+                page-id="{{page.url}}" loading="manual">
+            </hyvor-talk-comments>
+            {% if page.youtube-id and page.is-reveal %}
+            <iframe class="youtube-comments" style="display: none;"
+                src="https://www.youtube.com/live_chat?v={{page.youtube-id}}&embed_domain=hielkemaps.com"
+                frameborder="0"></iframe>
+            {% endif %}
+        </div>
+    </div>
+</div>
 </div>

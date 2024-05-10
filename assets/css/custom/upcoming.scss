@@ -50,6 +50,19 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+
+  a{
+    color: rgb(0, 166, 255);
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    text-shadow: 2px 2px 5px rgb(97, 97, 97);
+  }
+
+  a:hover{
+    color: rgb(120, 208, 255);
+  }
 }
 
 #hypeBtn {
