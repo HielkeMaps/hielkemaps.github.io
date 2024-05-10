@@ -40,23 +40,23 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
 }
 
-#countdownText {
-  font-size: 60px;
-}
+.frame{
+  transition: 0.3s;
 
-.counter {
-  display: flex;
-  gap: 0px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+  #revealText {
+    font-size: min(6vw, 50px);
+  }
+  
+  #countdownText {
+    font-size: min(8vw, 60px);
+  }
 
   a{
     color: rgb(0, 166, 255);
-    font-size: 35px;
+    font-size: min(6vw, 35px);
     font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
+   
     text-shadow: 2px 2px 5px rgb(97, 97, 97);
   }
 
@@ -65,9 +65,22 @@ h1 {
   }
 }
 
+
+.counter {
+  padding: 5px;
+  display: flex;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
 #hypeBtn {
-  padding: 10px 20px;
-  font-size: large;
+  padding-top: min(2vw, 10px);
+  padding-bottom: min(2vw, 10px);
+  padding-left: min(4vw, 20px);
+  padding-right: min(4vw, 20px);
+  
+  font-size: min(3vw, 18px);
   background-color: rgb(0, 157, 255);
   color: white;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -89,8 +102,11 @@ h1 {
 }
 
 .countBox {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding-top: min(2vw, 10px);
+  padding-bottom: min(2vw, 10px);
+  padding-left: min(4vw, 20px);
+  padding-right: min(4vw, 20px);
+  font-size: min(3vw, 16px);
   font-weight: bold;
   background-color: white;
   color: black;
@@ -142,10 +158,6 @@ h1 {
     color: white;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
-    .frame {
-      height: 50%;
-    }
   }
 }
 
@@ -153,8 +165,6 @@ h1 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 30px;
-
-
 
   #comments-container {
 
@@ -236,26 +246,6 @@ h1 {
   }
 }
 
-
-@container (max-width: 575px) {
-  #revealText{
-    font-size: 25px;
-  }
-
-  #countdownText {
-    font-size: 30px;
-  }
-
-  .counter {
-    margin-top: 10px;
-    scale: 0.9;
-  }
-
-  .frame{
-    margin-top: -25px;
-  }
-}
-
 @media (max-width: 1199px) {
   #comments-container {
     margin-top: 30px;
@@ -271,6 +261,10 @@ h1 {
   #comments {
     height: 50vh !important;
     overflow-x: hidden !important;
+  }
+
+  .counter{
+    margin-top: 35px;
   }
 }
 

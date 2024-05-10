@@ -8,10 +8,10 @@ youtube-id: "l4afpsnRcZA"
 date: 2024-05-16 17:00:00
 countdown: true
 is-reveal: false
-hype-counter: false
+hype-counter: true
 ---
 
-<span id="countdownDate" data-countdown-date="{{page.date}}"></span>
+<span id="JSdata" data-countdown-date="{{page.date}}" data-is-reveal="{{page.is-reveal}}"></span>
 <div class="fluid-container upcoming">
     <div class="row">
         <div class="col-xl-8">
@@ -22,18 +22,17 @@ hype-counter: false
                         <h1 id="revealText">Parkour Volcano Release:</h1>
                         <h1 id="countdownText"></h1>
                      
-                        <div class="counter">
+                        <a href="https://play.hielkemaps.com">play.hielkemaps.com</a>
+
                             {% if page.hype-counter %}
-                            <button class="btn" id="hypeBtn"">Hype!</button>
-                            <div class=" triangle"></div>
-                            <div id="countBox" class="countBox">
-                                <p id="hypeCount" class="count">...</p>
+                            <div class="counter flex flex-row">
+                                <button class="btn" id="hypeBtn"">Hype!</button>
+                                <div class=" triangle"></div>
+                                <div id="countBox" class="countBox">
+                                    <p id="hypeCount" class="count">...</p>
+                                </div>
                             </div>
-                            {% else %}
-                            <a href="https://play.hielkemaps.com">play.hielkemaps.com</a>
                             {% endif %}
-                        </div>
-                       
                     </div>
                 </div>
                 {% else %}

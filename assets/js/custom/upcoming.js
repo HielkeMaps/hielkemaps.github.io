@@ -5,17 +5,19 @@ function onYouTubeIframeAPIReady() {
 }
 
 $(function () {
-  
-
   let countDownDate;
-  const dateString = $("#countdownDate").data("countdown-date");
-  if(dateString) {
+  const dateString = $("#JSdata").data("countdown-date");
+  const isReveal = $("#JSdata").data("is-reveal");
+
+  if (dateString) {
     const [datePart, timePart] = dateString.split(" ");
     const [year, month, day] = datePart.split("-");
     const [hour, minute, second] = timePart.split(":");
-    countDownDate = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
+    countDownDate = new Date(
+      Date.UTC(year, month - 1, day, hour, minute, second)
+    );
   }
-  
+
   const countdownOverlay = $("#countdownOverlay");
   const countdownText = $("#countdownText");
 
@@ -28,7 +30,7 @@ $(function () {
   const oneMinute = 60 * 1000;
 
   // Show youtube comments until about 1 minutes after reveal started
-  if(timeDiff > -oneMinute){
+  if (isReveal && timeDiff > -oneMinute) {
     $(".hyvor-comments").remove();
     $(".youtube-comments").show();
   }
@@ -131,21 +133,24 @@ $(function () {
 const isIframe = new URLSearchParams(window.location.search).get("iframe");
 if (isIframe) {
   $("#comments-container").remove();
-  $(".upcoming").css( "padding", "0" );
+  $(".upcoming").css("padding", "0");
 
   document.querySelector("footer").style = "display: none";
   document.body.style.overflow = "hidden";
   document.body.style.backgroundColor = "transparent";
-}else{
-
+} else {
   //Not iframe, show comments
   customElements.whenDefined("hyvor-talk-comments").then(() => {
     const comments = document.querySelector("hyvor-talk-comments");
     comments.settings = {
       top_widget: "none",
       voting: {
-        type: "up", // 'both' | 'up' | 'down'
-        voters: false, // show voters list
+        type: "up", 
+        voters: false, 
+      },
+      comments_view: {
+        is_keyboard_navigation_on: true,
+        nested_levels: 1, 
       },
       realtime: {
         on: true, // enable realtime updates
