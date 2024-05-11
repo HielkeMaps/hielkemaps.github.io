@@ -73,6 +73,22 @@ h6 {
 	}
 }
 
+.comment-bubble {
+	font-size: 20px;
+	color: var(--primary-color-pressed);
+	transition: all 300ms ease-out;
+
+	.count{
+		font-size: 18px;
+		color:white;
+	}
+
+	&:hover{
+		scale: 1.1;
+		filter: drop-shadow(5px 5px 10px var(--primary-color-pressed));
+	}
+}
+
 .btn-outline-primary {
 	border-color: var(--primary-color);
 	color: var(--primary-color);

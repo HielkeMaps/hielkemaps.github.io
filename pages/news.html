@@ -21,6 +21,12 @@ custom-css: news
 
         <a class="btn btn-outline-primary" href="{{ post.url }}">Read more</a>
 
+        <a class="fa-stack comment-bubble" href="{{ post.url }}?comments">
+          <span class="fa-duotone fa-comment fa-stack-2x"></span>
+          <span class="fa-stack-1x count">
+            <hyvor-talk-comment-count page-id="{{ post.url }}" mode="number">~</hyvor-talk-comment-count> 
+          </span>
+        </a>
       </div>
       <div class="col hidden md:block">
         <div class="image-holder">
@@ -31,4 +37,11 @@ custom-css: news
   </div>
     {% endfor %}
 </div>
+
+<script src="https://talk.hyvor.com/embed/comment-counts.js"></script>
+<script>
+    hyvorTalkCommentCounts.load({
+      "website-id": 10730
+    })
+</script>
 

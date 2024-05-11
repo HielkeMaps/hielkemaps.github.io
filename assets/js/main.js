@@ -9,6 +9,16 @@ $(document).on("hidden.bs.modal", function () {
 let jsConfetti = new JSConfetti();
 const comments = document.querySelector("hyvor-talk-comments");
 if (comments) {
+
+  const urlParams = new URLSearchParams(window.location.search);
+  comments.addEventListener("loaded", () => {
+    if (urlParams.has("comments")) {
+      setTimeout(() => {
+        comments.scrollIntoView({ behavior: "smooth" });
+      }, 1);
+    }
+  });
+
   comments.addEventListener("reaction", function (e) {
     switch (e.detail.type) {
       case "superb":
