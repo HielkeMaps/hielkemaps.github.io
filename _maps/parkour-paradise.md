@@ -17,7 +17,7 @@ crank: 5400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourparadise"
 server: "https://stickypiston.co/hielkemaps/parkourparadise"
-version: 2.4.1
+version: 2.4.2
 ---
 
 Parkour Paradise is a parkour map which contains 100 little levels, and your goal is to beat them all! The first levels will be easy, but the parkour gets harder the further you get. Are you skilled enough to reach the end?

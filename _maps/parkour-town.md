@@ -17,7 +17,7 @@ crank: 1200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourtown"
 server: "https://stickypiston.co/hielkemaps/parkourtown"
-version: 1.3.2
+version: 1.3.3
 ---
 
 Climb the **Parkour Town** with its countless pathways to the top!
