@@ -3,7 +3,7 @@ layout: map
 title: "Parkour Volcano"
 date: 2024-04-20
 order: 0
-short-description: "A hot new Parkour map pushing the limits of Minecraft parkour! Coming soon!"
+short-description: "Escape the active volcano through a daring parkour adventure!"
 trailer: "https://www.youtube.com/watch?v=5yzLzc2nhYI"
 speedrunnable: false
 isranked: true
