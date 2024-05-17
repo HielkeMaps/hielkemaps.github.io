@@ -6,17 +6,22 @@ order: 0
 short-description: "A hot new Parkour map pushing the limits of Minecraft parkour! Coming soon!"
 trailer: "https://www.youtube.com/watch?v=5yzLzc2nhYI"
 speedrunnable: false
-isranked: false
-inserver: false
+isranked: true
+srank: 1000
+arank: 1500
+brank: 2500
+crank: 5000
+inserver: true
+java-version: "1.20.4"
 version: 1.0.0
-soon: true
 ---
 
-Introducing an exhilarating Parkour map that pushes the boundaries of Minecraft's parkour!
+Welcome to **Parkour Volcano**, where your goal is to reach the top of an active volcano!
+Each section of the volcano brings new tests of your agility and speed. Can you make it out of the volcano safely?
 
-Prepare yourself for an adrenaline-filled experience unlike any other. 
-
-### Releasing May 16th on the Java server!
-<a class="btn btn-success" href="{{site.baseurl}}/news/2024-05-10">Learn more</a>
-
-<iframe id="countdownFrame" src="/upcoming?hideNav=true&iframe=true" class="w-100 h-[60vw] md:h-[470px]"></iframe>
+- Escape the volcano while the lava rises beneath you!
+- Zipline Traversal! Use ziplines to cover large gaps and reach distant platforms!
+- Outrun raging fires that threaten to engulf you!
+- 10 Easter eggs to find!
+- Multiplayer friendly!
+- Ranking system for added replayability!
