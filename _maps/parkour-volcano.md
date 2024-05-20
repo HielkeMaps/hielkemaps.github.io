@@ -9,7 +9,7 @@ speedrunnable: false
 isranked: true
 srank: 1000
 arank: 1500
-brank: 2500
+brank: 2000
 crank: 5000
 inserver: true
 java-version: "1.20.4"
