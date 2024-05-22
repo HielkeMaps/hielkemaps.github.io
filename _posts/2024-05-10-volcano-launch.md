@@ -27,5 +27,3 @@ The fastest players will not only earn bragging rights but also receive server r
 See you then!
 
 -- Hielke
-
-<iframe id="countdownFrame" src="/upcoming?hideNav=true&iframe=true" class="w-100 h-[60vw] md:h-[470px]"></iframe>
