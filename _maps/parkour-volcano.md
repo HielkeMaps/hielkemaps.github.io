@@ -14,7 +14,7 @@ arank: 1500
 brank: 2000
 crank: 5000
 inserver: true
-version: 1.0.0
+version: 1.0.1
 ---
 
 Welcome to **Parkour Volcano**, where your goal is to reach the top of an active volcano!
