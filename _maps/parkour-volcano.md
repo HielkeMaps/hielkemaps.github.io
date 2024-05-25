@@ -7,7 +7,7 @@ short-description: "Escape the active volcano through a daring parkour adventure
 trailer: "https://www.youtube.com/watch?v=5yzLzc2nhYI"
 java: "/downloads/Parkour Volcano.zip"
 java-version: "1.20.6"
-speedrunnable: false
+speedrunnable: true
 isranked: true
 srank: 1000
 arank: 1500
