@@ -6,7 +6,7 @@ order: 31
 short-description: "Parkour Paradise 2 offers 100 new and exciting levels for you to enjoy!"
 java: "/downloads/Parkour Paradise 2.zip"
 java-version: "1.21"
-bedrock: "https://www.minecraft.net/nl-nl/marketplace/pdp?id=04f173d9-8329-44d9-8d70-ca04530b03c2"
+bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=04f173d9-8329-44d9-8d70-ca04530b03c2"
 trailer: "https://www.youtube.com/watch?v=Kz6RnLEJl3w"
 speedrunnable: true
 isranked: true

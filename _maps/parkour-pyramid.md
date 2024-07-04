@@ -7,7 +7,7 @@ short-description: "Parkour Pyramid is one GIANT pyramid full of parkour!"
 java: "/downloads/Parkour Pyramid.zip"
 java-version: "1.20.6"
 trailer: "https://www.youtube.com/watch?v=g-1QduiUrgs"
-bedrock: "https://www.minecraft.net/nl-nl/pdp?id=d0247495-6eb2-4823-8681-9f15acc5255a"
+bedrock: "https://www.minecraft.net/en-us/pdp?id=d0247495-6eb2-4823-8681-9f15acc5255a"
 speedrunnable: true
 isranked: true
 srank: 4800
