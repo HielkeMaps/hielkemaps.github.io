@@ -6,7 +6,7 @@ order: 0
 short-description: "Escape the active volcano through a daring parkour adventure!"
 trailer: "https://www.youtube.com/watch?v=5yzLzc2nhYI"
 java: "/downloads/Parkour Volcano.zip"
-java-version: "1.20.6"
+java-version: "1.21"
 speedrunnable: true
 isranked: true
 srank: 1000
@@ -14,7 +14,7 @@ arank: 1500
 brank: 2000
 crank: 5000
 inserver: true
-version: 1.0.5
+version: 1.1
 ---
 
 Welcome to **Parkour Volcano**, where your goal is to reach the top of an active volcano!
