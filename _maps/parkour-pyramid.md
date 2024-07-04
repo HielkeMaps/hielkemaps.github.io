@@ -17,7 +17,7 @@ crank: 16200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourpyramid"
 server: "https://stickypiston.co/hielkemaps/parkourpyramid"
-version: 2.5
+version: 2.5.1
 ---
 
 Parkour Pyramid is an epic parkour adventure that will keep you entertained for hours!
