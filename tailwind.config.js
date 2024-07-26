@@ -20,6 +20,11 @@ module.exports = {
         '2xl': '8rem',
       },
     },
+    extend: {
+      scale: {
+        '103': '1.03',
+      }
+    }
   },
   plugins: [],
 }
