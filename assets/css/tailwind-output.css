@@ -305,16 +305,12 @@
   border-radius: 0.25rem
 }
 
-.rounded-\[15px\] {
-  border-radius: 15px
-}
-
 .rounded-full {
   border-radius: 9999px
 }
 
-.border-0 {
-  border-width: 0px
+.rounded-\[15px\] {
+  border-radius: 15px
 }
 
 .border-2 {
@@ -332,6 +328,10 @@
 
 .p-3 {
   padding: 0.75rem
+}
+
+.p-\[7px\] {
+  padding: 7px
 }
 
 .p-\[5px\] {
@@ -366,11 +366,6 @@
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem
 }
 
 .font-bold {
