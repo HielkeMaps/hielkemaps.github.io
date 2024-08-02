@@ -145,8 +145,7 @@ layout: default
       data-thumb="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" class="col-sm-6 col-lg-4 mappic">
       <img class="playBtn" src="{{site.baseurl}}/media/playbtn.svg" />
       {% else %}
-      <a href="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" data-fancybox="media"
-        class="col-sm-6 col-lg-4 mappic">
+      <a href="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
         {% endif %}
         <img src="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" class="img-fluid">
       </a>
@@ -254,13 +253,44 @@ layout: default
         Here you can download the zip file of {{page.title}}.<br>
         Make sure you unzip it into your saves directory to
         make Minecraft detect it.<br><br>
-        <a type="button" class="btn btn-success java-download-btn" href="{{page.java}}"
-          data-eo-form-toggle-id="d0211064-e537-11ee-9934-354c3c8b8fa0">
+        <a type="button" class="btn btn-success java-download-btn" href="{{page.java}}" data-bs-toggle="modal"
+          data-bs-target="#newsletterModal">
           <i class="fas fa-download"></i>
           Download ({{page.version}})
           <div class="java-download-mc">For Minecraft {{page.java-version}}</div>
         </a>
         <span class="tos-text">By downloading you accept the <a href="/tos">Terms of Service</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="newsletterModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center newsletter-modal-content">
+        <div class="container-fluid">
+          <div class="row gx-5">
+            <div class="col-lg-7">
+              <h1 class="modal-title text-center w-100">Thanks for downloading!</h1>
+              <br>
+              Consider joining my newsletter!
+              <br><br>
+              And get notified when I release a new map!<br>
+              <span class="text-xs">(I promise I won't spam ❤️)</span>
+              <br><br>
+              <hyvor-talk-newsletter website-id="10730"></hyvor-talk-newsletter>
+              <br>
+            </div>
+            <div class="col-lg-5">
+              <img src="{{site.baseurl}}/media/subscribe.png" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
