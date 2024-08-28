@@ -235,12 +235,20 @@
   height: 4rem
 }
 
+.max-h-96 {
+  max-height: 24rem
+}
+
 .w-16 {
   width: 4rem
 }
 
 .w-44 {
   width: 11rem
+}
+
+.max-w-96 {
+  max-width: 24rem
 }
 
 .transform {
@@ -305,12 +313,16 @@
   border-radius: 0.25rem
 }
 
+.rounded-\[15px\] {
+  border-radius: 15px
+}
+
 .rounded-full {
   border-radius: 9999px
 }
 
-.rounded-\[15px\] {
-  border-radius: 15px
+.rounded-lg {
+  border-radius: 0.5rem
 }
 
 .border-2 {
@@ -328,10 +340,6 @@
 
 .p-3 {
   padding: 0.75rem
-}
-
-.p-\[7px\] {
-  padding: 7px
 }
 
 .p-\[5px\] {
