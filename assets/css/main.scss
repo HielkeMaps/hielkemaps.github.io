@@ -174,8 +174,7 @@ img::selection {
 .card:hover {
 	transition: all 0.3s ease;
 	cursor: pointer;
-	background-color: #e6e6e6;
-	transform: scale(1.03);
+	transform: scale(1.02);
 }
 
 div.row>div>div.row {
@@ -186,6 +185,11 @@ div.row>div>div.row {
 	width: 21rem;
 	margin: 10px !important;
 	padding: 0px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#searchInput{
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 @media (max-width: 767px) {
