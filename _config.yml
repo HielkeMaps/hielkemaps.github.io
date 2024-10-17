@@ -22,5 +22,8 @@ collections:
   maps:
     output: true
     permalink: /:collection/:path
+  addons:
+    output: true
+    permalink: /:collection/:path
   posts:
     permalink: /news/:year-:month-:day

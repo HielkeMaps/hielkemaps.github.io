@@ -36,6 +36,10 @@
   {% endfor %}
   {% endif %}
 
+  {% if page.layout == 'addon' %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom/addon.css">
+  {% endif %}
+
   {% if page.layout == 'map' %}
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom/map.css">
   {% endif %}

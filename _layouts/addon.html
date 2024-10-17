@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="masthead"
+  style="background-color: gray;  background-image: url('{{site.baseurl}}/media{{page.url}}/background.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>{{ page.title }}</h1>
+          <span class="meta">{% if page.soon %} {{page.release-date | date: '%B %d, %Y'}} {%else%} {{page.date| date:
+            '%B %d, %Y'}} {% endif %}&nbsp;
+          </span>
+          {% unless page.soon %}<span class="meta">v{{ page.version}}
+          </span>{% endunless %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 mx-auto side-img-panel">
+      <div class="animate__animated animate__fadeInLeft">
+        <img class="side-img" src="{{site.baseurl}}/media{{page.url}}/side/left.png" alt="Left Side Image">
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-10 mx-auto mainpanel" id="sp-row-size">
+      {{ content }}
+      <div class="text-center">
+        <a type="button" href="{{page.download}}" class="btn btn-success downloadbtn">Get Add-On</a>
+      </div>
+      <hr>
+    </div>
+
+    <div class="col-lg-3 mx-auto side-img-panel">
+      <div class="animate__animated animate__fadeInRight">
+        <img class="side-img" src="{{site.baseurl}}/media{{page.url}}/side/right.png" alt="Right Side Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<!-- Media -->
+<div style="text-align: center;">
+  <h2>Media</h2>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+
+    {% if page.trailer %}
+    <a href="{{page.trailer}}&amp;rel=0" data-fancybox="media"
+      data-thumb="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" class="col-sm-6 col-lg-4 mappic">
+      <img class="playBtn" src="{{site.baseurl}}/media/playbtn.svg" />
+      {% else %}
+      <a href="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" data-fancybox="media"
+        class="col-sm-6 col-lg-4 mappic">
+        {% endif %}
+        <img src="{{site.baseurl}}/media{{page.url}}/thumbnail.jpg" class="img-fluid">
+      </a>
+      <a href="{{site.baseurl}}/media{{page.url}}/pic_0.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+        <img src="{{site.baseurl}}/media{{page.url}}/pic_0.jpg" class="img-fluid">
+      </a>
+      <a href="{{site.baseurl}}/media{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+        <img src="{{site.baseurl}}/media{{page.url}}/pic_1.jpg" class="img-fluid">
+      </a>
+
+      <a href="{{site.baseurl}}/media{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+        <img src="{{site.baseurl}}/media{{page.url}}/pic_2.jpg" class="img-fluid">
+      </a>
+      <a href="{{site.baseurl}}/media{{page.url}}/pic_3.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+        <img src="{{site.baseurl}}/media{{page.url}}/pic_3.jpg" class="img-fluid">
+      </a>
+      <a href="{{site.baseurl}}/media{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
+        <img src="{{site.baseurl}}/media{{page.url}}/pic_4.jpg" class="img-fluid">
+      </a>
+
+  </div>
+</div>
+<br>
+
+<!-- Comments -->
+<div class="container">
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+  <hyvor-talk-comments website-id="10730" page-url="{{site.domain}}{{ page.url }}" page-id="{{page.url}}"
+    loading="lazy">
+  </hyvor-talk-comments>
+</div>
+
+<!-- Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
