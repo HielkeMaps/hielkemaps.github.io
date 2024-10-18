@@ -1,0 +1,106 @@
+---
+layout: wiki
+title: Changelog
+permalink: /wiki/treecapitator/changelog
+custom-css: treecapitator/changelog
+hide-footer: true
+---
+
+<body>
+    <h2>Changelog</h2>
+    <p>This page lists all notable changes to the TreeCapitator Add-On</p>
+
+    <button class="btn btn-primary version-button">v1.4.0 (Latest)</button>
+    <div class="version-content">
+        <h6>Added</h6>
+        <ul>
+            <li>Add-On creators can now add compatibility for TreeCapitator by themselves!</li>
+            <li>Trunk outline feature (disabled by default due to performance considerations)</li>
+            <li>Support for the More Ores & Tools Add-On</li>
+        </ul>
+        <h6>Changed</h6>
+        <ul>
+            <li>Improved performance for large tree detection</li>
+        </ul>
+        <h6>Fixed</h6>
+        <ul>
+            <li>Minor bugs related to custom tree integration</li>
+        </ul>
+    </div>
+
+    <button class="btn btn-primary version-button">v1.3.0</button>
+    <div class="version-content">
+        <h6>Added</h6>
+        <ul>
+            <li>Sound effect when a tool doesn't have enough durability to cut down a tree</li>
+            <li>Support for Forest Craft Add-On</li>
+            <li>Support for Farming Add-On</li>
+        </ul>
+        <h6>Improved</h6>
+        <ul>
+            <li>Leaf detection algorithm for better performance</li>
+        </ul>
+        <h6>Fixed</h6>
+        <ul>
+            <li>Compatibility issues with some custom add-ons</li>
+        </ul>
+    </div>
+
+    <button class="btn btn-primary version-button">v1.2.0</button>
+    <div class="version-content">
+        <h6>Added</h6>
+        <ul>
+            <li>Support for Tinker's Construct Add-On</li>
+            <li>New configuration options for custom add-on integration</li>
+        </ul>
+        <h6>Fixed</h6>
+        <ul>
+            <li>Issue where cherry leaves were not dropping loot when using fast decay</li>
+        </ul>
+    </div>
+
+    <button class="btn btn-primary version-button">v1.1.0</button>
+    <div class="version-content">
+        <h6>Added</h6>
+        <ul>
+            <li>Fast Decay leaf break option</li>
+            <li>Support for RealismCraft Add-On</li>
+            <li>Compatibility with azalea trees</li>
+        </ul>
+        <h6>Fixed</h6>
+        <ul>
+            <li>Issue where cherry trees sometimes didn't work properly</li>
+        </ul>
+        <h6>Improved</h6>
+        <ul>
+            <li>Tree detection algorithm for better accuracy</li>
+        </ul>
+    </div>
+
+    <button class="btn btn-primary version-button">v1.0.0</button>
+    <div class="version-content">
+        <ul>
+            <li>Initial release of TreeCapitator</li>
+            <li>Basic functionality for cutting down entire trees</li>
+            <li>Support for vanilla Minecraft trees</li>
+            <li>Configurable settings for activation method and tool usage</li>
+        </ul>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("btn btn-primary version-button");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>

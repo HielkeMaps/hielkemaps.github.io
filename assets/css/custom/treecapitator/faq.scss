@@ -1,0 +1,18 @@
+---
+---
+
+.faq-section {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	.faq {
+		background-color: white;
+		border-radius: 20px;
+		padding: 30px;
+	}
+
+	.faq:hover {
+		transition: all 0.3s ease;
+		transform: scale(1.03);
+	}
+}

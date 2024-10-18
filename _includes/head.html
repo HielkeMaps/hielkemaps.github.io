@@ -48,5 +48,9 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom/post.css">
   {% endif %}
 
+  {% if page.layout == 'wiki' %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom/wiki.css">
+  {% endif %}
+
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 </head>

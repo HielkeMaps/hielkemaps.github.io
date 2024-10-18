@@ -5,6 +5,7 @@
 @import url("./navbar.css");
 @import url("./masthead.css");
 @import url("./footer.css");
+@import url("./highlight.css");
 
 :root {
 	--primary-color: #0085BE;
@@ -74,6 +75,10 @@ h6 {
 	}
 }
 
+.btn-light{
+	border-color: var(--bs-btn-hover-border-color);
+}
+
 .comment-bubble {
 	display: inline-block;
     line-height: 2em;
@@ -119,15 +124,15 @@ h6 {
 }
 
 .btn-primary {
-	background-color: var(--primary-color);
-	border-color: var(--primary-color);
+	background-color: var(--primary-color) !important;
+	border-color: var(--primary-color)!important;
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: white;
-		background-color: var(--primary-color-pressed);
-		border-color: var(--primary-color-pressed);
+		background-color: var(--primary-color-pressed) !important;
+		border-color: var(--primary-color-pressed) !important;
 	}
 }
 
