@@ -1,87 +1,95 @@
 ---
----
+--- 
 
 .navbar {
-	background-color: white !important;
+  background-color: white !important;
 
-	.hamburger {
-		span {
-			background: black !important;
-		}
-	}
+  .hamburger {
+    span {
+      background: black !important;
+    }
+  }
 
-	.navbar-title {
-		color:black !important;
-	}
+  .navbar-title {
+    color: black !important;
+  }
 
-	--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-	0 8px 10px -6px rgb(0 0 0 / 0.1);
-	--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-	0 8px 10px -6px var(--tw-shadow-color);
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-	var(--tw-ring-shadow, 0 0 #0000),
-	var(--tw-shadow);
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+  0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+  0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+  var(--tw-ring-shadow, 0 0 #0000),
+  var(--tw-shadow);
 
 }
 
 @media (min-width: 992px) {
-	.navbar {
-		* {
-			color: black !important;
-		}
-	}
+  .navbar {
+    * {
+      color: black !important;
+    }
+  }
 }
 
 body {
-	background-color: #ebf6fa;
+  background-color: #ebf6fa;
 }
 
-p{
-    margin: 10px 0;
+p {
+  margin: 10px 0;
 }
 
 .highlight {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-    text-align: left;
-    background-color: white;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  background-color: white;
+}
+
+@media (max-width: 650px) {
+  table {
+    table-layout: fixed;
+    font-size: small;
   }
-  
-  th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Optional: For styling tables with more interaction */
-  tbody tr:hover td {
-    color: #333;
-    background-color: #ececec;
-  }
-  
-  caption {
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Optional: For styling tables with more interaction */
+tbody tr:hover td {
+  color: #333;
+  background-color: #ececec;
+}
+
+caption {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
