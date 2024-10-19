@@ -3,6 +3,7 @@ layout: wiki
 title: Changelog
 permalink: /wiki/treecapitator/changelog
 custom-css: treecapitator/changelog
+custom-js: treecapitator/changelog
 hide-footer: true
 ---
 
@@ -86,21 +87,4 @@ hide-footer: true
             <li>Configurable settings for activation method and tool usage</li>
         </ul>
     </div>
-
-    <script>
-        var acc = document.getElementsByClassName("btn btn-primary version-button");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                }
-            });
-        }
-    </script>
 </body>
