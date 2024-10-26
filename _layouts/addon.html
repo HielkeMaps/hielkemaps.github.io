@@ -35,7 +35,7 @@ layout: default
       <div class="text-center">
         <a type="button" href="{{page.download}}" class="btn btn-success">Get Add-On</a>
         {% if page.wiki %}
-        <a type="button" href="{{site.baseurl}}/wiki/treecapitator" class="btn btn-primary">Wiki</a>
+        <a type="button" href="{{site.baseurl}}/wiki/{{page.title | downcase}}" class="btn btn-primary">Wiki</a>
         {% endif %}
       </div>
       <hr>

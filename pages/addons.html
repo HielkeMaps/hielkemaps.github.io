@@ -12,16 +12,19 @@ background-white: true
     {% assign sorted = site.addons | sort: 'order' %}
     {% for addon in sorted %}
     {% unless addon.hide %}
-    <div class="card mapcard" 
-         onclick="location.href='{{ addon.url | prepend: site.baseurl | replace: '//', '/' }}';"
-         data-aos="zoom-in">
-      <img class="card-img-top" src="{{site.baseurl}}/media/{{addon.url}}/thumbnail-compressed.jpg" alt="Card image cap">
+    <div class="card mapcard" onclick="location.href='{{ addon.url | prepend: site.baseurl | replace: '//', '/' }}';"
+      data-aos="zoom-in">
+      <img class="card-img-top" src="{{site.baseurl}}/media/{{addon.url}}/thumbnail-compressed.jpg"
+        alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title">{{ addon.title }}</h4>
-        <span class="badge badge-secondary">v{{ addon.version }}</span>
+
         {% if addon.soon %}<span class="badge badge-primary">{% if addon.release-date %}
           {{addon.release-date | date: "%B %-d"}}{%else %}
-          Coming soon{% endif %}</span>{% endif %}
+          Coming soon{% endif %}</span>
+
+        {% else %} <span class="badge badge-secondary">v{{ addon.version }}</span>
+        {% endif %}
         <p class="card-text">{{addon.short-description}}</p>
       </div>
     </div>
@@ -29,4 +32,3 @@ background-white: true
     {% endfor %}
   </div>
 </div>
-
