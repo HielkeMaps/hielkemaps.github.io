@@ -13,7 +13,7 @@ soon: true
 Transform your mining experience with VeinMiner! Get straight to the fun part of Minecraft by mining entire ore veins with a single block break. Smart, efficient, and fully customizable.
 
 ##### Features:
-- **Smart Detection**: Preview ore veins before mining with colored outlines
+- **Ore Outlines**: Preview ore veins before mining with colored outlines
 - **Enchantment Ready**: Works perfectly with Fortune and Silk Touch enchantments
 - **Customizable**: Configure everything to your needs with tons of settings to tweak
 - **Highly Compatible**: Works with vanilla and lots of other Add-Ons
