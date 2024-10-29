@@ -29,7 +29,7 @@ background-white: true
         {% if map.java or map.inserver %}<span class="badge badge-secondary">Java {{map.java-version}}</span>{% endif %}
         {% if map.soon %}<span class="badge badge-primary">{% if map.release-date %}
           {{map.release-date | date: "%B %-d"}}{%else %}
-          Coming soon{% endif %}</span>{% endif %}
+          Coming Soon{% endif %}</span>{% endif %}
         <p class="card-text">{{map.short-description}}</p>
       </div>
     </div>

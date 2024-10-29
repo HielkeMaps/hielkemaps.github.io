@@ -21,7 +21,7 @@ background-white: true
 
         {% if addon.soon %}<span class="badge badge-primary">{% if addon.release-date %}
           {{addon.release-date | date: "%B %-d"}}{%else %}
-          Coming soon{% endif %}</span>
+          Coming Soon{% endif %}</span>
 
         {% else %} <span class="badge badge-secondary">v{{ addon.version }}</span>
         {% endif %}
