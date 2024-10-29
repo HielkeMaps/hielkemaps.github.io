@@ -6,9 +6,7 @@ permalink: /wiki/veinminer/integration
 
 ##### Hi there!
 
-This guide explains how to integrate your custom Add-On with VeinMiner using Minecraft's scriptevent system. By following these instructions, you can register your custom trees and axes, allowing them to work seamlessly with VeinMiner's tree-cutting functionality!
-
-Really nothing too complicated, but make sure you read everything! ^^
+This guide explains how to integrate your custom Add-On with VeinMiner using Minecraft's scriptevent system. By following these instructions, you can register your custom ores and pickaxes, allowing them to work seamlessly with VeinMiner's ore mining functionality!
 
 ___
 #### Registering Your Add-On
@@ -20,42 +18,45 @@ Here's an example of how to register your Add-On:
 ```typescript
 world.getDimension("overworld").runCommand("scriptevent veinminer:register_addon " + JSON.stringify({
   name: "My Custom Add-On",
-  trees: [
-    // Your custom trees here
+  ores: [
+    // Your custom ores here
   ],
-  axes: [
-    // Your custom axes here
+  pickaxes: [
+    // Your custom pickaxes here
   ]
 }));
 ```
 ___
-#### Tree Configuration
+#### Ore Configuration
 
-When defining custom trees, you need to provide a Tree object with the following structure:
+When defining custom ores, you need to provide an Ore object with the following structure:
 
 ```typescript
-interface Tree {
+interface Ore {
   id: string;
   lang?: string;
-  nether?: boolean;
-  variants?: Set<string>;
+  xp_orbs?: [number, number]; // [min, max]
+  variants?: string[];
+  loot_table: LootTable;
+  hardness: number;
+  rgb: [number, number, number];
+}
 
-  leaves: {
-    types: Set<string>;
-    persistent_state?: string;
-    range: number;
-    sides_required: number;
-  };
-
-  shape: {
-    stem?: boolean;
-    leaf_diagonal?: boolean;
-    log_up_diagonal?: boolean;
-    log_up_diagonal_side?: boolean;
-    max_branch?: number;
-  };
-
-  on_load: string;
+interface LootTable {
+  type: "item";
+  pools?: {
+    rolls: number | { min: number, max: number };
+    entries: {
+      type: "item";
+      name: string;
+      functions?: {
+        function: "set_count" | "apply_bonus";
+        count?: number | { min: number, max: number };
+        enchantment?: string;
+        formula?: string;
+      }[];
+    }[];
+  }[];
 }
 ```
 
@@ -63,88 +64,97 @@ Here's what each field means:
 
 | Field | Type | Description | Required |
 |-------|------|-------------|----------|
-| id | string | The unique identifier for the tree log | ✔️ |
-| lang | string | The language key for the tree name (defaults to `tile.${id}.name`). Can also be a normal string. | ❌ |
-| nether | boolean | Whether this is a Nether tree. Nether trees have a custom leaf decay option. | ❌ |
-| variants | Set<string> | Alternative log types (e.g. a mossy log variant) | ❌ |
-| leaves.types | Set<string> | Block IDs for leaves associated with this tree | ✔️ |
-| leaves.persistent_state | string | Block state to check for leaf persistence | ❌ |
-| leaves.range | number | Maximum distance to search for leaves from the trunk. Works similarly to how vanilla tree distance works. | ✔️ |
-| leaves.sides_required | number | Minimum number of sides with leaves to be considered a valid tree. This is NOT leaf count. Range from 1-5, as VeinMiner will check leaves in north, east, west, south and up direction) | ✔️ |
-| shape.stem | boolean | Whether this tree has a 2x2 stem (like giant jungle trees) | ❌ |
-| shape.leaf_diagonal | boolean | Whether leaves connect diagonally | ❌ |
-| shape.log_up_diagonal | boolean | Whether tree logs connect diagonally upwards | ❌ |
-| shape.log_up_diagonal_side | boolean | Whether logs connect diagonally upwards AND sideways | ❌ |
-| shape.max_branch | number | Maximum horizontal branch length. Set this if you have tree branches going sideways.  | ❌ |
-| on_load | string| Minecraft command that will be run when Add-On has been registered. | ❌ |
+| id | string | The unique identifier for the ore | ✔️ |
+| lang | string | The language key for the ore name (defaults to `tile.${id}.name`). Can also be a normal string. | ❌ |
+| xp_orbs | [number, number] | Range for XP orb drops [min, max] | ❌ |
+| variants | string[] | Alternative ore block IDs (e.g. deepslate variants) | ❌ |
+| loot_table | LootTable | Defines what items drop when mining the ore | ✔️ |
+| hardness | number | Mining tier required (1=wood, 2=stone, 3=iron, 4=diamond, 5=netherite) | ✔️ |
+| rgb | [number, number, number] | RGB color values for ore highlight (0-1 range) | ✔️ |
 
 ___
 
-#### Axe Configuration
+#### Pickaxe Configuration
 
-When defining custom axes, you can specify the following properties:
+When defining custom pickaxes, you can specify the following properties:
 
 | Property | Type | Description | Required |
 |----------|------|-------------|----------|
-| id | string | The unique identifier for the axe | ✔️ |
-| lang | string | The language key for the axe name (defaults to `item.${id}.name`). You can also pass a normal string here. | ❌ |
+| id | string | The unique identifier for the pickaxe | ✔️ |
+| lang | string | The language key for the pickaxe name (defaults to `item.${id}.name`). Can also be a normal string. | ❌ |
+| tier | number | Mining tier of the pickaxe (1=wood, 2=stone, 3=iron, 4=diamond, 5=netherite) | ✔️ |
 
 ___
 #### Complete Example
 
-Here's a complete example of registering an Add-On with both custom trees and axes:
+Here's a complete example of registering an Add-On with both custom ores and pickaxes:
 
 ```typescript
 // Define your addon configuration
 const myAddon = {
-  name: "My Nature Add-On",
-  trees: [
+  name: "My Geological Add-On",
+  ores: [
     {
-      id: "mynature:rainbow_log",
-      nether: false,
-      variants: new Set(["mynature:rainbow_wood"]),
-      leaves: {
-        types: new Set(["mynature:red_leaves","mynature:yellow_leaves","mynature:green_leaves","mynature:blue_leaves","mynature:purple_leaves"]),
-        range: 7,
-        sides_required: 4,
+      id: "mygeology:rainbow_ore",
+      aliases: ["mygeology:rainbow_ore_deep", "mygeology:rainbow_ore_nether"],
+      xp_orbs: [3, 7],
+      loot_table: {
+        type: "item",
+        pools: [
+          {
+            rolls: 1,
+            entries: [
+              {
+                type: "item",
+                name: "mygeology:rainbow_gem",
+                functions: [
+                  {
+                    function: "set_count",
+                    count: { min: 1, max: 3 }
+                  },
+                  {
+                    function: "apply_bonus",
+                    enchantment: "fortune",
+                    formula: "ore_drops"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
-      shape: {
-        leaf_diagonal: true,
-        log_up_diagonal: true,
-        log_up_diagonal_side: true,
-        max_branch: 3,
-      },
-    },
+      lang: "tile.mygeology:rainbow_ore.name",
+      hardness: 3,
+      rgb: [1.0, 0.5, 0.7]
+    }
   ],
-  axes: [
-    { id: "mynature:stone_axe" },
-    { id: "mynature:iron_axe" },
-    { id: "mynature:diamond_axe", lang: "My super cool diamond axe" },
+  pickaxes: [
+    { id: "mygeology:quartz_pickaxe", tier: 2 },
+    { id: "mygeology:obsidian_pickaxe", tier: 4 },
+    { id: "mygeology:rainbow_pickaxe", lang: "My super cool rainbow pickaxe", tier: 5 }
   ],
-  on_load: "say VeinMiner Compatibility Added!",
+  on_load: "say VeinMiner Compatibility Added!"
 };
 
-// Register the addon after the world initializes
-world.afterEvents.worldInitialize.subscribe(() => {
-  world.getDimension("overworld").runCommand(
-    "scriptevent veinminer:register_addon " + JSON.stringify(myAddon)
-  );
-});
+// Register the addon
+world.getDimension("overworld").runCommand(
+  "scriptevent veinminer:register_addon " + JSON.stringify(myAddon)
+);
 ```
 
-In this example, we're registering an Add-On called "My Nature Add-On" with a custom rainbow tree, and three custom axes. Note that for the diamond axe, we've specified a custom lang key.
+In this example, we're registering an Add-On called "My Geological Add-On" with a custom rainbow ore and three custom pickaxes. The rainbow ore drops XP orbs and rainbow gems, with Fortune enchantment support.
 
-Your axes and logs will now show up in VeinMiner! 🎉
+Your pickaxes and ores will now show up in VeinMiner! 🎉
 
-<img src="{{site.baseurl}}/media{{page.url}}/custom_axes.jpg" width="400">
-<img src="{{site.baseurl}}/media{{page.url}}/custom_logs.jpg" width="400">
+<img src="{{site.baseurl}}/media{{page.url}}/custom_pickaxes.jpg" width="400">
+<img src="{{site.baseurl}}/media{{page.url}}/custom_ores.jpg" width="400">
 
 ___
 #### Best Practices
 
-1. Use unique identifiers for your trees and axes to avoid conflicts with other Add-Ons.
-2. Optimize your trees as much as possible. For example: if your trees don't have any horizontal branches, don't set `max_branch`.
-3. Test your integration thoroughly to ensure all trees and axes work as expected with VeinMiner.
-4. In VeinMiner, enable Trunk Outline to easily test integration.
+1. Use unique identifiers for your ores and pickaxes to avoid conflicts with other Add-Ons.
+2. Set appropriate mining tiers for your ores and pickaxes to maintain game balance.
+3. Consider Fortune enchantment compatibility when defining ore loot tables.
+4. Test your integration thoroughly to ensure all ores and pickaxes work as expected.
 
-By following this guide, you can seamlessly integrate your custom Add-On with VeinMiner, allowing players to enjoy your custom trees and axes with the tree-cutting functionality provided by VeinMiner.
+By following this guide, you can seamlessly integrate your custom Add-On with VeinMiner, allowing players to enjoy your custom ores and pickaxes with the vein mining functionality!
