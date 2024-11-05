@@ -15,6 +15,7 @@ arank: 1500
 brank: 2000
 crank: 5000
 inserver: true
+trial: "https://trial.stickypiston.co/map/parkourvolcano"
 version: 1.1.1
 ---
 
