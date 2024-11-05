@@ -5,7 +5,7 @@ date: 2023-04-18
 order: 1
 short-description: "Climb the colorful Parkour Egg to the top!"
 java: "/downloads/Parkour Egg.zip"
-java-version: "1.21"
+java-version: "1.21.1"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=a7ab0f7d-1a45-4262-9a3f-e627efc779c1"
 trailer: "https://www.youtube.com/watch?v=I9WRpevGDcU"
 speedrunnable: true
