@@ -5,7 +5,7 @@ date: 2020-11-24
 order: 21
 short-description: "Parkour Spiral 2 offers a new fun parkour adventure! Start in the Nether and climb to the top!"
 java: "/downloads/Parkour Spiral 2.zip"
-java-version: "1.21.1"
+java-version: "1.21.3"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=22cd5101-1567-47ee-ab4d-e729b387daa0"
 trailer: "https://www.youtube.com/watch?v=c8kIQyzg_fo"
 speedrunnable: true
@@ -17,7 +17,7 @@ crank: 4800
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourspiral2"
 server: "https://stickypiston.co/hielkemaps/parkourspiral2"
-version: 2.5.1
+version: 2.5.2
 ---
 
 In Parkour Spiral 2 your goal is to climb the Spiral from the Nether to the top!
