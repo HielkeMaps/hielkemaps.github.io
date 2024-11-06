@@ -5,7 +5,7 @@ date: 2024-04-20
 order: 0
 short-description: "Escape the active volcano through a daring parkour adventure!"
 java: "/downloads/Parkour Volcano.zip"
-java-version: "1.21.1"
+java-version: "1.21.3"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=e45f4e64-85b7-430d-9cac-49075c1760d5"
 trailer: "https://www.youtube.com/watch?v=dHhX3wEdkwo"
 speedrunnable: true
@@ -17,7 +17,7 @@ crank: 5000
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourvolcano"
 server: "https://stickypiston.co/hielkemaps/parkourvolcano"
-version: 1.1.1
+version: 1.2.0
 ---
 
 Welcome to **Parkour Volcano**, where your goal is to reach the top of an active volcano!
