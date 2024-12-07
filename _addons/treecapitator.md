@@ -6,7 +6,7 @@ order: 1
 short-description: "Tired of chopping trees one block at a time? TreeCapitator brings instant forestry to Minecraft Bedrock!"
 download: "https://www.minecraft.net/en-us/marketplace/pdp?id=7093c4ee-0422-421c-a2ad-95140c96a1ac"
 wiki: true
-version: 1.4.0
+version: 1.5.1
 ---
 
 Tired of spending hours chopping trees? Wish there was a faster way to harvest wood? Introducing TreeCapitator!
