@@ -8,6 +8,7 @@ download: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 wiki: false
 version: 1.0.0
 soon: true
+hide: true
 ---
 
 Transform your mining experience with VeinMiner! Get straight to the fun part of Minecraft by mining entire ore veins with a single block break. Smart, efficient, and fully customizable.
