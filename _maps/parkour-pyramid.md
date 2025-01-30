@@ -5,7 +5,7 @@ date: 2020-08-25
 order: 50
 short-description: "Parkour Pyramid is one GIANT pyramid full of parkour!"
 java: "/downloads/Parkour Pyramid.zip"
-java-version: "1.21.3"
+java-version: "1.21.4"
 trailer: "https://www.youtube.com/watch?v=g-1QduiUrgs"
 bedrock: "https://www.minecraft.net/en-us/pdp?id=d0247495-6eb2-4823-8681-9f15acc5255a"
 speedrunnable: true
