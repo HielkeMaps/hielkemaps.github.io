@@ -305,6 +305,153 @@ When defining custom axes, you can specify the following properties:
 
 ___
 
+## Overwriting Vanilla Trees
+
+TreeCapitator supports overwriting vanilla Minecraft trees with custom configurations! This powerful feature allows you to modify how TreeCapitator interacts with default Minecraft trees.
+
+### Vanilla Tree Overwrite Configuration
+
+To overwrite vanilla trees, use the script event `treecapitator:overwrite_trees` with a JSON payload containing the tree IDs as keys and partial tree configurations as values:
+
+```typescript
+// Example payload structure
+{
+  "minecraft:oak_log": {
+    "leaves": {
+      "range": 8,
+      "sides_required": 2
+    },
+    "shape": {
+      "log_up_diagonal": true,
+      "max_branch": 3
+    }
+  },
+  "minecraft:birch_log": {
+    "leaves": {
+      "sides_required": 3
+    },
+    "shape": {
+      "leaf_diagonal": true
+    }
+  }
+}
+```
+
+The system uses a deep merge approach, where only the specified properties are overwritten, and the rest remain unchanged.
+
+### Example: Overwriting Vanilla Oak Trees
+
+Here's an example of how to overwrite vanilla oak trees with a custom configuration:
+
+```typescript
+// Overwrite vanilla oak trees with enhanced properties
+world.afterEvents.worldInitialize.subscribe(() => {
+  const oakOverwrite = {
+    "minecraft:oak_log": {
+      "leaves": {
+        "range": 8,           // Increased from default
+        "sides_required": 2   // Reduced from default
+      },
+      "shape": {
+        "log_up_diagonal": true,
+        "max_branch": 3       // Increased branch detection
+      }
+    }
+  };
+  
+  world.getDimension("overworld").runCommand(
+    "scriptevent treecapitator:overwrite_trees " + JSON.stringify(oakOverwrite)
+  );
+});
+```
+
+### Multi-Tree Overwrite Example
+
+You can overwrite multiple vanilla trees in a single command:
+
+```typescript
+// Overwrite multiple vanilla trees
+world.afterEvents.worldInitialize.subscribe(() => {
+  const treeOverwrites = {
+    "minecraft:oak_log": {
+      "leaves": {
+        "range": 7,
+        "sides_required": 2
+      },
+      "shape": {
+        "log_up_diagonal": true,
+        "max_branch": 3
+      }
+    },
+    "minecraft:birch_log": {
+      "leaves": {
+        "sides_required": 3
+      },
+      "shape": {
+        "log_up_diagonal": true
+      }
+    },
+    "minecraft:spruce_log": {
+      "leaves": {
+        "range": 8,
+        "sides_required": 3
+      },
+      "shape": {
+        "leaf_diagonal": true,
+        "log_up_diagonal": true
+      }
+    }
+  };
+  
+  world.getDimension("overworld").runCommand(
+    "scriptevent treecapitator:overwrite_trees " + JSON.stringify(treeOverwrites)
+  );
+});
+```
+
+### Overwritable Properties
+
+You can overwrite any property of the Tree interface. Common properties to overwrite include:
+
+| Property | Description |
+|----------|-------------|
+| leaves.range | Maximum distance to search for leaves from the trunk |
+| leaves.sides_required | Minimum number of sides with leaves to be considered a valid tree |
+| leaves.types | Block IDs for leaves associated with this tree |
+| shape.leaf_diagonal | Whether leaves connect diagonally |
+| shape.log_up_diagonal | Whether tree logs connect diagonally upwards |
+| shape.log_up_diagonal_side | Whether logs connect diagonally upwards AND sideways |
+| shape.max_branch | Maximum horizontal branch length |
+| variants | Alternative log types (e.g. a mossy log variant) |
+
+### Important Notes and Limitations
+
+1. When overwriting vanilla trees, you must use the correct Minecraft IDs for logs (e.g., `minecraft:oak_log`).
+2. Only specify the properties you want to change - other properties will retain their default values.
+3. Overwriting vanilla trees affects all instances of that tree type in the world.
+4. This feature is compatible with both the Basic and Multi-Step registration methods.
+5. Keep the 2000 character limit in mind. You can call the `treecapitator:overwrite_trees` scriptevent multiple times.
+
+### Supported Vanilla Tree Types
+
+TreeCapitator supports overwriting all vanilla Minecraft tree types:
+
+| Tree Type | Log Block ID |
+|-----------|--------------|
+| Oak | minecraft:oak_log |
+| Birch | minecraft:birch_log |
+| Spruce | minecraft:spruce_log |
+| Jungle | minecraft:jungle_log |
+| Acacia | minecraft:acacia_log |
+| Dark Oak | minecraft:dark_oak_log |
+| Mangrove | minecraft:mangrove_log |
+| Cherry | minecraft:cherry_log |
+| Pale Oak | minecraft:pale_oak_log |
+| Crimson | minecraft:crimson_stem |
+| Warped | minecraft:warped_stem |
+
+___
+
 ## Best Practices
 
 1. Use unique identifiers for your trees and axes to avoid conflicts with other Add-Ons.
@@ -313,5 +460,6 @@ ___
 4. Optimize your trees as much as possible. For example, if your trees don't have horizontal branches, don't set `max_branch`.
 5. Test your integration thoroughly to ensure all trees and axes work as expected with TreeCapitator.
 6. Enable Trunk Outline in TreeCapitator's settings to easily test your integration.
+7. When overwriting vanilla trees, consider the impact on gameplay and balance. Adjust parameters carefully.
 
 By following this guide, you can seamlessly integrate your custom Add-On with TreeCapitator, allowing players to enjoy your custom trees and axes with the tree-cutting functionality provided by TreeCapitator.
