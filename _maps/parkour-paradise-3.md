@@ -6,7 +6,7 @@ order: 32
 hide: false
 short-description: "Parkour through 100 fun and challenging levels in Parkour Paradise 3!"
 java: "/downloads/Parkour Paradise 3.zip"
-java-version: "1.21.4"
+java-version: "1.21.5"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=33e3b151-481c-42f5-b325-83faaabb192d"
 trailer: "https://www.youtube.com/watch?v=dRN7gbcMyu0"
 speedrunnable: true
@@ -18,7 +18,7 @@ crank: 14400
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourparadise3"
 server: "https://stickypiston.co/hielkemaps/parkourparadise3"
-version: 2.5.3
+version: 2.5.4
 ---
 
 Parkour Paradise 3 is a MASSIVE parkour map containing 100 fun and exciting levels to beat! Play alone or with friends!

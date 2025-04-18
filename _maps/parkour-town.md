@@ -5,7 +5,7 @@ date: 2022-12-21
 order: 10
 short-description: "Parkour Town has thousands of ways to reach the top, can you find the fastest one?"
 java: "/downloads/Parkour Town.zip"
-java-version: "1.21.4"
+java-version: "1.21.5"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=cf288377-426a-4938-95f7-a2b0f3c9ca1f"
 trailer: "https://www.youtube.com/watch?v=JeULV5tEfZo"
 speedrunnable: true
@@ -17,7 +17,7 @@ crank: 1200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourtown"
 server: "https://stickypiston.co/hielkemaps/parkourtown"
-version: 1.4.2
+version: 1.4.3
 ---
 
 Climb the **Parkour Town** with its countless pathways to the top!
