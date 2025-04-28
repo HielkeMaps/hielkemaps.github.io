@@ -17,7 +17,7 @@ $(function () {
                 if (map.name === pagetitle) {
 
                     //Get leaderboard url from map
-                    leaderboardurl = map.links[6].uri + "?var-2lge7q38=1gn2vrnl&top=1&embed=players";
+                    leaderboardurl = map.links[6].uri + "?var-r8ro7y78=klr06wwl&var-2lge7q38=1gn2vrnl&top=1&embed=players";
 
                     //Retrieve leaderboard
                     $.ajax({
