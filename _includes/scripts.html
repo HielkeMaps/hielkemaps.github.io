@@ -9,27 +9,28 @@
 <script src="{{'/assets/js/main.js' | relative_url }}"></script>
 <script src="{{'/assets/js/navbar.js' | relative_url }}"></script>
 
+{% if page.newsletter-form or page.layout == 'map' %}
+  <script type="text/javascript" src="{{ site.baseurl }}/assets/js/newsletter.js"></script>
+{% endif %}
+
 {% if page.custom-js %}
-{% for js_file in page.custom-js %}
-<script type="text/javascript" src="{{ site.baseurl }}/assets/js/custom/{{ js_file }}.js"></script>
-{% endfor %}
+  {% for js_file in page.custom-js %}
+  <script type="text/javascript" src="{{ site.baseurl }}/assets/js/custom/{{ js_file }}.js"></script>
+  {% endfor %}
 {% endif %}
 
 {% if page.layout == 'map' %}
-<script src="{{ site.baseurl }}/assets/js/map.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/map.js"></script>
 
-<!-- Newsletter pop-up -->
-<script async src="https://eocampaign1.com/form/d0211064-e537-11ee-9934-354c3c8b8fa0.js" data-form="d0211064-e537-11ee-9934-354c3c8b8fa0"></script>
+  {% if page.java %}
+  <script id="javaScript" src="{{ site.baseurl }}/assets/js/java.js" | relative_url}}" data-url="{{page.java}}"></script>
+  {% endif %}
 
-{% if page.java %}
-<script id="javaScript" src="{{ site.baseurl }}/assets/js/java.js" | relative_url}}" data-url="{{page.java}}"></script>
-{% endif %}
+  {% if page.speedrunnable %}
+  <script id="speedrunScript" src="{{ site.baseurl }}/assets/js/leaderboard.js" data-title="{{page.title}}"></script>
+  {% endif %}
 
-{% if page.speedrunnable %}
-<script id="speedrunScript" src="{{ site.baseurl }}/assets/js/leaderboard.js" data-title="{{page.title}}"></script>
-{% endif %}
-
-{% if page.isranked %}
-<script src="{{ site.baseurl }}/assets/js/rank.js" | relative_url}}"></script>
-{% endif %}
+  {% if page.isranked %}
+  <script src="{{ site.baseurl }}/assets/js/rank.js" | relative_url}}"></script>
+  {% endif %}
 {% endif %}

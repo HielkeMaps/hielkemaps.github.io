@@ -45,11 +45,7 @@
   --tw-backdrop-invert:  ;
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  
+  --tw-backdrop-sepia:  
 }
 
 ::backdrop {
@@ -99,11 +95,7 @@
   --tw-backdrop-invert:  ;
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  
+  --tw-backdrop-sepia:  
 }
 
 .container {
@@ -154,6 +146,10 @@
   pointer-events: none
 }
 
+.visible {
+  visibility: visible
+}
+
 .absolute {
   position: absolute
 }
@@ -187,6 +183,10 @@
   margin-right: auto
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem
+}
+
 .mb-3 {
   margin-bottom: 0.75rem
 }
@@ -209,6 +209,10 @@
 
 .mt-4 {
   margin-top: 1rem
+}
+
+.mb-4 {
+  margin-bottom: 1rem
 }
 
 .block {
@@ -235,6 +239,10 @@
   height: 4rem
 }
 
+.w-1\/2 {
+  width: 50%
+}
+
 .w-16 {
   width: 4rem
 }
@@ -245,6 +253,26 @@
 
 .max-w-96 {
   max-width: 24rem
+}
+
+.max-w-md {
+  max-width: 28rem
+}
+
+.max-w-lg {
+  max-width: 32rem
+}
+
+.max-w-xl {
+  max-width: 36rem
+}
+
+.max-w-2xl {
+  max-width: 42rem
+}
+
+.max-w-3xl {
+  max-width: 48rem
 }
 
 .transform {
@@ -340,6 +368,10 @@
 
 .p-\[5px\] {
   padding: 5px
+}
+
+.p-4 {
+  padding: 1rem
 }
 
 .pb-28 {

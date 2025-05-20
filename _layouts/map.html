@@ -156,8 +156,6 @@ layout: default
       <a href="{{site.baseurl}}/media{{page.url}}/pic_1.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
         <img src="{{site.baseurl}}/media{{page.url}}/pic_1.jpg" class="img-fluid">
       </a>
-
-
       <a href="{{site.baseurl}}/media{{page.url}}/pic_2.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
         <img src="{{site.baseurl}}/media{{page.url}}/pic_2.jpg" class="img-fluid">
       </a>
@@ -167,7 +165,6 @@ layout: default
       <a href="{{site.baseurl}}/media{{page.url}}/pic_4.jpg" data-fancybox="media" class="col-sm-6 col-lg-4 mappic">
         <img src="{{site.baseurl}}/media{{page.url}}/pic_4.jpg" class="img-fluid">
       </a>
-
   </div>
 </div>
 <br>
@@ -181,15 +178,15 @@ layout: default
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <button type="button" class="btn btn-primary p-2 w-44" data-bs-toggle="modal" data-bs-target="#downloadModal"
+        <button type="button" class="btn btn-primary p-3 w-44" data-bs-toggle="modal" data-bs-target="#downloadModal"
           data-bs-dismiss="modal">
           <span class="fas fa-user fa-2x mb-3"></span>
-          <h5>Singleplayer</h5>
+          <h6>Singleplayer</h6>
         </button>
-        <button type="button" class="btn btn-primary p-2 w-44" data-bs-toggle="modal" data-bs-target="#serverModal"
+        <button type="button" class="btn btn-primary p-3 w-44" data-bs-toggle="modal" data-bs-target="#serverModal"
           data-bs-dismiss="modal">
           <span class="fas fa-users fa-2x mb-3"></span>
-          <h5>Multiplayer</h5>
+          <h6>Multiplayer</h6>
         </button>
       </div>
       <div class="modal-footer">
@@ -255,12 +252,45 @@ layout: default
         Make sure you unzip it into your saves directory to
         make Minecraft detect it.<br><br>
         <a type="button" class="btn btn-success java-download-btn" href="{{page.java}}"
-          data-eo-form-toggle-id="d0211064-e537-11ee-9934-354c3c8b8fa0">
+          data-bs-toggle="modal" data-bs-target="#thanksDownloadModal">
           <i class="fas fa-download"></i>
           Download ({{page.version}})
           <div class="java-download-mc">For Minecraft {{page.java-version}}</div>
         </a>
         <span class="tos-text">By downloading you accept the <a href="/tos">Terms of Service</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Thanks for downloading Modal -->
+<div class="modal fade" id="thanksDownloadModal" tabindex="-1" role="dialog" aria-labelledby="thanksDownloadModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-7 text-center">
+            <h1 class="mb-4">Thanks for downloading!</h1>
+            <p class="fs-5">Consider joining my newsletter!</p>
+            <p>And get notified when I release a new map!<br>(I promise I won't spam <span class="text-danger">❤️</span>)</p>
+            
+            <form id="newsletter-form" class="mt-4">
+              <div class="mb-3">
+                <input type="email" class="form-control text-center" id="email" name="email" placeholder="Enter email address" required>
+                <input type="hidden" name="hp" value="">
+                <input type="hidden" name="list" value="maps">
+                <input type="hidden" name="subform" value="yes">
+              </div>
+              <input type="submit" class="btn btn-primary w-100" value="SUBSCRIBE">
+            </form>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <img src="/media/mailbox.png" alt="Mailbox" class="img-fluid rounded">
+          </div>
+        </div>
       </div>
     </div>
   </div>

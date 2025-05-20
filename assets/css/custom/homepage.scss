@@ -49,13 +49,10 @@
 	height: 500px;
 	padding-top: 30px;
 
-	.container {
-		width: 100%;
-
-		/* Generated */
-		.inline-container {
-			max-width: 100% !important;
-		}
+	#newsletter-form {
+		color: white;
+		font-size: x-large;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 	}
 }
 

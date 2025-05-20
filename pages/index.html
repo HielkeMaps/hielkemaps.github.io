@@ -1,8 +1,8 @@
 ---
 layout: default
 permalink: /index
-custom-js: homepage
 custom-css: homepage
+newsletter-form: true
 ---
 
 <header class="masthead vh-100">
@@ -105,15 +105,25 @@ custom-css: homepage
     {% endfor %}
   </div>
   <div class="w-100 text-center items-center mt-4">
-    <a class="no-underline hover:underline text-purple-400 hover:text-purple-500" href="{{site.baseurl}}/news">More news</a>
+  <a class="no-underline hover:underline text-purple-400 hover:text-purple-500" href="{{site.baseurl}}/news">More news</a>
   </div>
 </div>
 
 <div class="container-fluid newsletter-section" id="newsletter">
   <h2 class="text-center text-white header drop-shadow-xl">Subscribe to my newsletter!</h2>
-  <div class="container mt-14">
-    <script async src="https://eocampaign1.com/form/b37f944e-ce35-11ee-8f7b-47bbc859c081.js"
-      data-form="b37f944e-ce35-11ee-8f7b-47bbc859c081"></script>
+  <div class="container max-w-2xl mt-14">
+    <form id="newsletter-form" accept-charset="utf-8">
+      <div style="margin-top: 0px; margin-bottom: 8px; padding: 0px;">
+        <input type="email" name="email" id="email" placeholder="Enter email address" required aria-required="true" class="form-control" aria-label="Enter email address">
+      </div>
+      <div style="display:none;">
+        <label for="hp">HP</label>
+        <input type="text" name="hp" id="hp"/>
+      </div>
+      <input type="hidden" name="list" value="clQkzQPr8KUO57UsvwG9Ng"/>
+      <input type="hidden" name="subform" value="yes"/>
+      <input type="submit" class="btn w-100 btn-primary mb-2" value="Sign up">
+    </form>
   </div>
 </div>
 
