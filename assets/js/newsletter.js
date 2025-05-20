@@ -13,7 +13,7 @@ $(function () {
             
             const formData = new FormData();
             formData.append('email', emailInput.value);
-            formData.append('hp', hpInput.value); // This should be empty (honeypot)
+            formData.append('hp', hpInput.value);
             formData.append('list', listInput.value);
             formData.append('subform', subformInput.value);
             
