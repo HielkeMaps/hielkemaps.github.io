@@ -30,7 +30,7 @@ $(function () {
             })
             .then(response => {
                 if (response.ok) {
-                    newsletterForm.innerHTML = '<div class="text-center"><img src="/media/home/yay.gif" alt="Yay!" style="border-radius: 50%; width: 150px;"><p>Thanks for subscribing!</p></div>'
+                    newsletterForm.innerHTML = '<div class="text-center"><img src="/media/home/yay.gif" alt="Yay!" style="border-radius: 50%; width: 150px;"><br>Thanks for subscribing!</div>'
                 }
             })
             .catch(error => {
