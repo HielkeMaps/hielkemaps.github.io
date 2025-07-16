@@ -1,0 +1,185 @@
+---
+---
+
+// Typography improvements
+p {
+    margin: 30px 0 !important;
+}
+
+// Headings styling
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin: 40px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    margin-top: 20px;
+}
+
+h3 {
+    color: var(--black);
+    font-size: 1.4rem;
+    margin: 30px 0 15px 0;
+    font-weight: 700;
+}
+
+// Table of Contents styling
+#toc p {
+    margin: 0 !important;
+    
+    a {
+        display: block;
+        padding: 8px 15px;
+        margin: 5px 0;
+        background-color: #f8f9fa;
+        border-left: 4px solid var(--primary-color);
+        border-radius: 0 5px 5px 0;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        
+        &:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateX(5px);
+        }
+    }
+}
+
+// Lists styling
+ul {
+    margin: 10px 0 !important;
+    padding-left: 30px;
+    
+    li {
+    margin-bottom: 10px;
+    position: relative;
+    }
+}
+
+// Tables styling
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1rem;
+    }
+    
+    td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    
+    p {
+        margin: 0;
+        text-align: left;
+    }
+    }
+    
+    tbody tr {
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        background-color: #f8f9fa;
+    }
+    
+    &:nth-child(even) {
+        background-color: #fafafa;
+    }
+    }
+}
+
+// Strong text styling
+strong {
+    color: var(--black);
+    font-weight: 700;
+}
+
+// Section anchors
+h2[id], h3[id] {
+    scroll-margin-top: 100px; // Account for fixed header
+    position: relative;
+    
+    &::before {
+    content: "#";
+    position: absolute;
+    left: -25px;
+    color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
+    
+    &:hover::before {
+    opacity: 0.7;
+    }
+}
+
+// Contact section highlighting
+#contact + p {
+    background-color: #e8f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    
+    a {
+    font-weight: 600;
+    }
+}
+
+// Last updated styling
+p:first-child {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+
+// Print styles
+@media print {
+.privacy-policy .container {
+    max-width: none;
+    padding: 0;
+    
+    h2 {
+    color: black;
+    border-bottom-color: black;
+    }
+    
+    h3 {
+    color: black;
+    }
+    
+    a {
+    color: black;
+    text-decoration: underline;
+    }
+    
+    table {
+    box-shadow: none;
+    border: 1px solid black;
+    
+    th {
+        background-color: #f0f0f0;
+        color: black;
+    }
+    }
+    
+    #toc + p a {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    }
+}
+}
