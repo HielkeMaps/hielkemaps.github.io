@@ -8,6 +8,7 @@ module.exports = {
       '_layouts/**/*.html',
       '_posts/*.md',
       'pages/*.html',
+      'wiki/**/*.html',
       '*.markdown'
   ],
   theme: {
