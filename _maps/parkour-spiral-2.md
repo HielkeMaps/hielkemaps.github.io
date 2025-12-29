@@ -5,7 +5,7 @@ date: 2020-11-24
 order: 21
 short-description: "Parkour Spiral 2 offers a new fun parkour adventure! Start in the Nether and climb to the top!"
 java: "/downloads/Parkour Spiral 2.zip"
-java-version: "1.21.5"
+java-version: "1.21.11"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=22cd5101-1567-47ee-ab4d-e729b387daa0"
 trailer: "https://www.youtube.com/watch?v=c8kIQyzg_fo"
 speedrunnable: true

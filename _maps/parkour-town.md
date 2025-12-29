@@ -5,7 +5,7 @@ date: 2022-12-21
 order: 10
 short-description: "Parkour Town has thousands of ways to reach the top, can you find the fastest one?"
 java: "/downloads/Parkour Town.zip"
-java-version: "1.21.5"
+java-version: "1.21.11"
 bedrock: "https://www.minecraft.net/en-us/marketplace/pdp?id=cf288377-426a-4938-95f7-a2b0f3c9ca1f"
 trailer: "https://www.youtube.com/watch?v=JeULV5tEfZo"
 speedrunnable: true
