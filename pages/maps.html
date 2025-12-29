@@ -16,6 +16,7 @@ background-white: true
 
 <div class="container-fluid">
   <div class="card-deck row row-cols-xs-1 row-cols-md-3 row-cols-lg-4" style="justify-content: center;">
+
     {% assign sorted = site.maps | sort: 'order' %}
     {% for map in sorted %}
     {% unless map.hide %}
@@ -35,6 +36,19 @@ background-white: true
     </div>
     {% endunless %}
     {% endfor %}
+
+    <!-- Community Maps Card -->
+    <div class="card mapcard"
+         onclick="location.href='{{ site.baseurl }}/community-maps';"
+         data-aos="zoom-in">
+      <img class="card-img-top" src="{{site.baseurl}}/media/community-maps/thumbnail.jpg" alt="Community Maps">
+      <div class="card-body">
+        <h4 class="card-title">Community Maps</h4>
+        <span class="badge badge-secondary">Java</span>
+        <p class="card-text">Maps created by the community</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
