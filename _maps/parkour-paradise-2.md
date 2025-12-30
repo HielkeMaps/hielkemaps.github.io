@@ -17,7 +17,7 @@ crank: 7200
 inserver: true
 trial: "https://trial.stickypiston.co/map/parkourparadise2"
 server: "https://stickypiston.co/hielkemaps/parkourparadise2"
-version: 2.4.5
+version: 2.4.6
 ---
 
 Parkour Paradise is back! Parkour Paradise 2 offers 100 new and exciting levels to beat! With more than double the size of the first one, there's more parkour for you to enjoy! Are you up for the challenge?
