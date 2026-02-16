@@ -17,7 +17,7 @@ $(function () {
                 if (map.name === pagetitle) {
 
                     //Get leaderboard url from map
-                    leaderboardurl = map.links[6].uri + "?var-r8ro7y78=klr06wwl&var-2lge7q38=1gn2vrnl&top=1&embed=players";
+                    leaderboardurl = map.links[6].uri.replace("http://", "https://") + "?var-r8ro7y78=klr06wwl&var-2lge7q38=1gn2vrnl&top=1&embed=players";
 
                     //Retrieve leaderboard
                     $.ajax({
@@ -33,7 +33,7 @@ $(function () {
                                 let run = result.data.runs[0].run;
 
                                 //map link
-                                let link = result.data.weblink;
+                                let link = result.data.weblink.replace("http://", "https://");
                                 $('#record_link_2').attr("href", link);
 
                                 let name = result.data.players.data[0].names.international
@@ -74,7 +74,7 @@ function norun(result) {
     $("#record").html("No runs yet");
     $("#record").css("font-size", "25px");
 
-    var link = result.data.weblink
+    var link = result.data.weblink.replace("http://", "https://")
 
     //change small text to link
     $('#record_hms').hide();
