@@ -1,19 +1,19 @@
 name: Addon update watcher
 
-# Checks the add-ons that TreeCapitator advertises compatibility with and posts a
-# Discord notification when any of them ships a new version. The last-seen versions
-# live in .github/addon-watch/state.json and are committed back after each run.
+# Fetches the chunk.gg changelog pages of the add-ons that TreeCapitator advertises
+# compatibility with, detects new "updated on" dates, asks Claude whether the update
+# touches trees/axes, and posts the verdict to Discord. Last-seen state is committed back.
 #
-# Setup: add a repository secret named DISCORD_WEBHOOK_URL
-#        (Settings -> Secrets and variables -> Actions -> New repository secret).
+# Required repository secrets:
+#   DISCORD_WEBHOOK_URL      - Discord channel webhook (notifications)
+#   CLAUDE_CODE_OAUTH_TOKEN  - from `claude setup-token` (uses your Claude subscription)
+# Without CLAUDE_CODE_OAUTH_TOKEN it still works, just without the AI tree/axe analysis.
 
 on:
   schedule:
-    # Daily at 09:00 UTC.
-    - cron: "0 9 * * *"
+    - cron: "0 9 * * *" # daily 09:00 UTC
   workflow_dispatch:
 
-# Avoid overlapping runs racing on the committed state file.
 concurrency:
   group: addon-watch
   cancel-in-progress: false
@@ -24,6 +24,9 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .github/addon-watch
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,17 +36,21 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Run addon update check
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: node .github/addon-watch/check.mjs
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: node check.mjs
 
       - name: Commit updated state
         run: |
-          if [[ -n "$(git status --porcelain .github/addon-watch/state.json)" ]]; then
+          if [[ -n "$(git status --porcelain state.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add .github/addon-watch/state.json
+            git add state.json
             git commit -m "chore: update watched addon versions"
             git push
           else

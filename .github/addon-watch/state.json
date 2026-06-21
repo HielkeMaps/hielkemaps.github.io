@@ -1,42 +1,62 @@
 {
   "Better On Bedrock": {
-    "signal": "1.1.5.5",
-    "checked_at": "2026-06-21T15:43:29.232Z"
+    "signal": "Friday, April 10, 2026",
+    "version": "Friday, April 10, 2026",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:54.396Z"
   },
   "RealismCraft": {
     "signal": "Tuesday, April 7, 2026",
-    "checked_at": "2026-06-21T15:43:29.478Z"
+    "version": "Tuesday, April 7, 2026",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:54.812Z"
   },
   "Tinker's Construct": {
-    "signal": "1.7.0",
-    "checked_at": "2026-06-21T15:43:29.768Z"
+    "signal": "Tuesday, October 21, 2025",
+    "version": "Tuesday, October 21, 2025",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:55.058Z"
   },
   "Forest Craft": {
-    "signal": "1.1.14",
-    "checked_at": "2026-06-21T15:43:30.491Z"
+    "signal": "Thursday, April 9, 2026",
+    "version": "Thursday, April 9, 2026",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:55.519Z"
   },
   "Biomes Add-On": {
-    "signal": "1.1.7",
-    "checked_at": "2026-06-21T15:43:30.533Z"
+    "signal": "Tuesday, July 15, 2025",
+    "version": "Tuesday, July 15, 2025",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:55.748Z"
   },
   "Biomes + Structures Add-On": {
-    "signal": "1.0.7",
-    "checked_at": "2026-06-21T15:43:30.580Z"
+    "signal": "Monday, January 19, 2026",
+    "version": "Monday, January 19, 2026",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:55.990Z"
   },
   "Farming": {
-    "signal": "1.0.29",
-    "checked_at": "2026-06-21T15:43:30.622Z"
+    "signal": "Wednesday, August 20, 2025",
+    "version": "Wednesday, August 20, 2025",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:56.732Z"
   },
   "Biomes O' Plenty": {
-    "signal": "1.0.11",
-    "checked_at": "2026-06-21T15:43:30.697Z"
+    "signal": "Thursday, May 21, 2026",
+    "version": "Thursday, May 21, 2026",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:59.001Z"
   },
   "More Ores & Tools": {
-    "signal": "1.0.18",
-    "checked_at": "2026-06-21T15:43:30.742Z"
+    "signal": "Wednesday, November 13, 2024",
+    "version": "Wednesday, November 13, 2024",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:59.523Z"
   },
   "Nature": {
-    "signal": "1.1.4",
-    "checked_at": "2026-06-21T15:43:30.787Z"
+    "signal": "Tuesday, July 1, 2025",
+    "version": "Tuesday, July 1, 2025",
+    "tree_axe_relevant": null,
+    "checked_at": "2026-06-21T16:49:59.942Z"
   }
 }
