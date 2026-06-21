@@ -1,0 +1,75 @@
+{
+  "_comment": "Add-ons that TreeCapitator advertises compatibility with (see wiki/treecapitator/compatibility.html). The watcher fetches each `watch_url`, extracts the first capture group of `pattern` as a version/update signal, and notifies Discord when that signal changes. minecraft.net marketplace pages block bots (503), so each entry watches a bot-accessible mirror or the creator's own changelog instead. `marketplace_url` is only used to enrich the notification.",
+  "addons": [
+    {
+      "name": "Better On Bedrock",
+      "creator": "Poggy",
+      "watch_url": "https://poggy.org/latest_downloads.html",
+      "pattern": "v([0-9][0-9.]*) Changelog",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=6c3a6979-dc77-41c6-b19e-0071dabedf71"
+    },
+    {
+      "name": "RealismCraft",
+      "creator": "Spark Universe",
+      "watch_url": "https://chunk.gg/@spark-universe/realismcraft",
+      "pattern": "updated on ([A-Za-z0-9, ]+?) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=5eddc134-bdf3-4a84-b7c5-ee0504402be9"
+    },
+    {
+      "name": "Tinker's Construct",
+      "creator": "FTB Studios",
+      "watch_url": "https://docs.feed-the-beast.com/docs/marketplace/Addons/tinkers/changelog/",
+      "pattern": ">([0-9]+\\.[0-9]+\\.[0-9]+)<",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=e79ada28-0939-4161-bfe4-e2ce0bf7d69c"
+    },
+    {
+      "name": "Forest Craft",
+      "creator": "Float Studios",
+      "watch_url": "https://www.bedrockexplorer.com/@float-studios/forest-craft-add-on",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=b72d5e11-09a6-4f55-9bdd-fae5388e1866"
+    },
+    {
+      "name": "Biomes Add-On",
+      "creator": "Block Factory",
+      "watch_url": "https://www.bedrockexplorer.com/@block-factory/biomes-add-on",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=a995a919-46ca-4ade-a1c9-b634f98b7a72"
+    },
+    {
+      "name": "Biomes + Structures Add-On",
+      "creator": "Mythicus",
+      "watch_url": "https://www.bedrockexplorer.com/@mythicus/biomes-structures-add-on",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp/mythicus/biomes-+-structures-add--on/ffaa5a38-4a62-44ea-aafb-523d22be0322"
+    },
+    {
+      "name": "Farming",
+      "creator": "Podcrash",
+      "watch_url": "https://www.bedrockexplorer.com/@podcrash/farming",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=7d74d670-9990-469d-ac3c-972423429fd7"
+    },
+    {
+      "name": "Biomes O' Plenty",
+      "creator": "4ks Studios",
+      "watch_url": "https://www.bedrockexplorer.com/@4ks-studios/biomes-o-plenty",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": null
+    },
+    {
+      "name": "More Ores & Tools",
+      "creator": "Netherpixel",
+      "watch_url": "https://www.bedrockexplorer.com/@netherpixel/more-ores-and-tools",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=2b36d3a3-a83c-4614-92aa-ca83cbee621e"
+    },
+    {
+      "name": "Nature",
+      "creator": "Builders Horizon",
+      "watch_url": "https://www.bedrockexplorer.com/@builders-horizon/nature-add-on",
+      "pattern": "version is ([0-9][0-9.]*) and is compatible",
+      "marketplace_url": "https://www.minecraft.net/en-us/marketplace/pdp?id=e4321bd7-a1e4-4518-aa0a-23a16ee743a0"
+    }
+  ]
+}
